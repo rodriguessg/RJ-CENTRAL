@@ -79,7 +79,7 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   list-style: none;
   padding: 0;
-  min-width: 200px;
+  min-width: 300px;
   top: 100%;
   left: 0;
   border-radius: 5px;
@@ -97,7 +97,7 @@ nav {
 }
 
 .dropdown li a:hover {
-  background-color: #1a237e;
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
   color: white;
 }
 
