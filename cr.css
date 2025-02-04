@@ -52,6 +52,7 @@
 /* Menu Dropdown */
 nav ul.menu {
   position: relative;
+  align-items: baseline;
   z-index: 2; /* Menu fica acima do carrossel */
   width: 100%; /* Garantir que o menu ocupe toda a largura da tela */
 }
