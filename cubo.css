@@ -1,0 +1,96 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do container principal */
+.transparencia-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px; /* Ajuste o padding para um layout mais compacto */
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do lado esquerdo com informações */
+.info-lado {
+  text-align: center;
+  width: 48%;
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+}
+
+.info-lado h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.info-lado p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Estilo para o lado direito com 12 cubos */
+.cubo-info {
+  width: 50%;
+}
+
+.cubo i {
+  font-size: 3rem; /* Ajuste o valor conforme necessário */
+}
+
+.cubo-container {
+  display: grid;
+  grid-template-columns: repeat(4, 166px); /* 4 colunas com largura de 166px */
+  gap: 10px; /* Espaçamento entre os cubos */
+}
+
+.cubo {
+  width: 166px;
+  height: 166px;
+  padding: 20px;
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  /* Organiza o conteúdo verticalmente (ícone em cima e conteúdo embaixo) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Efeito de transição suave */
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Efeito ao passar o mouse (hover) */
+.cubo:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o cubo */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+  background: linear-gradient(
+    90deg,
+    #472774 67.81%,
+    #192844 100%
+  ); /* Altera a direção do gradiente */
+}
+
+/* Estilo para o texto dentro dos cubos */
+.cubo p {
+  font-size: 1.2rem;
+  margin-top: 10px; /* Ajuste a margem para que o conteúdo fique abaixo do ícone */
+}
+
+/* Estilo para a barra de título */
+.tr {
+  color: white;
+  font-size: large;
+  padding: 30px;
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+  text-align: center;
+}

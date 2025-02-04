@@ -1,0 +1,67 @@
+/* Estilo do Carrossel */
+.carousel {
+  position: relative;
+  width: 100%; /* Garantir que o carrossel ocupe toda a largura */
+  height: 600px; /* Ajuste a altura conforme necessário */
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 0; /* Fica atrás do menu */
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  height: 100%; /* Garante que as imagens ocupem toda a altura do carrossel */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%; /* Ajusta as imagens para preencher a altura e largura do carrossel */
+  object-fit: cover; /* Faz as imagens se ajustarem ao tamanho do carrossel sem distorcer */
+  image-rendering: crisp-edges; /* Melhora a qualidade da imagem e evita o borrão */
+}
+
+/* Botões de Navegação */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  background-color: transparent; /* Remover fundo transparente */
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1; /* Coloca as setas acima do carrossel */
+  transform: translateY(-50%); /* Alinha verticalmente as setas */
+}
+
+.prev {
+  left: 10px; /* Distância da borda esquerda */
+}
+
+.next {
+  right: 10px; /* Distância da borda direita */
+}
+
+/* Menu Dropdown */
+nav ul.menu {
+  position: relative;
+  z-index: 2; /* Menu fica acima do carrossel */
+  width: 100%; /* Garantir que o menu ocupe toda a largura da tela */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel {
+    height: 400px; /* Ajuste para uma altura menor em telas pequenas */
+  }
+  .carousel-item img {
+    object-fit: cover; /* Para garantir que a imagem não fique distorcida */
+  }
+}
