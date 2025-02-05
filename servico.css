@@ -1,60 +1,105 @@
+/* Estilo para o contêiner geral */
+.servico-geral {
+    text-align: center; /* Centraliza o título */
+    padding: 40px 20px; /* Espaçamento ao redor do conteúdo */
+}
 
+/* Estilo para o título */
+.canais_atendimento1 {
+    font-size: 2em; /* Tamanho do título */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    color: #333; /* Cor do título */
+    font-weight: bold; /* Deixa o título em negrito */
+}
 
+/* Estilo para o contêiner dos cards */
 .cards-container {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se necessário */
+    margin-top: 20px; /* Espaço acima dos cards */
+    margin: 0; /* Remover margens extras */
 }
 
-/* Card Styles */
+/* Estilo para cada card */
 .card {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 25%;
-    min-width: 280px;
+    width: 300px; /* Largura fixa para cada card */
+    height: 400px; /* Altura fixa para manter todos os cards do mesmo tamanho */
+    border: 1px solid #ddd; /* Borda do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para os cards */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do card */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo do card siga uma coluna */
 }
 
+/* Efeito de hover para os cards */
+.card:hover {
+    transform: translateY(-10px); /* Eleva o card quando o mouse passa sobre ele */
+}
+
+/* Estilo para o cabeçalho de cada card */
 .card-header {
-    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo personalizada */
-    padding: 20px;
-    position: relative;
-    height: 80px; /* Aumentei a altura para garantir que haja espaço para a imagem */
+    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo do cabeçalho */
+    padding: 20px; /* Espaçamento ao redor da imagem */
+    text-align: center; /* Centraliza a imagem */
+    flex-grow: 0; /* Impede que o cabeçalho cresça */
 }
 
-/* Estilo da imagem dentro do cabeçalho */
-.card-header .icon-image {
-    width: 50px;  /* Tamanho da imagem, você pode ajustar */
-    height: 50px; /* Tamanho da imagem */
-    position: absolute;
-    top: 50%;
-    right: 20px; /* Ajuste para posicionar à direita */
-    transform: translateY(-50%);
+/* Estilo para a imagem do cabeçalho */
+.icon-image {
+    max-width: 70%; /* Garante que a imagem se ajuste dentro do espaço */
+    height: auto; /* Mantém a proporção da imagem */
 }
 
-/* Card Content */
+/* Estilo para o conteúdo do card */
 .card-content {
     padding: 20px;
+    background-color: #fff; /* Cor de fundo do conteúdo */
+    flex-grow: 1; /* Faz o conteúdo crescer e ocupar o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui o conteúdo do card de forma equitativa */
 }
 
+/* Estilo para o título dentro do card */
 .card-content h3 {
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
 }
 
+/* Estilo para o texto do card */
 .card-content p {
-    color: #555;
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Estilo para o botão Saiba Mais */
+.card-content a.saiba-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    align-self: center; /* Alinha o botão à esquerda do card */
+}
 
-    .card {
-        width: 80%;
+.card-content a.saiba-mais:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+    transform: scale(1.01); /* Aumenta o tamanho do botão */
+}
+
+/* Responsividade: Ajusta o botão para telas menores */
+@media (max-width: 768px) {
+    .card-content a.saiba-mais {
+        padding: 12px 25px;
+        font-size: 18px; /* Aumenta o tamanho da fonte em telas menores */
     }
 }
