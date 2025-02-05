@@ -28,16 +28,28 @@
   padding: 20px;
   }
 
-.info-lado a {
-  width: 41%;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  color: aqua;
-  border: 1px solid white;
-  border-radius: 19px;
-
+  .info-lado a {
+    background-color: white;
+    padding: 5px;
+    width: 16%;
+    display: flex
+;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
 }
+.info-lado a:hover {
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra suave em branco */
+}
+
+
 .info-presi {
   gap: 10px;
   display: flex;
@@ -125,3 +137,39 @@
   background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
   text-align: center;
 }
+
+
+.redes-sociais {
+  list-style: none;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+.icones {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.icones a{
+  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+  border: none;
+}
+
+.icon i {
+  font-size: 30px;
+  color:white; /* Cor padrão dos ícones */
+  transition: color 0.3s ease;
+}
+
+.icones a:hover{
+  background: linear-gradient(90deg, white, #472774 100%);
+  border: none;
+}
+
+.icon:hover i {
+  color: black; /* Cor ao passar o mouse sobre o ícone */
+}
+
