@@ -1,15 +1,4 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
 
 .cards-container {
     display: flex;
@@ -29,7 +18,7 @@ body {
 }
 
 .card-header {
-    background-color: #4CAF50; /* Cor de fundo personalizada */
+    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo personalizada */
     padding: 20px;
     position: relative;
     height: 80px; /* Aumentei a altura para garantir que haja espaço para a imagem */
