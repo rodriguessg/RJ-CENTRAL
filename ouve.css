@@ -14,7 +14,12 @@
     gap: 8px;
     margin-bottom: 15px;
 }
+.informcao {
+    /* display: flex
+; */
+width: 24%;
 
+}
 .canais_atendimento {
 
     
