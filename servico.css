@@ -42,7 +42,7 @@
 
 /* Estilo para o cabeçalho de cada card */
 .card-header {
-    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo do cabeçalho */
+    background: linear-gradient(90deg, #192844 67.81%, #0a558b 100%); /* Cor de fundo do cabeçalho */
     padding: 20px; /* Espaçamento ao redor da imagem */
     text-align: center; /* Centraliza a imagem */
     flex-grow: 0; /* Impede que o cabeçalho cresça */
@@ -82,7 +82,7 @@
 .card-content a.saiba-mais {
     display: inline-block;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #192844 67.81%, #472774 100%); /* Cor de fundo do cabeçalho */
+    background: linear-gradient(90deg, #192844 67.81%, #0a558b 100%); /* Cor de fundo do cabeçalho */
     color: white; /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado */
     border-radius: 5px; /* Bordas arredondadas */
@@ -91,7 +91,7 @@
 }
 
 .card-content a.saiba-mais:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    
     color: #ffffff; /* Cor do texto ao passar o mouse */
     transform: scale(1.01); /* Aumenta o tamanho do botão */
 }
