@@ -14,10 +14,19 @@
     gap: 8px;
     margin-bottom: 15px;
 }
+.informcao {
+    /* display: flex
+; */
+width: 24%;
 
+<<<<<<< HEAD
 .canais_atendimento h2{
   text-align: center;
 }
+=======
+}
+.canais_atendimento {
+>>>>>>> da528bdba4e335fd944e868510c127240ff448e0
 
 .canais_atendimento {   
         position: relative;
