@@ -159,8 +159,6 @@
 }
 
 
-
-
 .redes-sociais {
   list-style: none;
   font-size: 18px;
@@ -170,7 +168,6 @@
 
 .icones {
   display: flex;
-  gap: 10px;
   margin-top: 15px;
   justify-content: center;
 }
@@ -188,6 +185,6 @@
 
 
 .icon:hover i {
-  color: black; /* Cor ao passar o mouse sobre o ícone */
+  color: #472774; /* Cor ao passar o mouse sobre o ícone */
 }
 
