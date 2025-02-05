@@ -1,16 +1,31 @@
 .banner-ouve {
     
-    display: grid;
-    grid-template-columns: 1fr 0fr;
-    gap: 50px;
-    /* width: 470px; */
-    margin-left: 2%;
-    /* justify-content: center;*/
+    display: flex;
+        gap: 50px;
+        justify-content: center;
 }
 
 .banner-section {
     display: flex;
-        gap: 50px;
+    margin-top: 25px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.canais_atendimento {
+
+    
+        position: relative;
+        text-decoration: underline;
+        text-decoration-thickness: 3px; /* Espessura da linha */
+        text-underline-offset: 8px; /* Distância entre o texto e a linha */
+        text-decoration-color: #007bff; /* Cor da linha */
+        display: inline-block;
+
+      
 }
   @keyframes slideIn {
     from {
