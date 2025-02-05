@@ -47,7 +47,23 @@
   background-color: white;
   width: 116px;
   padding: 12px;
+  border: 2px solid #192844; /* Adiciona uma borda */
+  border-radius: 8px; /* Borda arredondada */
+  color: #192844; /* Cor do texto */
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Transição suave */
 }
+
+/* Efeito hover */
+.info-lado .saiba:hover {
+  background-color: #472774; /* Cor de fundo ao passar o mouse */
+  color: white; /* Cor do texto ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento no tamanho */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
 
 
 .info-presi {
@@ -143,8 +159,6 @@
 }
 
 
-
-
 .redes-sociais {
   list-style: none;
   font-size: 18px;
@@ -161,7 +175,6 @@
 
 .icones {
   display: flex;
-  gap: 10px;
   margin-top: 15px;
   justify-content: center;
 }
@@ -184,6 +197,6 @@
 
 
 .icon:hover i {
-  color: black; /* Cor ao passar o mouse sobre o ícone */
+  color: #472774; /* Cor ao passar o mouse sobre o ícone */
 }
 
