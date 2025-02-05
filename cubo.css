@@ -43,7 +43,11 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-
+.info-lado .saiba {
+  background-color: white;
+  width: 116px;
+  padding: 12px;
+}
 
 
 .info-presi {
