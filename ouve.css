@@ -1,17 +1,33 @@
 .banner-ouve {
-    display: flex;
-        flex-wrap: wrap;
-        border: 1px solid black;
-        margin-bottom: 50px;
-        justify-content: center;
+    
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    gap: 50px;
+    /* width: 470px; */
+    margin-left: 2%;
+    /* justify-content: center;*/
+}
 
+.banner-section {
+    display: flex;
+        gap: 50px;
 }
-.bannercentral {
-    background-color: aqua;
-    border: 1px solid black;
-}
-.banner-ouvidoria-central {
-    /* width: 50%; */
-    border:  1px solid black;
-    background-color: brown;
-}
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+  
+  .bannercentral,
+  .banner-ouvidoria-central {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .bannercentral:hover,
+  .banner-ouvidoria-central:hover {
+    transform: scale(1.1);
+  }
+  
