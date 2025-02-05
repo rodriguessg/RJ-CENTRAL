@@ -1,0 +1,71 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 280px;
+}
+
+.card-header {
+    background-color: #4CAF50; /* Cor de fundo personalizada */
+    padding: 20px;
+    position: relative;
+    height: 80px; /* Aumentei a altura para garantir que haja espaço para a imagem */
+}
+
+/* Estilo da imagem dentro do cabeçalho */
+.card-header .icon-image {
+    width: 50px;  /* Tamanho da imagem, você pode ajustar */
+    height: 50px; /* Tamanho da imagem */
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Ajuste para posicionar à direita */
+    transform: translateY(-50%);
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
