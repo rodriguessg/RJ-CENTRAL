@@ -1,0 +1,17 @@
+.banner-ouve {
+    display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        margin-bottom: 50px;
+        justify-content: center;
+
+}
+.bannercentral {
+    background-color: aqua;
+    border: 1px solid black;
+}
+.banner-ouvidoria-central {
+    /* width: 50%; */
+    border:  1px solid black;
+    background-color: brown;
+}
