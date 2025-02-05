@@ -15,16 +15,17 @@
     margin-bottom: 15px;
 }
 
-.canais_atendimento {
+.canais_atendimento h2{
+  text-align: center;
+}
 
-    
+.canais_atendimento {   
         position: relative;
         text-decoration: underline;
         text-decoration-thickness: 3px; /* Espessura da linha */
         text-underline-offset: 8px; /* Distância entre o texto e a linha */
-        text-decoration-color: #007bff; /* Cor da linha */
+        text-decoration-color: black; /* Cor da linha */
         display: inline-block;
-
       
 }
   @keyframes slideIn {

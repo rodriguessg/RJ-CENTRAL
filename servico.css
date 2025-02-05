@@ -1,7 +1,6 @@
 /* Estilo para o contêiner geral */
 .servico-geral {
     text-align: center; /* Centraliza o título */
-    padding: 40px 20px; /* Espaçamento ao redor do conteúdo */
 }
 
 /* Estilo para o título */
@@ -19,7 +18,7 @@
     gap: 20px; /* Espaço entre os cards */
     flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se necessário */
     margin-top: 20px; /* Espaço acima dos cards */
-    margin: 0; /* Remover margens extras */
+    margin-bottom: 30px;
 }
 
 /* Estilo para cada card */

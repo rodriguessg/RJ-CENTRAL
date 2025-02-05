@@ -10,9 +10,10 @@
   display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 50px;
+      padding: 20px;
       background-color: #f4f4f4;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
   }
 
 /* Estilo do lado esquerdo com informações */
@@ -41,11 +42,8 @@
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
 }
-.info-lado a:hover {
-  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
-  color: white;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra suave em branco */
-}
+
+
 
 
 .info-presi {
@@ -129,12 +127,18 @@
 
 /* Estilo para a barra de título */
 .tr {
-  color: white;
   font-size: large;
-  padding: 30px;
-  background: linear-gradient(90deg, #192844 67.81%, #192844 100%);
+  padding: 20px;
   text-align: center;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-thickness: 3px; /* Espessura da linha */
+  text-underline-offset: 8px; /* Distância entre o texto e a linha */
+  text-decoration-color:black; /* Cor da linha */
+ 
 }
+
+
 
 
 .redes-sociais {
@@ -161,10 +165,7 @@
   transition: color 0.3s ease;
 }
 
-.icones a:hover{
-  background: linear-gradient(90deg, white, #472774 100%);
-  border: none;
-}
+
 
 .icon:hover i {
   color: black; /* Cor ao passar o mouse sobre o ícone */
