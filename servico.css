@@ -41,15 +41,13 @@
 
 /* Estilo para o cabeçalho de cada card */
 .card-header {
-    background: linear-gradient(90deg, #192844 67.81%, #0a558b 100%); /* Cor de fundo do cabeçalho */
-    padding: 40px; /* Menos espaço ao redor da imagem */
     text-align: center; /* Centraliza a imagem */
     flex-grow: 0; /* Impede que o cabeçalho cresça */
 }
 
 /* Estilo para a imagem do cabeçalho */
 .icon-image {
-    max-width: 75%; /* Tamanho da imagem ajustado */
+    max-width: 100%; /* Tamanho da imagem ajustado */
     height: auto; /* Mantém a proporção da imagem */
 }
 
