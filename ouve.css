@@ -1,58 +1,134 @@
-.banner-ouve {
-    
-    display: flex;
-        gap: 50px;
-        justify-content: center;
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.banner-section {
-    display: flex;
-    margin-top: 25px;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 15px;
+/* Seção principal */
+.ouverj-section {
+  margin: 0px 40px 20px 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
-.informcao {
-    /* display: flex
-; */
-width: 24%;
 
-<<<<<<< HEAD
-.canais_atendimento h2{
+/* Container principal */
+.ouverj-container {
+  display: flex;
+  align-items: center;
+  background-color: #141c54; /* Ajuste a cor conforme a imagem */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 77%;
+}
+
+/* Imagem */
+.ouverj-image img {
+  width: 210px;
+  height: auto;
+  border-radius: 10px;
+  border: solid 1px white;
+}
+
+/* Conteúdo */
+.ouverj-content {
+  display: grid;
+  flex: 1;
+  color: white;
+  padding: 20px;
+  gap: 10px;
+}
+
+/* Título */
+.ouverj-content h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Texto */
+.ouverj-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  
+}
+
+/* Botão */
+.ouverj-btn {
+  background-color: white;
+  width: 149px;
+  padding: 10px;
+  border-radius: 8px;
+  color: #192844;
+  font-weight: bold;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin-right: 20px;
 }
-=======
-}
-.canais_atendimento {
->>>>>>> da528bdba4e335fd944e868510c127240ff448e0
 
-.canais_atendimento {   
-        position: relative;
-        text-decoration: underline;
-        text-decoration-thickness: 3px; /* Espessura da linha */
-        text-underline-offset: 8px; /* Distância entre o texto e a linha */
-        text-decoration-color: black; /* Cor da linha */
-        display: inline-block;
-      
+/* Efeito hover no botão */
+.ouverj-btn:hover {
+  background-color: #472774;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-  @keyframes slideIn {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateY(-50%);
-    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ouverj-container {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
   }
-  
-  .bannercentral,
-  .banner-ouvidoria-central {
-    transition: transform 0.3s ease-in-out;
+
+  .ouverj-image img {
+    width: 180px;
+    margin-bottom: 15px;
   }
-  
-  .bannercentral:hover,
-  .banner-ouvidoria-central:hover {
-    transform: scale(0.9);
+
+  .ouverj-content {
+    padding: 15px;
   }
-  
+
+  .ouverj-content h2 {
+    font-size: 22px;
+  }
+
+  .ouverj-content p {
+    font-size: 14px;
+  }
+
+  .ouverj-btn {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ouverj-container {
+    padding: 15px;
+  }
+
+  .ouverj-image img {
+    width: 150px;
+  }
+
+  .ouverj-content h2 {
+    font-size: 20px;
+  }
+
+  .ouverj-content p {
+    font-size: 13px;
+  }
+
+  .ouverj-btn {
+    width: 130px;
+    font-size: 14px;
+  }
+}
