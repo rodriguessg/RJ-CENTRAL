@@ -195,12 +195,12 @@
   }
 
   .cubo-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    grid-template-columns: repeat(3, 4fr); /* Adiciona 3 colunas no mobile */
   }
 
   .cubo {
     width: 100%; /* Ajusta os cubos para ocupar toda a largura */
-    height: 150px; /* Ajusta a altura dos cubos */
+    height: 130px; /* Ajusta a altura dos cubos */
   }
 
   .tr {
