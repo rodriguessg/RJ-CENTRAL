@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BONDE SANTA TERESA-RJ</title>
-  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cr.css">
   <link rel="stylesheet" href="cubo.css">
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="ouve.css">
   <link rel="stylesheet" href="servico.css">
   <link rel="stylesheet" href="video.css">
+  <link rel="stylesheet" href="bonde-chat.css">
   <!-- Novo link do FontAwesome--->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -48,7 +49,7 @@
     <nav>
       <ul class="menu">
         <li>
-          <a href="https://www.rj.gov.br/central/historia" target="_blank"><i class="fa-solid fa-landmark"></i> EMPRESA</a>
+          <a href="http://127.0.0.1:5500/index-bonde.html" ><i class="fa-solid fa-landmark"></i> EMPRESA</a>
           <ul class="dropdown">
             <li><a href="#"><i class="fa-solid fa-search"></i> Sobre o Bonde</a></li>
             <li><a href="#"><i class="fa-solid fa-search"></i> Missão, Visão e Valores</a></li>
@@ -69,13 +70,8 @@
         <li>
           <a href="#"><i class="fa-solid fa-map"></i>ESTAÇÕES</a>
           <ul class="dropdown">
-            <li><a href="#"><i class="fa-solid fa-search"></i> Estrutura de Governança</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Ética e Integridade</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Politicas e Regras Organizacionais</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Atas de Reunião</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> LGPD</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Relatórios Anuais</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Sustentabilidade</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> Linhas</a></li>
+           
           </ul>
         </li>
         <li>
@@ -83,19 +79,15 @@
           <ul class="dropdown">
             <li><a href="#" target="_blank"><i class="fa-solid fa-ticket"></i> Bilheteria</a></li>
             <li><a href="#" target="_blank"><i class="fa-solid fa-train-tram"></i>Meios e Tarifas</a></li>
-            <li><a href="#" target="_blank"><i class="fa-solid fa-address-card"></i>Onde Pagar/a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-address-card"></i>Onde Pagar</a></li>
             <li><a href="#" target="_blank"><i class="fa-solid fa-address-card"></i> Gratuidade</a></li>
           </ul>
         </li> 
         <li>
-          <a href="#"><i class="fa-solid fa-newspaper"></i> NOTÍCIAS</a>
+          <a href="noticias.html" target="_blank"><i class="fa-solid fa-newspaper"></i> NOTÍCIAS</a>
           <ul class="dropdown">
-            <li><a href="#"><i class="fa-solid fa-search"></i> Regulamento - RILC</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Em Andamento</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Realizadas</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Suspensas</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Contratos e Convênios</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Empresas Sancionadas</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> Imprensa</a></li>
+            
           </ul>
         </li>
         <li>
@@ -111,10 +103,10 @@
         <li>
           <a href="#ouvirj"><i class="fa-solid fa-newspaper"></i>  FALE CONOSCO</a>
           <ul class="dropdown">
-            <li><a href="#"><i class="fa-solid fa-search"></i> Saiba Mais</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Contatos</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Carta de Serviços</a></li>
-            <li><a href="#"><i class="fa-solid fa-search"></i> Relatórios</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> Atendimento ao Cliente</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> LGPD</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> Dúvidas Frequentes</a></li>
+            <li><a href="#"><i class="fa-solid fa-search"></i> Ressarciamento</a></li>
             <li><a href="#"><i class="fa-solid fa-search"></i> OuveRJ</a></li>
             
           </ul>
@@ -277,6 +269,35 @@
   </ul>
 
       </div>
+
+      <button class="open-btn" onclick="toggleForm()">Dúvidas ? Fale aqui no Chat</button>
+
+      <div id="formContainer">
+        <button class="close-btn" onclick="toggleForm()">×</button>
+        <h3>Contato</h3>
+        <form action="https://formspree.io/f/{SEU_ID_FORM}" method="POST">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required>
+          <br><br>
+    
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+          <br><br>
+    
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <br><br>
+    
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+  <script>
+    function toggleForm() {
+      const formContainer = document.getElementById('formContainer');
+      formContainer.classList.toggle('active');
+    }
+  </script>
     </div>
       <div class="cubo-info">
         <div class="cubo-container">
