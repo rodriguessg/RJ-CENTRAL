@@ -32,6 +32,7 @@
     transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
     display: flex;
     flex-direction: column; /* Garante que o conteúdo do card siga uma coluna */
+    background-color: #0a558b;
 }
 
 /* Efeito de hover para os cards */

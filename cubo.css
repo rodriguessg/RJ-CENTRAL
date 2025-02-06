@@ -155,10 +155,12 @@
 }
 
 .icones, .icones-bonde {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  display: flex
+  ;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 15px;
+      align-items: center;
 }
 
 .icones a, .icones-bonde a {
@@ -171,9 +173,25 @@
   transition: color 0.3s ease;
 }
 
-.icon:hover i {
-  color: #472774;
+.icon i {
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
+
+.icon:hover i {
+  transform: scale(1.2); /* Aumenta o ícone levemente ao passar o mouse */
+}
+
+/* Ajuste do ícone GOVRJ para manter o mesmo efeito */
+.govrj-icon {
+  width: 50px;
+  height: 40px;
+  transition: transform 0.3s ease; /* Mesma transição dos outros ícones */
+}
+
+.icon:hover .govrj-icon {
+  transform: scale(1.2); /* Aplica o efeito de zoom no GOVRJ */
+}
+
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
