@@ -8,63 +8,61 @@
 /* Estilos do container principal */
 .transparencia-container {
   display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #f4f4f4;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}
 
-/* Estilo do lado esquerdo com informações */
 .info-lado {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-left: 200px;
-  background: linear-gradient(90deg, #192844 67.81%, #192844  100%);
+  background: linear-gradient(90deg, #192844 67.81%, #192844 100%);
   height: 500px;
   padding: 20px;
-  }
+  flex: 1;
+  margin-left: 200px; /* Ajusta a margem */
+}
 
-  .info-lado a {
-    padding: 5px;
-    width: 10%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: black;
-    border: 1px solid white;
-    border-radius: 10px;
-    font-weight: bolder;
-    text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
+.info-lado a {
+  padding: 5px;
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-weight: bolder;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .info-lado .saiba {
   background-color: white;
   width: 116px;
   padding: 12px;
-  border: 2px solid #192844; /* Adiciona uma borda */
-  border-radius: 8px; /* Borda arredondada */
-  color: #192844; /* Cor do texto */
+  border: 2px solid #192844;
+  border-radius: 8px;
+  color: #192844;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease-in-out; /* Transição suave */
+  transition: all 0.3s ease-in-out;
 }
 
 /* Efeito hover */
 .info-lado .saiba:hover {
-  background-color: #472774; /* Cor de fundo ao passar o mouse */
-  color: white; /* Cor do texto ao passar o mouse */
-  transform: scale(1.05); /* Leve aumento no tamanho */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  background-color: #472774;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-
 
 .info-presi {
   gap: 10px;
@@ -73,7 +71,6 @@
   justify-content: center;
   text-align: center;
   width: 48%;
-  /* background: linear-gradient(90deg, #192844 67.81%, #472774 100%); */
   height: 514px;
 }
 
@@ -89,23 +86,24 @@
   text-align: start;
   color: white;
 }
+
 .info-fab {
   text-align: start;
-  
 }
+
 /* Estilo para o lado direito com 12 cubos */
 .cubo-info {
   width: 50%;
 }
 
 .cubo i {
-  font-size: 3rem; /* Ajuste o valor conforme necessário */
+  font-size: 3rem;
 }
 
 .cubo-container {
   display: grid;
-  grid-template-columns: repeat(4, 166px); /* 4 colunas com largura de 166px */
-  gap: 10px; /* Espaçamento entre os cubos */
+  grid-template-columns: repeat(4, 166px);
+  gap: 10px;
 }
 
 .cubo {
@@ -117,32 +115,24 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-
-  /* Organiza o conteúdo verticalmente (ícone em cima e conteúdo embaixo) */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* Efeito de transição suave */
   transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 /* Efeito ao passar o mouse (hover) */
 .cubo:hover {
-  transform: scale(1.05); /* Aumenta ligeiramente o cubo */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
-  background: linear-gradient(
-    90deg,
-    #472774 67.81%,
-    #192844 100%
-  ); /* Altera a direção do gradiente */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #472774 67.81%, #192844 100%);
 }
 
 /* Estilo para o texto dentro dos cubos */
 .cubo p {
   font-size: 1.2rem;
-  margin-top: 10px; /* Ajuste a margem para que o conteúdo fique abaixo do ícone */
+  margin-top: 10px;
 }
 
 /* Estilo para a barra de título */
@@ -152,51 +142,100 @@
   text-align: center;
   position: relative;
   text-decoration: underline;
-  text-decoration-thickness: 3px; /* Espessura da linha */
-  text-underline-offset: 8px; /* Distância entre o texto e a linha */
-  text-decoration-color:black; /* Cor da linha */
- 
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color: black;
 }
 
-
-.redes-sociais {
+.redes-sociais, .redes-sociais-bonde {
   list-style: none;
   font-size: 18px;
   color: white;
   font-weight: bolder;
 }
-.redes-sociais-bonde {
-  list-style: none;
-  font-size: 18px;
-  color: white;
-  font-weight: bolder;
 
-}
-
-.icones {
+.icones, .icones-bonde {
   display: flex;
-  margin-top: 15px;
   justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
 }
-.icones-bonde {
-  display: flex;
-      gap: 30px;
-      margin-top: 15px;
-      /* justify-content: center;*/
-}
-.icones a{
+
+.icones a, .icones-bonde a {
   border: none;
 }
 
 .icon i {
   font-size: 30px;
-  color:white; /* Cor padrão dos ícones */
+  color: white;
   transition: color 0.3s ease;
 }
 
-
-
 .icon:hover i {
-  color: #472774; /* Cor ao passar o mouse sobre o ícone */
+  color: #472774;
 }
 
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .transparencia-container {
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center;
+  }
+
+  .info-lado {
+    margin-left: 0; /* Remove a margem para dispositivos menores */
+    width: 100%; /* Ajusta a largura para 100% */
+    height: auto; /* Ajusta a altura */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da coluna */
+  }
+
+  .info-presi {
+    width: 100%; /* Ajusta a largura para 100% */
+    height: auto; /* Ajusta a altura */
+  }
+
+  .cubo-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+  }
+
+  .cubo {
+    width: 100%; /* Ajusta os cubos para ocupar toda a largura */
+    height: 150px; /* Ajusta a altura dos cubos */
+  }
+
+  .tr {
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .icon i {
+    font-size: 25px; /* Ajusta o tamanho dos ícones */
+  }
+}
+
+@media (max-width: 480px) {
+  .info-lado {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .cubo-container {
+    grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+  }
+
+  .cubo {
+    width: 100%; /* Faz com que os cubos ocupem toda a largura */
+    height: 130px; /* Ajusta a altura dos cubos */
+  }
+
+  .icon i {
+    font-size: 20px; /* Ajusta o tamanho dos ícones */
+  }
+
+  .icones-bonde {
+    gap: 15px; /* Diminui o espaço entre os ícones */
+  }
+
+  .tr {
+    font-size: 1rem; /* Reduz o tamanho da fonte do título */
+  }
+}

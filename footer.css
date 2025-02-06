@@ -6,20 +6,21 @@ body {
 
 .footer {
     display: flex;
-        width: 100%;
-        /* margin: 0 auto; */
-        padding-bottom: 20px;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
-        color: white;
-        padding: 40px 0;
-        margin-top: 30px;
+    width: 100%;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+    color: white;
+    padding: 40px 0;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
 }
 
 .footer-column {
     width: 30%;
     text-align: center;
+    margin-bottom: 20px; /* Adiciona espaço entre as colunas em telas menores */
 }
 
 .footer-column h3 {
@@ -44,6 +45,33 @@ body {
     text-decoration: underline;
 }
 
-.gov{
+.gov {
     width: 200px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Torna as colunas empilhadas em telas menores */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .footer-column {
+        width: 80%; /* Faz as colunas ocuparem 80% da largura */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 0; /* Reduz o padding do rodapé para telas menores */
+    }
+
+    .footer-column {
+        width: 90%; /* Aumenta a largura das colunas para 90% em telas muito pequenas */
+    }
+
+    .gov {
+        width: 150px; /* Ajusta o tamanho da coluna "gov" para telas pequenas */
+    }
 }
