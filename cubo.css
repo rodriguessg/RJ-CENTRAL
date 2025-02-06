@@ -180,9 +180,9 @@
 }
 .icones-bonde {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
-  /* justify-content: center; */
+      gap: 30px;
+      margin-top: 15px;
+      /* justify-content: center;*/
 }
 .icones a{
   border: none;
