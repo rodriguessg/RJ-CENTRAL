@@ -263,7 +263,7 @@
               let reverseDelay = 0;
               estacoes.forEach((estacao, index) => {
                   setTimeout(() => {
-                      bonde.style.top = `${index * 80}px`;
+                      bonde.style.top = `${index * 60}px`;
                       if (index < linhas.length) {
                           linhas[index].style.height = "40px";
                       }
@@ -277,7 +277,7 @@
               let reverseDelay = 0;
               for (let i = estacoes.length - 1; i >= 0; i--) {
                   setTimeout(() => {
-                      bonde.style.top = `${i * 80}px`;
+                      bonde.style.top = `${i * 60}px`;
                       if (i < linhas.length) {
                           linhas[i].style.height = "0px";
                       }
