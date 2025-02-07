@@ -44,6 +44,19 @@ header {
   font-family: 'Antenna Regular', sans-serif; /* Fonte padrão para header */
 }
 
+
+
+.ico1 {
+  display: flex;
+  justify-content: end;
+  gap: 50px;
+  align-items: center;
+}
+
+
+
+
+
 .buscar {
   margin: 5px;
 }
@@ -144,6 +157,8 @@ nav {
   font-weight: bolder;
   border-radius: 20px;
   font-family: 'Boris Black', sans-serif; /* Fonte forte para o botão */
+  width: 35%;
+  margin-bottom: 10px;
 }
 
 /* Efeito hover */
