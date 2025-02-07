@@ -49,9 +49,8 @@ header {
 .ico1 {
   display: flex;
   justify-content: end;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
-  background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
 }
 
 
