@@ -161,7 +161,7 @@
 .cubo:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(90deg, #472774 67.81%, #192844 100%);
+  background: linear-gradient(90deg, #005A92 67.81%, #192844 100%);
 }
 
 /* Estilo para o texto dentro dos cubos */
