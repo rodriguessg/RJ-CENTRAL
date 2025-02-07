@@ -237,59 +237,60 @@
     <div class="estacao">Dois Irmãos<div class="linha"></div></div>
 </div>
 
-
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-      const trajeto = document.querySelector(".trajeto");
-      const bonde = document.querySelector(".bonde");
-      const estacoes = document.querySelectorAll(".estacao");
-      const linhas = document.querySelectorAll(".linha");
-      
-      let observer = new IntersectionObserver(entries => {
-          if (entries[0].isIntersecting) {
-              trajeto.style.opacity = "1";
-              bonde.style.opacity = "1";
-              animarBonde();
-          }
-      }, { threshold: 0.5 });
-      
-      observer.observe(trajeto);
-      
-      function animarBonde() {
-          let delay = 0;
-          let tempoTotal = estacoes.length * 5000;
-          
-          function moverParaCima() {
-              let reverseDelay = 0;
-              estacoes.forEach((estacao, index) => {
-                  setTimeout(() => {
-                      bonde.style.top = `${index * 60}px`;
-                      if (index < linhas.length) {
-                          linhas[index].style.height = "40px";
-                      }
-                  }, reverseDelay);
-                  reverseDelay += 2000;
-              });
-              setTimeout(moverParaBaixo, tempoTotal);
-          }
-          
-          function moverParaBaixo() {
-              let reverseDelay = 0;
-              for (let i = estacoes.length - 1; i >= 0; i--) {
-                  setTimeout(() => {
-                      bonde.style.top = `${i * 60}px`;
-                      if (i < linhas.length) {
-                          linhas[i].style.height = "0px";
-                      }
-                  }, reverseDelay);
-                  reverseDelay += 2000;
-              }
-              setTimeout(moverParaCima, tempoTotal);
-          }
-          
-          moverParaCima();
-      }
-  });
+    document.addEventListener("DOMContentLoaded", () => {
+        const trajeto = document.querySelector(".trajeto");
+        const bonde = document.querySelector(".bonde");
+        const estacoes = document.querySelectorAll(".estacao");
+        const linhas = document.querySelectorAll(".linha");
+        
+        // Observador que detecta quando o trajeto entra na tela
+        let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                trajeto.style.opacity = "1";
+                bonde.style.opacity = "1";
+                animarBonde();
+            }
+        }, { threshold: 0.5 });
+        
+        observer.observe(trajeto);
+        
+        function animarBonde() {
+            let tempoTotal = estacoes.length * 3000; // Tempo total da animação de ida
+            
+            // Animação do bonde subindo pelas estações
+            function moverParaCima() {
+                let delay = 0;
+                estacoes.forEach((estacao, index) => {
+                    setTimeout(() => {
+                        bonde.style.top = `${index * 60}px`; // Move o bonde para a estação atual
+                        if (index < linhas.length) {
+                            linhas[index].style.height = "40px"; // Expande a linha
+                        }
+                    }, delay);
+                    delay += 2000;
+                });
+                setTimeout(moverParaBaixo, tempoTotal); // Após subir, inicia a descida
+            }
+            
+            // Animação do bonde descendo de volta
+            function moverParaBaixo() {
+                let delay = 0;
+                for (let i = estacoes.length - 1; i >= 0; i--) {
+                    setTimeout(() => {
+                        bonde.style.top = `${i * 60}px`; // Move o bonde para a estação anterior
+                        if (i < linhas.length) {
+                            linhas[i].style.height = "0px"; // Reduz a linha
+                        }
+                    }, delay);
+                    delay += 2000;
+                }
+                setTimeout(moverParaCima, tempoTotal); // Após descer, inicia a subida novamente
+            }
+            
+            moverParaCima(); // Inicia o loop de animação
+        }
+    });
 </script>
   <div>
     <div class="tr" id="transparencia">
