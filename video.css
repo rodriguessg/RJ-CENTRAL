@@ -1,3 +1,6 @@
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Antenna:wght@400;700&family=Boris+Black+Bloxx&display=swap');
+
 /* Container principal */
 .video-geral {
     margin-top: 30px;
@@ -5,7 +8,6 @@
     justify-content: center;
     background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
     margin-bottom: 30px;
-
 }
 
 /* Grid Container */
@@ -79,4 +81,25 @@
     .small-bottom {
         height: 200px;
     }
+}
+
+/* Aplicando as fontes aos textos */
+body {
+    font-family: 'Antenna', sans-serif; /* Fonte padrão */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antenna', sans-serif; /* Fonte para títulos */
+}
+
+p, .video-box iframe {
+    font-family: 'Boris Black Bloxx', sans-serif; /* Fonte para parágrafos */
+}
+
+button, .small-top, .small-bottom {
+    font-family: 'Antenna', sans-serif; /* Fonte para botões e pequenas caixas de vídeo */
+}
+
+.large {
+    font-family: 'Antenna', sans-serif; /* Fonte para o vídeo principal */
 }
