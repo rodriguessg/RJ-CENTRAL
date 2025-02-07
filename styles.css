@@ -71,7 +71,7 @@ header {
   height: auto;
   display: flex;
   background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
-  min-height: 170px;
+  min-height: 230px;
   align-items: center;
   justify-content: space-between;
   font-family: 'Bloxx', sans-serif; /* Fonte estilosa para a logo */
@@ -80,7 +80,7 @@ header {
 .logo img {
   margin-left: 100px;
   margin-right: 100px;
-  height: 90px;
+  height: 100px;
 }
 
 /* Estilos do menu de navegação */

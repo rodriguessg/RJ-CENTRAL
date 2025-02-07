@@ -49,8 +49,8 @@
   
   /* Estilo para cada card */
   .card {
-      width: 300px; /* Largura reduzida para os cards */
-      height: 350px; /* Altura ajustada */
+      width: 385px; /* Largura reduzida para os cards */
+      height: 370px; /* Altura ajustada */
       border: 1px solid #ddd; /* Borda do card */
       border-radius: 8px; /* Bordas arredondadas */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para os cards */
