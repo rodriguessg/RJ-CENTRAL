@@ -1,6 +1,31 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
 /* Estilo do corpo da página */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Antenna Regular', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -16,7 +41,9 @@ header {
   min-height: 70px;
   align-items: center;
   justify-content: center;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte padrão para header */
 }
+
 .buscar {
   margin: 5px;
 }
@@ -31,6 +58,7 @@ header {
   min-height: 170px;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Bloxx', sans-serif; /* Fonte estilosa para a logo */
 }
 
 .logo img {
@@ -50,6 +78,7 @@ nav {
   justify-content: center;
   gap: 20px;
   padding: 0;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para o menu */
 }
 
 .menu li {
@@ -65,6 +94,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para os links */
 }
 
 .menu li i {
@@ -113,6 +143,7 @@ nav {
   cursor: pointer;
   font-weight: bolder;
   border-radius: 20px;
+  font-family: 'Boris Black', sans-serif; /* Fonte forte para o botão */
 }
 
 /* Efeito hover */
@@ -125,10 +156,12 @@ nav {
 .search-section {
   text-align: center;
   padding: 20px 20px;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para a seção de busca */
 }
 
 .search-section h1 {
   color: white;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
 }
 
 .search-section input {

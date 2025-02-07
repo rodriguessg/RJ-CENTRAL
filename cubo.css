@@ -1,3 +1,28 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -10,10 +35,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 100px 100px 100px;
   background-color: #f4f4f4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+  font-family: 'Antenna Regular', sans-serif; /* Fonte padrão para o container */
+}
+
+/* Ajustando espaçamento entre as linhas de texto */
+.transparencia-container p, .transparencia-container h2 {
+  line-height: 1.5;
 }
 
 .info-lado {
@@ -26,7 +56,8 @@
   height: 500px;
   padding: 20px;
   flex: 1;
-  margin-left: 200px; /* Ajusta a margem */
+  margin-left: 270px; /* Ajusta a margem */
+  font-family: 'Antenna Regular', sans-serif;
 }
 
 .info-lado a {
@@ -70,14 +101,15 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 48%;
-  height: 514px;
+  width: 49%;
 }
 
 .info-lado h2 {
   margin-bottom: 15px;
   font-size: 1.5rem;
   color: white;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
+  line-height: 1.4; /* Ajustando o espaçamento entre as linhas */
 }
 
 .info-lado p {
@@ -85,6 +117,8 @@
   margin-bottom: 10px;
   text-align: start;
   color: white;
+  font-family: 'Antenna Regular', sans-serif;
+  line-height: 1.6; /* Ajustando o espaçamento entre as linhas */
 }
 
 .info-fab {
@@ -103,12 +137,12 @@
 .cubo-container {
   display: grid;
   grid-template-columns: repeat(4, 166px);
-  gap: 10px;
+  gap: 16px;
 }
 
 .cubo {
-  width: 166px;
-  height: 166px;
+  width: 170px;
+  height: 192px;
   padding: 20px;
   background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
   color: white;
@@ -120,6 +154,7 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-family: 'Antenna Regular', sans-serif;
 }
 
 /* Efeito ao passar o mouse (hover) */
@@ -133,6 +168,7 @@
 .cubo p {
   font-size: 1.2rem;
   margin-top: 10px;
+  line-height: 1.4;
 }
 
 /* Estilo para a barra de título */
@@ -145,6 +181,8 @@
   text-decoration-thickness: 3px;
   text-underline-offset: 8px;
   text-decoration-color: black;
+  line-height: 1.4;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte para o título */
 }
 
 .redes-sociais, .redes-sociais-bonde {
@@ -155,12 +193,11 @@
 }
 
 .icones, .icones-bonde {
-  display: flex
-  ;
-      justify-content: center;
-      gap: 5px;
-      margin-top: 15px;
-      align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+  align-items: center;
 }
 
 .icones a, .icones-bonde a {
@@ -192,12 +229,12 @@
   transform: scale(1.2); /* Aplica o efeito de zoom no GOVRJ */
 }
 
-
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .transparencia-container {
     flex-direction: column; /* Coloca os itens em coluna */
     align-items: center;
+    padding: 0 20px; /* Ajusta o padding para telas menores */
   }
 
   .info-lado {
@@ -241,19 +278,11 @@
   }
 
   .cubo {
-    width: 100%; /* Faz com que os cubos ocupem toda a largura */
-    height: 130px; /* Ajusta a altura dos cubos */
+    width: 100%;
+    height: 120px; /* Ajuste maior da altura */
   }
 
   .icon i {
-    font-size: 20px; /* Ajusta o tamanho dos ícones */
-  }
-
-  .icones-bonde {
-    gap: 15px; /* Diminui o espaço entre os ícones */
-  }
-
-  .tr {
-    font-size: 1rem; /* Reduz o tamanho da fonte do título */
+    font-size: 20px; /* Reduz o tamanho dos ícones */
   }
 }
