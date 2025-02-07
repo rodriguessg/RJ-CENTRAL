@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="servico.css">
   <link rel="stylesheet" href="video.css">
   <link rel="stylesheet" href="bonde-chat.css">
+  <link rel="stylesheet" href="trajeto.css">
   <!-- Novo link do FontAwesome--->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -210,19 +211,86 @@
 
   <div class="banner-section" id="ouvirj">
 
-    <h2 class="canais_atendimento">Canais de Atendimento</h2>
+    <h2 class="canais_atendimento"> Trajeto</h2>
     <div class="banner-ouve">
       <div class="bannercentral">
-        <a href="https://ouverj.gov.br"><img src="./img/OUVERJ__2_.png" alt=""></a>
+        <a href="https://ouverj.gov.br"><img src="./img/trajeto-bonde.jpg" alt=""  style="    width: 555px;"></a>
        
     </div>
      <div class="informcao">
-      <h2>informação</h2>
-      <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in facilis eveniet aspernatur quasi aut expedita nam temporibus excepturi ut. Veritatis perspiciatis impedit deleniti suscipit, eos corporis tenetur distinctio tempora.</p>
+      <h2 style="color: white;">informação</h2>
+      <p style="color: white;"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in facilis eveniet aspernatur quasi aut expedita nam temporibus excepturi ut. Veritatis perspiciatis impedit deleniti suscipit, eos corporis tenetur distinctio tempora.</p>
+      <a href="https://mapa-bonde.vercel.app/">Mapa</a>
        <!-- <a href="https://ouverj.gov.br"><img src="./img/OUVERJ__2_.png" alt=""></a>  -->
     </div> 
   </div>
   </div>
+  <div class="trajeto-container trajeto">
+    <div class="bonde">🚋</div>
+    <div class="estacao">Estação Carioca<div class="linha"></div></div>
+    <div class="estacao">Largo do Corvelo<div class="linha"></div></div>
+    <div class="estacao">Oficina<div class="linha"></div></div>
+    <div class="estacao">Monte Alegre<div class="linha"></div></div>
+    <div class="estacao">Ramal Paula Matos<div class="linha"></div></div>
+    <div class="estacao">Vista Alegre<div class="linha"></div></div>
+    <div class="estacao">Largo do França<div class="linha"></div></div>
+    <div class="estacao">Dois Irmãos<div class="linha"></div></div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const trajeto = document.querySelector(".trajeto");
+      const bonde = document.querySelector(".bonde");
+      const estacoes = document.querySelectorAll(".estacao");
+      const linhas = document.querySelectorAll(".linha");
+      
+      let observer = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting) {
+              trajeto.style.opacity = "1";
+              bonde.style.opacity = "1";
+              animarBonde();
+          }
+      }, { threshold: 0.5 });
+      
+      observer.observe(trajeto);
+      
+      function animarBonde() {
+          let delay = 0;
+          let tempoTotal = estacoes.length * 5000;
+          
+          function moverParaCima() {
+              let reverseDelay = 0;
+              estacoes.forEach((estacao, index) => {
+                  setTimeout(() => {
+                      bonde.style.top = `${index * 60}px`;
+                      if (index < linhas.length) {
+                          linhas[index].style.height = "40px";
+                      }
+                  }, reverseDelay);
+                  reverseDelay += 2000;
+              });
+              setTimeout(moverParaBaixo, tempoTotal);
+          }
+          
+          function moverParaBaixo() {
+              let reverseDelay = 0;
+              for (let i = estacoes.length - 1; i >= 0; i--) {
+                  setTimeout(() => {
+                      bonde.style.top = `${i * 60}px`;
+                      if (i < linhas.length) {
+                          linhas[i].style.height = "0px";
+                      }
+                  }, reverseDelay);
+                  reverseDelay += 2000;
+              }
+              setTimeout(moverParaCima, tempoTotal);
+          }
+          
+          moverParaCima();
+      }
+  });
+</script>
   <div>
     <div class="tr" id="transparencia">
       <H2>Transparência
