@@ -1,25 +1,6 @@
-/* Importando as fontes */
-@font-face {
-  font-family: 'Antenna Bold';
-  src: url('Antenna-Bold.woff2') format('woff2'),
-       url('Antenna-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Antenna Regular';
-  src: url('Antenna-Regular.woff2') format('woff2'),
-       url('Antenna-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Boris Black Bloxx';
-  src: url('BorisBlackBloxx.woff2') format('woff2'),
-       url('BorisBlackBloxx.woff') format('woff');
-}
-
 /* Estilo do corpo da página */
 body {
-  font-family: 'Antenna Regular', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -27,7 +8,6 @@ body {
 
 /* Estilos do header */
 header {
-  font-family: 'Antenna Bold', sans-serif;
   color: #ffffff;
   width: 100%;
   height: auto;
@@ -37,10 +17,12 @@ header {
   align-items: center;
   justify-content: center;
 }
+.buscar {
+  margin: 5px;
+}
 
 /* Estilo da logo */
 .logo {
-  font-family: 'Boris Black Bloxx', sans-serif;
   color: #ffffff;
   width: 100%;
   height: auto;
@@ -76,7 +58,6 @@ nav {
 }
 
 .menu li a {
-  font-family: 'Antenna Bold', sans-serif;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -91,7 +72,6 @@ nav {
   font-size: 20px;
 }
 
-/* Dropdown menu */
 .dropdown {
   display: none;
   position: absolute;
@@ -110,7 +90,6 @@ nav {
 }
 
 .dropdown li a {
-  font-family: 'Antenna Regular', sans-serif;
   color: black;
   padding: 10px;
   display: block;
@@ -122,14 +101,12 @@ nav {
   color: white;
 }
 
-/* Mostrar dropdown ao passar o mouse */
 .menu li:hover .dropdown {
   display: block;
 }
 
 /* Estilo do botão de login */
 .login-btn {
-  font-family: 'Boris Black Bloxx', sans-serif;
   color: #0a558b;
   padding: 10px 20px;
   border: none;
@@ -151,22 +128,19 @@ nav {
 }
 
 .search-section h1 {
-  font-family: 'Antenna Bold', sans-serif;
   color: white;
 }
 
 .search-section input {
-  font-family: 'Antenna Regular', sans-serif;
   border-radius: 5px;
   width: 300px;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ccc;
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2); /* Sombra branca suave */
 }
 
 .search-section button {
-  font-family: 'Antenna Bold', sans-serif;
   border-radius: 5px;
   padding: 11px 20px;
   border: none;
