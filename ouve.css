@@ -1,10 +1,29 @@
-/* Reset e configurações globais */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+/* Importação das fontes */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
+
 
 /* Seção principal */
 .ouverj-section {
@@ -24,12 +43,12 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 77%;
+  width: 80%;
 }
 
 /* Imagem */
 .ouverj-image img {
-  width: 210px;
+  width: 230px;
   height: auto;
   border-radius: 10px;
   border: solid 1px white;
@@ -41,20 +60,21 @@
   flex: 1;
   color: white;
   padding: 20px;
-  gap: 10px;
 }
 
 /* Título */
 .ouverj-content h2 {
   margin-bottom: 10px;
   font-size: 24px;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
 }
 
 /* Texto */
 .ouverj-content p {
   margin-bottom: 20px;
   font-size: 16px;
-  
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para o texto */
+  line-height: 1.6; /* Espaçamento entre as linhas de texto */
 }
 
 /* Botão */
@@ -70,6 +90,7 @@
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   margin-right: 20px;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o botão */
 }
 
 /* Efeito hover no botão */
@@ -132,3 +153,4 @@
     font-size: 14px;
   }
 }
+

@@ -1,77 +1,107 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.footer {
-    display: flex;
-    width: 100%;
-    padding-bottom: 20px;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
-    color: white;
-    padding: 40px 0;
-    margin-top: 30px;
-    flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
-}
-
-.footer-column {
-    width: 30%;
-    text-align: center;
-    margin-bottom: 20px; /* Adiciona espaço entre as colunas em telas menores */
-}
-
-.footer-column h3 {
-    margin-bottom: 10px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin: 5px 0;
-}
-
-.footer-column ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-column ul li a:hover {
-    text-decoration: underline;
-}
-
-.gov {
-    width: 200px;
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column; /* Torna as colunas empilhadas em telas menores */
-        align-items: center; /* Centraliza os itens */
-    }
-
-    .footer-column {
-        width: 80%; /* Faz as colunas ocuparem 80% da largura */
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        padding: 20px 0; /* Reduz o padding do rodapé para telas menores */
-    }
-
-    .footer-column {
-        width: 90%; /* Aumenta a largura das colunas para 90% em telas muito pequenas */
-    }
-
-    .gov {
-        width: 150px; /* Ajusta o tamanho da coluna "gov" para telas pequenas */
-    }
-}
+/* Definindo as fontes com @font-face */
+@font-face {
+    font-family: 'Antenna Regular';
+    src: url('fonts/antenna-regular.woff2') format('woff2'),
+         url('fonts/antenna-regular.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Antenna Bold';
+    src: url('fonts/antenna-bold.woff2') format('woff2'),
+         url('fonts/antenna-bold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Boris Black';
+    src: url('fonts/boris-black.woff2') format('woff2'),
+         url('fonts/boris-black.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Bloxx';
+    src: url('fonts/bloxx.woff2') format('woff2'),
+         url('fonts/bloxx.woff') format('woff');
+  }
+  
+  body {
+      font-family: 'Antenna Regular', Arial, sans-serif; /* Fonte para o corpo da página */
+      margin: 0;
+      padding: 0;
+  }
+  
+  .footer {
+      display: flex;
+      width: 100%;
+      padding-bottom: 20px;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
+      color: white;
+      padding: 40px 0;
+      margin-top: 30px;
+      flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+      font-family: 'Antenna Regular', Arial, sans-serif; /* Fonte para o rodapé */
+  }
+  
+  .footer-column {
+      width: 30%;
+      text-align: center;
+      margin-bottom: 20px; /* Adiciona espaço entre as colunas em telas menores */
+  }
+  
+  .footer-column h3 {
+      margin-bottom: 10px;
+      font-family: 'Antenna Bold', sans-serif; /* Fonte em negrito para o título das colunas */
+  }
+  
+  .footer-column ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .footer-column ul li {
+      margin: 5px 0;
+  }
+  
+  .footer-column ul li a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Antenna Regular', sans-serif; /* Fonte regular para os links */
+  }
+  
+  .footer-column ul li a:hover {
+      text-decoration: underline;
+  }
+  
+  .gov {
+      width: 200px;
+      font-family: 'Antenna Regular', sans-serif; /* Fonte para a coluna gov */
+  }
+  
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+      .footer {
+          flex-direction: column; /* Torna as colunas empilhadas em telas menores */
+          align-items: center; /* Centraliza os itens */
+      }
+  
+      .footer-column {
+          width: 80%; /* Faz as colunas ocuparem 80% da largura */
+          text-align: center;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .footer {
+          padding: 20px 0; /* Reduz o padding do rodapé para telas menores */
+      }
+  
+      .footer-column {
+          width: 90%; /* Aumenta a largura das colunas para 90% em telas muito pequenas */
+      }
+  
+      .gov {
+          width: 150px; /* Ajusta o tamanho da coluna "gov" para telas pequenas */
+      }
+  }
+  

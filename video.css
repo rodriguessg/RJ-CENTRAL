@@ -1,11 +1,11 @@
+
 /* Container principal */
 .video-geral {
     margin-top: 30px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(90deg, #192844 67.81%, #0a558b 100%);
+    background: linear-gradient(90deg, #192844 67.81%, #472774 100%);
     margin-bottom: 30px;
-
 }
 
 /* Grid Container */
