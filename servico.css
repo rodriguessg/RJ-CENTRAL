@@ -58,7 +58,7 @@
       transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
       display: flex;
       flex-direction: column; /* Garante que o conteúdo do card siga uma coluna */
-      background-color: #0a558b;
+      background-color: #005A92
   }
   
   /* Efeito de hover para os cards */
@@ -109,7 +109,7 @@
   .card-content a.saiba-mais {
       display: inline-block;
       padding: 8px 15px; /* Tamanho reduzido do botão */
-      background: linear-gradient(90deg, #192844 67.81%, #0a558b 100%); /* Cor de fundo do cabeçalho */
+      background: linear-gradient(90deg, #192844 67.81%, #005A92 100%); /* Cor de fundo do cabeçalho */
       color: white; /* Cor do texto */
       text-decoration: none; /* Remove o sublinhado */
       border-radius: 5px; /* Bordas arredondadas */
