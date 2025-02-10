@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="ouve.css">
   <link rel="stylesheet" href="servico.css">
   <link rel="stylesheet" href="video.css">
+  <link rel="stylesheet" href="trajeto.css">
   <!-- Novo link do FontAwesome--->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -202,6 +203,94 @@
       </div>
     </div>
   </div>
+
+  <div class="banner-section" id="ouvirj">
+
+    <h2 class="canais_atendimento">Canais de Atendimento</h2>
+    <h2 class="canais_atendimento"> Trajeto</h2>
+    <div class="banner-ouve">
+      <div class="bannercentral">
+        <a href="https://ouverj.gov.br"><img src="./img/OUVERJ__2_.png" alt=""></a>
+        <a href="https://ouverj.gov.br"><img src="./img/trajeto-bonde.jpg" alt=""  style="    width: 555px;"></a>
+       
+    </div>
+     <div class="informcao">
+      <h2>informação</h2>
+      <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in facilis eveniet aspernatur quasi aut expedita nam temporibus excepturi ut. Veritatis perspiciatis impedit deleniti suscipit, eos corporis tenetur distinctio tempora.</p>
+      <h2 style="color: white;">informação</h2>
+      <p style="color: white;"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero in facilis eveniet aspernatur quasi aut expedita nam temporibus excepturi ut. Veritatis perspiciatis impedit deleniti suscipit, eos corporis tenetur distinctio tempora.</p>
+      <a href="https://mapa-bonde.vercel.app/">Mapa</a>
+       <!-- <a href="https://ouverj.gov.br"><img src="./img/OUVERJ__2_.png" alt=""></a>  -->
+    </div> 
+  </div>
+  </div>
+  <div class="trajeto-container trajeto">
+    <div class="bonde">🚋</div>
+    <div class="estacao">Estação Carioca<div class="linha"></div></div>
+    <div class="estacao">Largo do Corvelo<div class="linha"></div></div>
+    <div class="estacao">Oficina<div class="linha"></div></div>
+    <div class="estacao">Monte Alegre<div class="linha"></div></div>
+    <div class="estacao">Ramal Paula Matos<div class="linha"></div></div>
+    <div class="estacao">Vista Alegre<div class="linha"></div></div>
+    <div class="estacao">Largo do França<div class="linha"></div></div>
+    <div class="estacao">Dois Irmãos<div class="linha"></div></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const trajeto = document.querySelector(".trajeto");
+        const bonde = document.querySelector(".bonde");
+        const estacoes = document.querySelectorAll(".estacao");
+        const linhas = document.querySelectorAll(".linha");
+        
+        // Observador que detecta quando o trajeto entra na tela
+        let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                trajeto.style.opacity = "1";
+                bonde.style.opacity = "1";
+                animarBonde();
+            }
+        }, { threshold: 0.5 });
+        
+        observer.observe(trajeto);
+        
+        function animarBonde() {
+            let tempoTotal = estacoes.length * 2000; // Tempo total da animação de ida
+            
+            // Animação do bonde subindo pelas estações
+            function moverParaCima() {
+                let delay = 0;
+                estacoes.forEach((estacao, index) => {
+                    setTimeout(() => {
+                        bonde.style.top = `${index * 60}px`; // Move o bonde para a estação atual
+                        if (index < linhas.length) {
+                            linhas[index].style.height = "40px"; // Expande a linha
+                        }
+                    }, delay);
+                    delay += 2000;
+                });
+                setTimeout(moverParaBaixo, tempoTotal); // Após subir, inicia a descida
+            }
+            
+            // Animação do bonde descendo de volta
+            function moverParaBaixo() {
+                let delay = 0;
+                for (let i = estacoes.length - 1; i >= 0; i--) {
+                    setTimeout(() => {
+                        bonde.style.top = `${i * 60}px`; // Move o bonde para a estação anterior
+                        if (i < linhas.length) {
+                            linhas[i].style.height = "0px"; // Reduz a linha
+                        }
+                    }, delay);
+                    delay += 2000;
+                }
+                setTimeout(moverParaCima, tempoTotal); // Após descer, inicia a subida novamente
+            }
+            
+            moverParaCima(); // Inicia o loop de animação
+        }
+    });
+</script>
 
   <div class="tr" id="transparencia">
     <H2>Videos 

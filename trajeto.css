@@ -1,6 +1,3 @@
-body {
-
-}
 .trajeto-container {
     position: relative;
     margin-left: 111px;
@@ -8,23 +5,23 @@ body {
     height: 468px;
     border-left: 4px solid gray;
     padding-left: 20px;
-    opacity: 0;
-    transition: opacity 1s;
+    opacity: 0; /* Inicialmente oculta o trajeto */
+    transition: opacity 1s; /* Suaviza a transição da opacidade */
 }
 .estacao {
-    margin: 40px 0;
+    margin: 40px 0; /* Define o espaçamento entre as estações */
 }
 .linha {
     position: absolute;
     left: -4px;
     width: 4px;
-    height: 0;
+    height: 0; /* Inicialmente oculta a linha */
     background-color: red;
-    transition: height 2s linear;
+    transition: height 2s linear; /* Transição suave do crescimento da linha */
 }
 .bonde {
     position: absolute;
-    left: -40px;
+    left: -40px; /* Define a posição inicial do bonde */
     width: 30px;
     height: 30px;
     background-color: yellow;
@@ -33,5 +30,5 @@ body {
     line-height: 30px;
     font-weight: bold;
     border-radius: 5px;
-    opacity: 0;
+    opacity: 0; /* Bonde inicialmente invisível */
 }
