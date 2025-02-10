@@ -1,0 +1,156 @@
+/* Importação das fontes */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
+
+
+/* Seção principal */
+.ouverj-section {
+  margin: 0px 40px 20px 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Container principal */
+.ouverj-container {
+  display: flex;
+  align-items: center;
+  background-color: #141c54; /* Ajuste a cor conforme a imagem */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+}
+
+/* Imagem */
+.ouverj-image img {
+  width: 230px;
+  height: auto;
+  border-radius: 10px;
+  border: solid 1px white;
+}
+
+/* Conteúdo */
+.ouverj-content {
+  display: grid;
+  flex: 1;
+  color: white;
+  padding: 20px;
+}
+
+/* Título */
+.ouverj-content h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
+}
+
+/* Texto */
+.ouverj-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para o texto */
+  line-height: 1.6; /* Espaçamento entre as linhas de texto */
+}
+
+/* Botão */
+.ouverj-btn {
+  background-color: white;
+  width: 149px;
+  padding: 10px;
+  border-radius: 8px;
+  color: #192844;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin-right: 20px;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o botão */
+}
+
+/* Efeito hover no botão */
+.ouverj-btn:hover {
+  background-color: #005A92;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ouverj-container {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+
+  .ouverj-image img {
+    width: 180px;
+    margin-bottom: 15px;
+  }
+
+  .ouverj-content {
+    padding: 15px;
+  }
+
+  .ouverj-content h2 {
+    font-size: 22px;
+  }
+
+  .ouverj-content p {
+    font-size: 14px;
+  }
+
+  .ouverj-btn {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ouverj-container {
+    padding: 15px;
+  }
+
+  .ouverj-image img {
+    width: 150px;
+  }
+
+  .ouverj-content h2 {
+    font-size: 20px;
+  }
+
+  .ouverj-content p {
+    font-size: 13px;
+  }
+
+  .ouverj-btn {
+    width: 130px;
+    font-size: 14px;
+  }
+}
+

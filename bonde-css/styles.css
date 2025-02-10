@@ -1,0 +1,252 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
+/* Estilo do corpo da página */
+body {
+  font-family: 'Antenna Regular', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Estilos do header */
+header {
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: linear-gradient(90deg, #005A92 67.81%, #005A92 100%);
+  min-height: 70px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte padrão para header */
+  margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+.ico1 {
+  display: flex;
+  justify-content: end;
+  gap: 35px;
+  align-items: center;
+}
+
+
+
+
+
+.buscar {
+  margin: 5px;
+}
+
+/* Estilo da logo */
+.logo {
+  color: #ffffff;
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
+  min-height: 230px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Bloxx', sans-serif; /* Fonte estilosa para a logo */
+}
+
+.logo img {
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 100px;
+}
+
+/* Estilos do menu de navegação */
+nav {
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para o menu */
+}
+
+.menu li {
+  position: relative;
+  display: inline-block;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para os links */
+}
+
+.menu li i {
+  color: white;
+  font-size: 20px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  min-width: 320px;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+}
+
+.dropdown li {
+  display: block;
+}
+
+.dropdown li a {
+  color: black;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
+  color: white;
+}
+
+.menu li:hover .dropdown {
+  display: block;
+}
+
+/* Estilo do botão de login */
+.login-btn {
+  color: #0a558b;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 20px;
+  font-family: 'Boris Black', sans-serif; /* Fonte forte para o botão */
+  width: 35%;
+  margin-bottom: 10px;
+}
+
+/* Efeito hover */
+.login-btn:hover {
+  transform: scale(1.02);
+  font-weight: bolder;
+}
+
+/* Estilos da seção de busca */
+.search-section {
+  text-align: center;
+  padding: 20px 20px;
+  font-family: 'Antenna Regular', sans-serif; /* Fonte regular para a seção de busca */
+}
+
+.search-section h1 {
+  color: white;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
+}
+
+.search-section input {
+  border-radius: 5px;
+  width: 350px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2); /* Sombra branca suave */
+}
+
+.search-section button {
+  border-radius: 5px;
+  padding: 11px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+  }
+
+  .logo img {
+    margin-left: 0;
+    margin-right: 0;
+    height: 70px;
+  }
+
+  .search-section input {
+    width: 80%;
+  }
+
+  .search-section button {
+    width: 80%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 60px;
+  }
+
+  .search-section input {
+    width: 90%;
+  }
+
+  .search-section button {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .menu li a {
+    padding: 10px 12px;
+  }
+}
