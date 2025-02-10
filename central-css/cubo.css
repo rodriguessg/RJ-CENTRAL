@@ -136,13 +136,13 @@
 
 .cubo-container {
   display: grid;
-  grid-template-columns: repeat(4, 166px);
+  grid-template-columns: repeat(4, 170px);
   gap: 16px;
 }
 
 .cubo {
   width: 175px;
-  height: 200px;
+  height: 199px;
   padding: 20px;
   background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
   color: white;
@@ -205,7 +205,7 @@
 }
 
 .icon i {
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   transition: color 0.3s ease;
 }
