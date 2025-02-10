@@ -89,7 +89,7 @@
 
 /* Efeito hover */
 .info-lado .saiba:hover {
-  background-color: #472774;
+  background-color: #005A92;
   color: white;
   transform: scale(1.05);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
