@@ -1,0 +1,154 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+    font-family: 'Antenna Regular';
+    src: url('fonts/antenna-regular.woff2') format('woff2'),
+         url('fonts/antenna-regular.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Antenna Bold';
+    src: url('fonts/antenna-bold.woff2') format('woff2'),
+         url('fonts/antenna-bold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Boris Black';
+    src: url('fonts/boris-black.woff2') format('woff2'),
+         url('fonts/boris-black.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Bloxx';
+    src: url('fonts/bloxx.woff2') format('woff2'),
+         url('fonts/bloxx.woff') format('woff');
+  }
+  
+  /* Estilo para o contêiner geral */
+  .servico-geral {
+      text-align: center; /* Centraliza o título */
+  }
+  
+  /* Estilo para o título */
+  .canais_atendimento1 {
+      font-size: 1.5em; /* Tamanho reduzido do título */
+      margin-bottom: 20px; /* Menos espaço abaixo do título */
+      color: #333; /* Cor do título */
+      font-weight: bold; /* Deixa o título em negrito */
+      font-family: 'Antenna Regular', sans-serif; /* Fonte para o título */
+  }
+  
+  /* Estilo para o contêiner dos cards */
+  .cards-container {
+      display: flex;
+      justify-content: center; /* Centraliza os cards horizontalmente */
+      gap: 15px; /* Espaço entre os cards */
+      flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se necessário */
+      margin-top: 20px; /* Espaço acima dos cards */
+      margin-bottom: 30px;
+  }
+  
+  /* Estilo para cada card */
+  .card {
+      width: 385px; /* Largura reduzida para os cards */
+      height: 370px; /* Altura ajustada */
+      border: 1px solid #ddd; /* Borda do card */
+      border-radius: 8px; /* Bordas arredondadas */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para os cards */
+      overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do card */
+      transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+      display: flex;
+      flex-direction: column; /* Garante que o conteúdo do card siga uma coluna */
+      background-color: #005A92
+  }
+  
+  /* Efeito de hover para os cards */
+  .card:hover {
+      transform: translateY(-10px); /* Eleva o card quando o mouse passa sobre ele */
+  }
+  
+  /* Estilo para o cabeçalho de cada card */
+  .card-header {
+      text-align: center; /* Centraliza a imagem */
+      flex-grow: 0; /* Impede que o cabeçalho cresça */
+  }
+  
+  /* Estilo para a imagem do cabeçalho */
+  .icon-image {
+      max-width: 100%; /* Tamanho da imagem ajustado */
+      height: auto; /* Mantém a proporção da imagem */
+  }
+  
+  /* Estilo para o conteúdo do card */
+  .card-content {
+      padding: 15px; /* Menos padding */
+      background-color: #fff; /* Cor de fundo do conteúdo */
+      flex-grow: 1; /* Faz o conteúdo crescer e ocupar o espaço restante */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Distribui o conteúdo do card de forma equitativa */
+  }
+  
+  /* Estilo para o título dentro do card */
+  .card-content h3 {
+      font-size: 1.2em; /* Fonte do título menor */
+      margin-bottom: 10px; /* Menos espaço abaixo do título */
+      color: #333;
+      font-family: 'Antenna Bold', sans-serif; /* Fonte para o título */
+  }
+  
+  /* Estilo para o texto do card */
+  .card-content p {
+      font-size: 0.9em; /* Texto reduzido */
+      margin-bottom: 15px; /* Menos espaço abaixo do texto */
+      color: #666;
+      font-family: 'Antenna Regular', sans-serif; /* Fonte para o texto */
+      line-height: 1.6; /* Espaçamento entre as linhas de texto */
+  }
+  
+  /* Estilo para o botão Saiba Mais */
+  .card-content a.saiba-mais {
+      display: inline-block;
+      padding: 8px 15px; /* Tamanho reduzido do botão */
+      background: linear-gradient(90deg, #192844 67.81%, #005A92 100%); /* Cor de fundo do cabeçalho */
+      color: white; /* Cor do texto */
+      text-decoration: none; /* Remove o sublinhado */
+      border-radius: 5px; /* Bordas arredondadas */
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      align-self: center; /* Alinha o botão ao centro do card */
+  }
+  
+  .card-content a.saiba-mais:hover {
+      color: #ffffff; /* Cor do texto ao passar o mouse */
+      transform: scale(1.05); /* Aumenta o tamanho do botão */
+  }
+  
+  /* Responsividade: Ajusta o layout para telas menores */
+  @media (max-width: 768px) {
+      .card {
+          width: 220px; /* Ajusta a largura dos cards */
+          height: 300px; /* Ajusta a altura */
+      }
+  
+      .cards-container {
+          justify-content: space-evenly; /* Alinha os cards de maneira mais equilibrada */
+      }
+  }
+  
+  /* Responsividade adicional para telas muito pequenas */
+  @media (max-width: 480px) {
+      .card-content a.saiba-mais {
+          padding: 10px 18px; /* Aumenta o padding do botão */
+          font-size: 16px; /* Ajusta o tamanho da fonte */
+      }
+  
+      .card {
+          width: 45%; /* Ajusta a largura dos cards em telas muito pequenas */
+          height: auto; /* Permite que a altura seja ajustada automaticamente */
+      }
+  
+      .cards-container {
+          flex-direction: row; /* Faz os cards ficarem em linha na versão móvel */
+          justify-content: space-between; /* Equilibrar o espaçamento entre os cards */
+      }
+  }
+  

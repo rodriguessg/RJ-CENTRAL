@@ -1,0 +1,288 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: 'Antenna Regular';
+  src: url('fonts/antenna-regular.woff2') format('woff2'),
+       url('fonts/antenna-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Antenna Bold';
+  src: url('fonts/antenna-bold.woff2') format('woff2'),
+       url('fonts/antenna-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Boris Black';
+  src: url('fonts/boris-black.woff2') format('woff2'),
+       url('fonts/boris-black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bloxx';
+  src: url('fonts/bloxx.woff2') format('woff2'),
+       url('fonts/bloxx.woff') format('woff');
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do container principal */
+.transparencia-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+  font-family: 'Antenna Regular', sans-serif; /* Fonte padrão para o container */
+}
+
+/* Ajustando espaçamento entre as linhas de texto */
+.transparencia-container p, .transparencia-container h2 {
+  line-height: 1.5;
+}
+
+.info-lado {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
+  height: 500px;
+  padding: 15px;
+  flex: 1;
+  margin-left: 270px; /* Ajusta a margem */
+  font-family: 'Antenna Regular', sans-serif;
+}
+
+.info-lado a {
+  padding: 5px;
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-weight: bolder;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.info-lado .saiba {
+  background-color: white;
+  width: 116px;
+  padding: 12px;
+  border: 2px solid #192844;
+  border-radius: 8px;
+  color: #192844;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efeito hover */
+.info-lado .saiba:hover {
+  background-color: #005A92;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-presi {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 49%;
+}
+
+.info-lado h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte bold para o título */
+  line-height: 1.4; /* Ajustando o espaçamento entre as linhas */
+}
+
+.info-lado p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: start;
+  color: white;
+  font-family: 'Antenna Regular', sans-serif;
+  line-height: 1.6; /* Ajustando o espaçamento entre as linhas */
+}
+
+.info-fab {
+  text-align: start;
+}
+
+/* Estilo para o lado direito com 12 cubos */
+.cubo-info {
+  width: 50%;
+}
+
+.cubo i {
+  font-size: 3rem;
+}
+
+.cubo-container {
+  display: grid;
+  grid-template-columns: repeat(4, 166px);
+  gap: 16px;
+}
+
+.cubo {
+  width: 175px;
+  height: 200px;
+  padding: 20px;
+  background: linear-gradient(90deg, #192844 67.81%, #005A92 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-family: 'Antenna Regular', sans-serif;
+}
+
+/* Efeito ao passar o mouse (hover) */
+.cubo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #005A92 67.81%, #192844 100%);
+}
+
+/* Estilo para o texto dentro dos cubos */
+.cubo p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Estilo para a barra de título */
+.tr {
+  font-size: large;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  text-decoration-color: black;
+  line-height: 1.4;
+  font-family: 'Antenna Bold', sans-serif; /* Fonte para o título */
+}
+
+.redes-sociais, .redes-sociais-bonde {
+  list-style: none;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+.icones, .icones-bonde {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.icones a, .icones-bonde a {
+  border: none;
+}
+
+.icon i {
+  font-size: 30px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.icon i {
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.icon:hover i {
+  transform: scale(1.2); /* Aumenta o ícone levemente ao passar o mouse */
+}
+
+/* Ajuste do ícone GOVRJ para manter o mesmo efeito */
+.govrj-icon {
+  width: 50px;
+  height: 40px;
+  transition: transform 0.3s ease; /* Mesma transição dos outros ícones */
+}
+
+.icon:hover .govrj-icon {
+  transform: scale(1.2); /* Aplica o efeito de zoom no GOVRJ */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .transparencia-container {
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center;
+    padding: 0 20px; /* Ajusta o padding para telas menores */
+  }
+
+  .info-lado {
+    margin-left: 0; /* Remove a margem para dispositivos menores */
+    width: 100%; /* Ajusta a largura para 100% */
+    height: auto; /* Ajusta a altura */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da coluna */
+  }
+
+  .info-presi {
+    width: 100%; /* Ajusta a largura para 100% */
+    height: auto; /* Ajusta a altura */
+  }
+
+  .cubo-container {
+    grid-template-columns: repeat(3, 4fr); /* Adiciona 3 colunas no mobile */
+  }
+
+  .cubo {
+    width: 100%; /* Ajusta os cubos para ocupar toda a largura */
+    height: 130px; /* Ajusta a altura dos cubos */
+  }
+
+  .tr {
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .icon i {
+    font-size: 25px; /* Ajusta o tamanho dos ícones */
+  }
+}
+
+@media (max-width: 480px) {
+  .info-lado {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .cubo-container {
+    grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+  }
+
+  .cubo {
+    width: 100%;
+    height: 120px; /* Ajuste maior da altura */
+  }
+
+  .icon i {
+    font-size: 20px; /* Reduz o tamanho dos ícones */
+  }
+}
