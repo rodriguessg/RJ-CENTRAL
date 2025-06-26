@@ -1,0 +1,176 @@
+/* Sistema de Abas */
+.tab-container {
+  position: relative;
+}
+
+.tab-content-wrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 800px;
+  max-width: 900px;
+  border: 2px solid #192844;
+}
+
+.tab-container:hover .tab-content-wrapper {
+  display: block;
+}
+
+/* Navegação das Abas */
+.tab-navigation {
+  display: flex;
+  background: linear-gradient(90deg, #192844 67.81%, #005a92 100%);
+  border-radius: 8px 8px 0 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.tab-navigation::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tab-navigation::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-navigation::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  font-family: "Antenna Regular", sans-serif;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom-color: #f5a623;
+  font-weight: bold;
+}
+
+/* Área de Conteúdo das Abas */
+.tab-content-area {
+  padding: 30px;
+  background: white;
+  border-radius: 0 0 8px 8px;
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h3 {
+  color: #192844;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: "Antenna Bold", sans-serif;
+  border-bottom: 2px solid #005a92;
+  padding-bottom: 8px;
+}
+
+.tab-content p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family: "Antenna Regular", sans-serif;
+}
+
+.tab-content strong {
+  color: #192844;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .tab-content-wrapper {
+    min-width: 90vw;
+    left: -200px;
+  }
+
+  .tab-navigation {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+
+  .tab-content-area {
+    padding: 20px;
+    min-height: 250px;
+  }
+
+  .tab-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-content-wrapper {
+    min-width: 95vw;
+    left: -250px;
+  }
+
+  .tab-btn {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .tab-content-area {
+    padding: 15px;
+    min-height: 200px;
+  }
+}
+
+/* Indicador visual para mostrar que há abas */
+.tab-trigger::after {
+  content: " ▼";
+  font-size: 0.8em;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.tab-container:hover .tab-trigger::after {
+  transform: rotate(180deg);
+}

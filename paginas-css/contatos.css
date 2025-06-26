@@ -1,0 +1,595 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.contatos-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Informação de atualização */
+.update-info {
+  text-align: center;
+  background: linear-gradient(90deg, #192844 67.81%, #005a92 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.update-info p {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 1.1rem;
+}
+
+/* Títulos das seções - Mais destacados */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem; /* Reduzido de 2.5rem para 2rem */
+  color: #192844;
+  margin-bottom: 25px; /* Reduzido de 40px para 35px */
+  font-family: "Antenna Bold", sans-serif;
+  font-weight: 800; /* Reduzido de 900 para 800 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Reduzido de 20px para 15px */
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  padding: 15px 25px; /* Reduzido de 25px 40px para 20px 30px */
+  border-radius: 15px; /* Reduzido de 20px para 15px */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Reduzido shadow */
+  border-left: 4px solid #005a92; /* Reduzido de 6px para 4px */
+  text-transform: none; /* Removido uppercase */
+  letter-spacing: 0.5px; /* Reduzido de 1px para 0.5px */
+}
+
+.section-title i {
+  color: #005a92;
+  font-size: 1.4rem; /* Reduzido de 2.2rem para 1.8rem */
+  filter: drop-shadow(0 2px 4px rgba(0, 90, 146, 0.3));
+}
+
+/* Seções de contatos */
+.secao-contatos {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 25px;
+  padding: 35px 25px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+/* Grid de cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Cards de contato - Padrão atualizado */
+.contato-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+}
+
+.contato-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: #d1d5db;
+}
+
+.contato-card.destaque {
+  border: 2px solid #dc2626;
+  background: white;
+  transform: scale(1.02);
+}
+
+.contato-card.destaque:hover {
+  border-color: #b91c1c;
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15);
+  transform: scale(1.02) translateY(-4px);
+}
+
+/* Header do card */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-header .department-name {
+  font-family: "Antenna Regular", sans-serif;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Badge do departamento - Com backgrounds coloridos */
+.cargo-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-family: "Antenna Bold", sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  border: none;
+  max-width: 120px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cargo-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+/* Badge especial para presidente */
+.cargo-badge.presidente {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  font-weight: 700;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  box-shadow: 0 3px 10px rgba(220, 38, 38, 0.4);
+}
+
+/* Cores diferentes por tipo de cargo */
+/* Diretorias */
+.diretoria-executiva .cargo-badge:not(.presidente) {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+/* Assessorias */
+#assessorias .cargo-badge {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+/* Superintendências */
+#superintendencias .cargo-badge {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Comitês */
+#comites-funcoes .cargo-badge {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+/* Órgãos Colegiados */
+#orgaos-colegiados .cargo-badge {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+/* Container de foto para Diretoria Executiva */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.person-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+/* Foto maior para o presidente */
+.destaque .person-photo {
+  width: 80px;
+  height: 80px;
+  border-color: #dc2626;
+  border-width: 3px;
+}
+
+.person-photo:hover {
+  transform: scale(1.1);
+  border-color: #2563eb;
+}
+
+/* Conteúdo do card */
+.card-content h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #111827;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card-content .cargo {
+  font-family: "Antenna Regular", sans-serif;
+  color: #2563eb;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Remover departamento duplicado */
+.card-content .departamento {
+  display: none;
+}
+
+/* Informações de contato */
+.contato-info {
+  margin-top: 16px;
+}
+
+.contato-info p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-family: "Antenna Regular", sans-serif;
+  color: #374151;
+  font-size: 0.9rem;
+  padding: 4px 0;
+}
+
+.contato-info i {
+  color: #2563eb;
+  width: 18px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Efeito de busca */
+.contato-card.highlight {
+  border-color: #10b981 !important;
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.15);
+}
+
+/* Tags de órgãos */
+.orgaos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.orgao-tag {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-family: "Antenna Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+
+/* Grupos de departamentos */
+.departamento-grupo {
+  margin-bottom: 35px;
+}
+
+.grupo-titulo {
+  font-family: "Antenna Bold", sans-serif;
+  color: #192844;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #f1f5f9, #ffffff);
+  border-radius: 15px;
+  border-left: 5px solid #005a92;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.grupo-titulo i {
+  color: #005a92;
+  font-size: 1.6rem;
+}
+
+/* Cards de informações adicionais */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  border-radius: 15px;
+  padding: 25px;
+  border-left: 5px solid #005a92;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #192844;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-card h3 i {
+  color: #005a92;
+}
+
+.info-card p {
+  color: #374151;
+  margin-bottom: 10px;
+  font-family: "Antenna Regular", sans-serif;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #005a92, #192844);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 90, 146, 0.3);
+}
+
+/* Layout especial para Diretoria Executiva */
+.diretoria-executiva .cards-grid {
+  display: block;
+}
+
+.diretoria-executiva .presidente-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.diretoria-executiva .presidente-container .contato-card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.diretoria-executiva .diretores-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .diretoria-executiva .diretores-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contatos-container {
+    padding: 15px;
+  }
+
+  .secao-contatos {
+    padding: 25px 15px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 1.3rem; /* Reduzido de 1.8rem */
+    flex-direction: column;
+    gap: 12px; /* Reduzido de 15px */
+    padding: 12px 18px; /* Reduzido de 20px 25px */
+  }
+
+  .section-title i {
+    font-size: 1.5rem; /* Reduzido de 1.8rem */
+  }
+
+  .contato-card {
+    padding: 20px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .cargo-badge {
+    align-self: flex-end;
+    max-width: 180px;
+  }
+
+  .grupo-titulo {
+    font-size: 1.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 15px;
+  }
+
+  .diretoria-executiva .diretores-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .person-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .destaque .person-photo {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .update-info {
+    padding: 12px;
+  }
+
+  .update-info p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem; /* Reduzido de 1.5rem */
+    padding: 10px 15px; /* Reduzido */
+  }
+
+  .contato-card {
+    padding: 18px;
+    min-height: 180px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .contato-info p {
+    font-size: 0.85rem;
+  }
+
+  .orgaos-lista {
+    gap: 5px;
+  }
+
+  .orgao-tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .cargo-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    max-width: 160px;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contato-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.contato-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contato-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contato-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contato-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.contato-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.contato-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Efeito hover na foto */
+.person-photo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Animação especial para o presidente */
+.destaque .person-photo:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatos e Cargos - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/contatos.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Lista de Cargos, Funções e Contatos</h1>
+      <input type="text" placeholder="Buscar por nome, cargo ou departamento...">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#diretorias"><i class="fa-solid fa-building"></i> Diretorias</a></li>
+        <li><a href="#assessorias"><i class="fa-solid fa-users"></i> Assessorias</a></li>
+        <li><a href="#superintendencias"><i class="fa-solid fa-sitemap"></i> Superintendências</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contatos-container">
+    <div class="update-info">
+      <p><i class="fa-solid fa-calendar-alt"></i> Última atualização: 13/05/2025</p>
+    </div>
+
+
+    <!-- Diretoria Executiva -->
+    <section class="secao-contatos diretoria-executiva" id="diretorias">
+      <h2 class="section-title">
+        <i class="fa-solid fa-crown"></i>
+        Diretoria Executiva
+      </h2>
+      
+      <!-- Presidente -->
+      <div class="presidente-container">
+        <div class="contato-card destaque" data-search="fabricio abilio diretor presidente presi presidencia">
+          <div class="card-header">
+            <span class="department-name">Diretoria da Presidência</span>
+            <div class="cargo-badge presidente">PRESIDÊNCIA</div>
+          </div>
+          <div class="card-content">
+            <div class="photo-container">
+              <img src="/img/1_6.png" alt="Fabrício Abílio" class="person-photo">
+            </div>
+            <h3>Fabrício Abílio</h3>
+            <p class="cargo">Diretor Presidente</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9114</p>
+              <p><i class="fa-solid fa-envelope"></i> presidencia@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Três diretores -->
+      <div class="diretores-container">
+        <div class="contato-card" data-search="heitor maciel diretor administracao financas diraf">
+          <div class="card-header">
+            <span class="department-name">Diretoria de Administração e Finanças</span>
+            <div class="cargo-badge">DIRAF</div>
+          </div>
+          <div class="card-content">
+            <div class="photo-container">
+              <img src="/placeholder.svg?height=60&width=60" alt="Heitor Maciel" class="person-photo">
+            </div>
+            <h3>Heitor Maciel</h3>
+            <p class="cargo">Diretor de Administração e Finanças</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9182</p>
+              <p><i class="fa-solid fa-envelope"></i> diraf@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="ary arruda diretor engenharia operacao direo">
+          <div class="card-header">
+            <span class="department-name">Diretoria de Engenharia e Operação</span>
+            <div class="cargo-badge">DIREO</div>
+          </div>
+          <div class="card-content">
+            <div class="photo-container">
+              <img src="/placeholder.svg?height=60&width=60" alt="Ary Arruda" class="person-photo">
+            </div>
+            <h3>Ary Arruda</h3>
+            <p class="cargo">Diretor de Engenharia e Operação</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9202</p>
+              <p><i class="fa-solid fa-envelope"></i> direo@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="marcelo onida diretor planejamento dirpla">
+          <div class="card-header">
+            <span class="department-name">Diretoria de Planejamento</span>
+            <div class="cargo-badge">DIRPLA</div>
+          </div>
+          <div class="card-content">
+            <div class="photo-container">
+              <img src="/placeholder.svg?height=60&width=60" alt="Marcelo Onida" class="person-photo">
+            </div>
+            <h3>Marcelo Onida</h3>
+            <p class="cargo">Diretor de Planejamento</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2332-7977</p>
+              <p><i class="fa-solid fa-envelope"></i> dirpla@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assessorias -->
+    <section class="secao-contatos" id="assessorias">
+      <h2 class="section-title">
+        <i class="fa-solid fa-handshake"></i>
+        Assessorias e Gabinete
+      </h2>
+      <div class="cards-grid">
+        <div class="contato-card" data-search="frederico couto gabinete presidencia chegab">
+          <div class="card-header">
+            <span class="department-name">Gabinete da Presidência</span>
+            <div class="cargo-badge">CHEGAB</div>
+          </div>
+          <div class="card-content">
+            <h3>Frederico Couto</h3>
+            <p class="cargo">Chefe de Gabinete</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9194 / 38894</p>
+              <p><i class="fa-solid fa-envelope"></i> chegab@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="rosania machado auditoria interna aud">
+          <div class="card-header">
+            <span class="department-name">Auditoria Interna</span>
+            <div class="cargo-badge">AUD</div>
+          </div>
+          <div class="card-content">
+            <h3>Rosania Machado</h3>
+            <p class="cargo">Auditor Interno</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9140</p>
+              <p><i class="fa-solid fa-envelope"></i> aud@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="daiti hamanaka governanca riscos compliance assger">
+          <div class="card-header">
+            <span class="department-name">Assessoria de Governança, Riscos e Compliance</span>
+            <div class="cargo-badge">ASSGER</div>
+          </div>
+          <div class="card-content">
+            <h3>Daiti Hamanaka</h3>
+            <p class="cargo">Assessor de Governança, Riscos e Compliance</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9190</p>
+              <p><i class="fa-solid fa-envelope"></i> assger@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="fernando kaczelink assessoria tecnica administrativa asstad">
+          <div class="card-header">
+            <span class="department-name">Assessoria Técnica e Administrativa</span>
+            <div class="cargo-badge">ASSTAD</div>
+          </div>
+          <div class="card-content">
+            <h3>Fernando Kaczelink</h3>
+            <p class="cargo">Assessor Técnico e Administrativo</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-8895</p>
+              <p><i class="fa-solid fa-envelope"></i> asstad@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="raphaela batista gestao contratos asscon">
+          <div class="card-header">
+            <span class="department-name">Assessoria de Gestão de Contratos</span>
+            <div class="cargo-badge">ASSCON</div>
+          </div>
+          <div class="card-content">
+            <h3>Raphaela Batista</h3>
+            <p class="cargo">Assessora de Gestão de Contratos</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9163</p>
+              <p><i class="fa-solid fa-envelope"></i> contratos@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="luiz carlos penner assessoria juridica assjur">
+          <div class="card-header">
+            <span class="department-name">Assessoria Jurídica</span>
+            <div class="cargo-badge">ASSJUR</div>
+          </div>
+          <div class="card-content">
+            <h3>Luiz Carlos Penner</h3>
+            <p class="cargo">Assessor Jurídico</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-8645</p>
+              <p><i class="fa-solid fa-envelope"></i> asjuradm@transportes.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="fabiana toledo comunicacao social asscom">
+          <div class="card-header">
+            <span class="department-name">Assessoria de Comunicação Social</span>
+            <div class="cargo-badge">ASSCOM</div>
+          </div>
+          <div class="card-content">
+            <h3>Fabiana Toledo</h3>
+            <p class="cargo">Assessora de Comunicação Social</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9156</p>
+              <p><i class="fa-solid fa-envelope"></i> ftoledo@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="priscilla dantas ouvidoria ouvi">
+          <div class="card-header">
+            <span class="department-name">Ouvidoria</span>
+            <div class="cargo-badge">OUVI</div>
+          </div>
+          <div class="card-content">
+            <h3>Priscilla Dantas</h3>
+            <p class="cargo">Ouvidor</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9114</p>
+              <p><i class="fa-solid fa-envelope"></i> ouvidoria@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="renato felix projetos especiais asspre">
+          <div class="card-header">
+            <span class="department-name">Assessoria de Projetos Especiais</span>
+            <div class="cargo-badge">ASSPRE</div>
+          </div>
+          <div class="card-content">
+            <h3>Renato Felix</h3>
+            <p class="cargo">Assessor de Projetos Especiais</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9164</p>
+              <p><i class="fa-solid fa-envelope"></i> renatofelix@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="flavia leone servico social seguranca medicina trabalho assesmt">
+          <div class="card-header">
+            <span class="department-name">Assessoria de Serviço Social, Segurança e Medicina do Trabalho</span>
+            <div class="cargo-badge">ASSESMT</div>
+          </div>
+          <div class="card-content">
+            <h3>Flavia Leone</h3>
+            <p class="cargo">Assessora de Serviço Social, Segurança e Medicina do Trabalho</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9174</p>
+              <p><i class="fa-solid fa-envelope"></i> flavial@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Superintendências e Gerências -->
+    <section class="secao-contatos" id="superintendencias">
+      <h2 class="section-title">
+        <i class="fa-solid fa-sitemap"></i>
+        Superintendências e Gerências
+      </h2>
+      
+      <!-- Administração e Finanças -->
+      <div class="departamento-grupo">
+        <h3 class="grupo-titulo">
+          <i class="fa-solid fa-building"></i>
+          Administração e Finanças
+        </h3>
+        <div class="cards-grid">
+          <div class="contato-card" data-search="carlos andre adjunto diretor administracao financas">
+            <div class="card-header">
+              <span class="department-name">Diretoria de Administração e Finanças</span>
+              <div class="cargo-badge">DIRAF</div>
+            </div>
+            <div class="card-content">
+              <h3>Carlos André</h3>
+              <p class="cargo">Adjunto do Diretor de Administração e Finanças</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9182</p>
+                <p><i class="fa-solid fa-envelope"></i> carlosaf@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="angela crespo superintendencia administrativa supadm">
+            <div class="card-header">
+              <span class="department-name">Superintendência Administrativa</span>
+              <div class="cargo-badge">SUPADM</div>
+            </div>
+            <div class="card-content">
+              <h3>Ângela Crespo</h3>
+              <p class="cargo">Superintendente Administrativa</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9145</p>
+                <p><i class="fa-solid fa-envelope"></i> supadm@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="marco malheiro superintendencia gestao pessoas supgep">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Gestão de Pessoas</span>
+              <div class="cargo-badge">SUPGEP</div>
+            </div>
+            <div class="card-content">
+              <h3>Marco Malheiro</h3>
+              <p class="cargo">Superintendente de Gestão de Pessoas</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9192</p>
+                <p><i class="fa-solid fa-envelope"></i> marcomalheiro@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="joao luiz freitas braga caruso superintendencia tecnologia informacao suptin">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Tecnologia da Informação</span>
+              <div class="cargo-badge">SUPTIN</div>
+            </div>
+            <div class="card-content">
+              <h3>João Luiz Freitas Braga Caruso</h3>
+              <p class="cargo">Superintendente de Tecnologia da Informação</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9157</p>
+                <p><i class="fa-solid fa-envelope"></i> asstinf@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="paulo henrique segges superintendencia financas contabilidade supfic">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Finanças e Contabilidade</span>
+              <div class="cargo-badge">SUPFIC</div>
+            </div>
+            <div class="card-content">
+              <h3>Paulo Henrique Segges</h3>
+              <p class="cargo">Superintendente de Finanças e Contabilidade</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-8740</p>
+                <p><i class="fa-solid fa-envelope"></i> paulosegges@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="rodrigo paes superintendencia gestao patrimonial supat">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Gestão Patrimonial</span>
+              <div class="cargo-badge">SUPAT</div>
+            </div>
+            <div class="card-content">
+              <h3>Rodrigo Paes</h3>
+              <p class="cargo">Superintendente de Gestão Patrimonial</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9161</p>
+                <p><i class="fa-solid fa-envelope"></i> rodrigotosta@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gerências de Administração e Finanças -->
+          <div class="contato-card" data-search="vitor hugo licitacoes contratos gerlic">
+            <div class="card-header">
+              <span class="department-name">Gerência de Licitações e Contratos</span>
+              <div class="cargo-badge">GERLIC</div>
+            </div>
+            <div class="card-content">
+              <h3>Vitor Hugo</h3>
+              <p class="cargo">Gerente de Licitações e Contratos</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9155 / 39145</p>
+                <p><i class="fa-solid fa-envelope"></i> vkrawczuk@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="patricia matos gerencia administrativa geradm">
+            <div class="card-header">
+              <span class="department-name">Gerência Administrativa</span>
+              <div class="cargo-badge">GERADM</div>
+            </div>
+            <div class="card-content">
+              <h3>Patrícia Matos</h3>
+              <p class="cargo">Gerente Administrativa</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9154 / 39145</p>
+                <p><i class="fa-solid fa-envelope"></i> pmatos@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="valdenice alves gerencia gestao pessoas gergep">
+            <div class="card-header">
+              <span class="department-name">Gerência de Gestão de Pessoas</span>
+              <div class="cargo-badge">GERGEP</div>
+            </div>
+            <div class="card-content">
+              <h3>Valdenice Alves</h3>
+              <p class="cargo">Gerente de Gestão de Pessoas</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9170</p>
+                <p><i class="fa-solid fa-envelope"></i> gegep@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="alexandre mendes gerencia tecnologia informacao gertin">
+            <div class="card-header">
+              <span class="department-name">Gerência de Tecnologia da Informação</span>
+              <div class="cargo-badge">GERTIN</div>
+            </div>
+            <div class="card-content">
+              <h3>Alexandre Mendes</h3>
+              <p class="cargo">Gerente de Tecnologia da Informação</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9157</p>
+                <p><i class="fa-solid fa-envelope"></i> alexandrerocha@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="joao jose tardin gerencia financas gerfin">
+            <div class="card-header">
+              <span class="department-name">Gerência de Finanças</span>
+              <div class="cargo-badge">GERFIN</div>
+            </div>
+            <div class="card-content">
+              <h3>João José Tardin</h3>
+              <p class="cargo">Gerente de Finanças</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9152</p>
+                <p><i class="fa-solid fa-envelope"></i> tardin@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="deborah vaz gerencia contabilidade gercot">
+            <div class="card-header">
+              <span class="department-name">Gerência de Contabilidade</span>
+              <div class="cargo-badge">GERCOT</div>
+            </div>
+            <div class="card-content">
+              <h3>Deborah Vaz</h3>
+              <p class="cargo">Gerente de Contabilidade</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-8740</p>
+                <p><i class="fa-solid fa-envelope"></i> deborah@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="danillo cunha gerencia administracao patrimonial geradp">
+            <div class="card-header">
+              <span class="department-name">Gerência de Administração Patrimonial</span>
+              <div class="cargo-badge">GERADP</div>
+            </div>
+            <div class="card-content">
+              <h3>Danillo Cunha</h3>
+              <p class="cargo">Gerente de Administração Patrimonial</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9162</p>
+                <p><i class="fa-solid fa-envelope"></i> danillocunha@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="humberto hauila gerencia fiscalizacao patrimonial gerfip">
+            <div class="card-header">
+              <span class="department-name">Gerência de Fiscalização Patrimonial</span>
+              <div class="cargo-badge">GERFIP</div>
+            </div>
+            <div class="card-content">
+              <h3>Humberto Hauila</h3>
+              <p class="cargo">Gerente de Fiscalização Patrimonial</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9162</p>
+                <p><i class="fa-solid fa-envelope"></i> humbertohauila@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engenharia e Operação -->
+      <div class="departamento-grupo">
+        <h3 class="grupo-titulo">
+          <i class="fa-solid fa-cogs"></i>
+          Engenharia e Operação
+        </h3>
+        <div class="cards-grid">
+          <div class="contato-card" data-search="marcio rodrigues adjunto diretor engenharia operacao">
+            <div class="card-header">
+              <span class="department-name">Diretoria de Engenharia e Operação</span>
+              <div class="cargo-badge">DIREO</div>
+            </div>
+            <div class="card-content">
+              <h3>Márcio Rodrigues</h3>
+              <p class="cargo">Adjunto do Diretor de Engenharia e Operação</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-3195</p>
+                <p><i class="fa-solid fa-envelope"></i> marciorodrigues@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="jose carlos almeida material rodante sistemas eletroeletronicos supmrs">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Material Rodante e Sistemas Eletroeletrônicos</span>
+              <div class="cargo-badge">SUPMRS</div>
+            </div>
+            <div class="card-content">
+              <h3>José Carlos de Almeida</h3>
+              <p class="cargo">Superintendente de Mat. Rodante e Sist. Eletroeletrônicos</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-envelope"></i> jose.almeida@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="jorge chaves via permanente obras civis manutencao predial supvip">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Via Permanente, Obras Civis e Manutenção Predial</span>
+              <div class="cargo-badge">SUPVIP</div>
+            </div>
+            <div class="card-content">
+              <h3>Jorge Chaves</h3>
+              <p class="cargo">Superintendente de Via Perm., Obras Civis e Manutenção Predial</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9199</p>
+                <p><i class="fa-solid fa-envelope"></i> jorge.chaves@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="fabio correa manutencao operacao transportes suptra">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Manutenção e Operação de Transportes</span>
+              <div class="cargo-badge">SUPTRA</div>
+            </div>
+            <div class="card-content">
+              <h3>Fábio Correa</h3>
+              <p class="cargo">Superintendente de Manutenção e Operação de Transportes</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2332-6614</p>
+                <p><i class="fa-solid fa-envelope"></i> subon@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gerências de Engenharia e Operação -->
+          <div class="contato-card" data-search="ezequiel araujo gerencia material rodante germar">
+            <div class="card-header">
+              <span class="department-name">Gerência de Material Rodante</span>
+              <div class="cargo-badge">GERMAR</div>
+            </div>
+            <div class="card-content">
+              <h3>Ezequiel de Araújo</h3>
+              <p class="cargo">Gerente de Material Rodante</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-envelope"></i> ezequielsoares@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="andre assuncao gerencia sistemas eletroeletronicos gersis">
+            <div class="card-header">
+              <span class="department-name">Gerência de Sistemas Eletroeletrônicos</span>
+              <div class="cargo-badge">GERSIS</div>
+            </div>
+            <div class="card-content">
+              <h3>André Assunção</h3>
+              <p class="cargo">Gerente de Sistemas Eletroeletrônicos</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9191</p>
+                <p><i class="fa-solid fa-envelope"></i> andrecastro@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="osmar souza gerencia manutencao predial germap">
+            <div class="card-header">
+              <span class="department-name">Gerência de Manutenção Predial</span>
+              <div class="cargo-badge">GERMAP</div>
+            </div>
+            <div class="card-content">
+              <h3>Osmar de Souza</h3>
+              <p class="cargo">Gerente de Manutenção Predial</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-envelope"></i> osmardesouza@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="ivoneide verissimo gerencia via permanente obras civis gervip">
+            <div class="card-header">
+              <span class="department-name">Gerência de Via Permanente e Obras Civis</span>
+              <div class="cargo-badge">GERVIP</div>
+            </div>
+            <div class="card-content">
+              <h3>Ivoneide Veríssimo</h3>
+              <p class="cargo">Gerente de Via Permanente e Obras Civis</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-envelope"></i> ivoneideverissimo@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="thiago neto gerencia manutencao transportes germat">
+            <div class="card-header">
+              <span class="department-name">Gerência de Manutenção de Transportes</span>
+              <div class="cargo-badge">GERMAT</div>
+            </div>
+            <div class="card-content">
+              <h3>Thiago Neto</h3>
+              <p class="cargo">Gerente de Manutenção de Transportes</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2332-6614</p>
+                <p><i class="fa-solid fa-envelope"></i> thiagooliveira@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="jerry quinto gerencia operacao transportes geropt">
+            <div class="card-header">
+              <span class="department-name">Gerência de Operação de Transportes</span>
+              <div class="cargo-badge">GEROPT</div>
+            </div>
+            <div class="card-content">
+              <h3>Jerry do Quinto</h3>
+              <p class="cargo">Gerente de Operação de Transportes</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2332-6614</p>
+                <p><i class="fa-solid fa-envelope"></i> jerrygevu@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planejamento -->
+      <div class="departamento-grupo">
+        <h3 class="grupo-titulo">
+          <i class="fa-solid fa-chart-line"></i>
+          Planejamento
+        </h3>
+        <div class="cards-grid">
+          <div class="contato-card" data-search="davi vianna macedo oliveira adjunto diretor planejamento">
+            <div class="card-header">
+              <span class="department-name">Diretoria de Planejamento</span>
+              <div class="cargo-badge">DIRPLA</div>
+            </div>
+            <div class="card-content">
+              <h3>Davi Vianna de Macedo Oliveira</h3>
+              <p class="cargo">Adjunto do Diretor de Planejamento</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9163</p>
+                <p><i class="fa-solid fa-envelope"></i> doliveira@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="michelle botelho planejamento orcamento suplan">
+            <div class="card-header">
+              <span class="department-name">Superintendência de Planejamento e Orçamento</span>
+              <div class="cargo-badge">SUPLAN</div>
+            </div>
+            <div class="card-content">
+              <h3>Michelle Botelho</h3>
+              <p class="cargo">Superintendente de Planejamento e Orçamento</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9144</p>
+                <p><i class="fa-solid fa-envelope"></i> michelle.botelho@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="marcelo dreicon gerencia planejamento gerpla">
+            <div class="card-header">
+              <span class="department-name">Gerência de Planejamento</span>
+              <div class="cargo-badge">GERPLA</div>
+            </div>
+            <div class="card-content">
+              <h3>Marcelo Dreicon</h3>
+              <p class="cargo">Gerente de Planejamento</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9144</p>
+                <p><i class="fa-solid fa-envelope"></i> mdreicon@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-card" data-search="marcio goncalves gerencia orcamento gerort">
+            <div class="card-header">
+              <span class="department-name">Gerência de Orçamento</span>
+              <div class="cargo-badge">GERORT</div>
+            </div>
+            <div class="card-content">
+              <h3>Márcio Gonçalves</h3>
+              <p class="cargo">Gerente de Orçamento</p>
+              <div class="contato-info">
+                <p><i class="fa-solid fa-phone"></i> (21) 2333-9144</p>
+                <p><i class="fa-solid fa-envelope"></i> mgoncalves@central.rj.gov.br</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comitês e Funções Especiais -->
+    <section class="secao-contatos" id="comites-funcoes">
+      <h2 class="section-title">
+        <i class="fa-solid fa-users-gear"></i>
+        Comitês e Funções Especiais
+      </h2>
+      <div class="cards-grid">
+        <div class="contato-card" data-search="marcelo dreicon comite seguranca informacao comiseinf presidente">
+          <div class="card-header">
+            <span class="department-name">Presidente do Comitê</span>
+            <div class="cargo-badge">COMISEINF</div>
+          </div>
+          <div class="card-content">
+            <h3>Marcelo Dreicon</h3>
+            <p class="cargo">Presidente do Comitê de Segurança da Informação</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-envelope"></i> comiseinf@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="daiti hamanaka comite etica compliance comiseti presidente">
+          <div class="card-header">
+            <span class="department-name">Presidente do Comitê</span>
+            <div class="cargo-badge">COMISETI</div>
+          </div>
+          <div class="card-content">
+            <h3>Daiti Hamanaka</h3>
+            <p class="cargo">Presidente do Comitê de Ética e Compliance</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9190</p>
+              <p><i class="fa-solid fa-envelope"></i> comiseti@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="claudia bianca santos luca comissao inventario bens patrimoniais comisibpa">
+          <div class="card-header">
+            <span class="department-name">Membro da Comissão</span>
+            <div class="cargo-badge">COMISIBPA</div>
+          </div>
+          <div class="card-content">
+            <h3>Cláudia Bianca Santos De Luca</h3>
+            <p class="cargo">Comissão de Inventário de Bens Patrimoniais</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9162</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="priscilla dantas comissao permanente capacitacao desenvolvimento comiscpd">
+          <div class="card-header">
+            <span class="department-name">Membro da Comissão</span>
+            <div class="cargo-badge">COMISCPD</div>
+          </div>
+          <div class="card-content">
+            <h3>Priscilla Dantas</h3>
+            <p class="cargo">Comissão Permanente de Capacitação e Desenvolvimento</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-envelope"></i> comiscpd@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="davi vianna patricia matos ponto focal sistema sei">
+          <div class="card-header">
+            <span class="department-name">Ponto Focal</span>
+            <div class="cargo-badge">SEI</div>
+          </div>
+          <div class="card-content">
+            <h3>Davi Vianna / Patrícia Matos</h3>
+            <p class="cargo">Ponto Focal do Sistema SEI</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-envelope"></i> pontofocal@central.rj.gov.br</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="angela crespo patricia matos ponto focal sistema sigfis">
+          <div class="card-header">
+            <span class="department-name">Ponto Focal</span>
+            <div class="cargo-badge">SIGFIS</div>
+          </div>
+          <div class="card-content">
+            <h3>Ângela Crespo / Patrícia Matos</h3>
+            <p class="cargo">Ponto Focal do Sistema SIGFIS</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9154 / 39145</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="paulo vitor responsavel almoxarifado">
+          <div class="card-header">
+            <span class="department-name">Responsável</span>
+            <div class="cargo-badge">ALM</div>
+          </div>
+          <div class="card-content">
+            <h3>Paulo Vitor</h3>
+            <p class="cargo">Responsável pelo Almoxarifado</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9154</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-card" data-search="carlos andre responsavel comissao interna prevencao acidentes assedio cipa">
+          <div class="card-header">
+            <span class="department-name">Responsável</span>
+            <div class="cargo-badge">CIPA</div>
+          </div>
+          <div class="card-content">
+            <h3>Carlos André</h3>
+            <p class="cargo">Responsável pela Comissão Interna de Prevenção de Acidentes e de Assédio</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-9182</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Órgãos Colegiados -->
+    <section class="secao-contatos" id="orgaos-colegiados">
+      <h2 class="section-title">
+        <i class="fa-solid fa-users-cog"></i>
+        Órgãos Colegiados e Comitês
+      </h2>
+      <div class="cards-grid">
+        <div class="contato-card" data-search="fernando kaczelink secretario orgaos colegiados asstad conadm direxe confis comaud comel comiseti comiesg comiseinf">
+          <div class="card-header">
+            <span class="department-name">Assessoria Técnica e Administrativa</span>
+            <div class="cargo-badge">ASSTAD</div>
+          </div>
+          <div class="card-content">
+            <h3>Fernando Kaczelink</h3>
+            <p class="cargo">Secretário dos Órgãos Colegiados</p>
+            <div class="contato-info">
+              <p><i class="fa-solid fa-phone"></i> (21) 2333-8895</p>
+              <p><i class="fa-solid fa-envelope"></i> asstad@central.rj.gov.br</p>
+            </div>
+            <div class="orgaos-lista">
+              <span class="orgao-tag">CONADM</span>
+              <span class="orgao-tag">DIREXE</span>
+              <span class="orgao-tag">CONFIS</span>
+              <span class="orgao-tag">COMAUD</span>
+              <span class="orgao-tag">COMEL</span>
+              <span class="orgao-tag">COMISETI</span>
+              <span class="orgao-tag">COMIESG</span>
+              <span class="orgao-tag">COMISEINF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informações Adicionais -->
+    <section class="secao-contatos" id="informacoes-adicionais">
+      <h2 class="section-title">
+        <i class="fa-solid fa-info-circle"></i>
+        Informações Adicionais
+      </h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3><i class="fa-solid fa-headset"></i> Suporte de Informática (TI)</h3>
+          <p>As chamadas deverão ser realizadas através do Sistema GLPI</p>
+          <a href="http://helpdesk.intranet.central.rj.gov.br/" target="_blank" class="link-button">
+            <i class="fa-solid fa-external-link-alt"></i> Acessar Sistema
+          </a>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fa-solid fa-users"></i> Atendimento Recursos Humanos (RH)</h3>
+          <p>Paulo Sales / Alessandra Fernandes</p>
+          <p><i class="fa-solid fa-phone"></i> (21) 2333-9169</p>
+        </div>
+
+        <div class="info-card">
+          <h3><i class="fa-solid fa-shield-alt"></i> Encarregado pelo Tratamento de Dados Pessoais</h3>
+          <p><strong>DPO/CENTRAL:</strong> Fernando Kaczelink e Priscilla Dantas</p>
+          <p><i class="fa-solid fa-phone"></i> (21) 2333-8895</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+
+  <script src="contatos.js"></script>
+</body>
+</html>

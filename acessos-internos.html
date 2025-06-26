@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessos Internos - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/acessos-internos.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Portal de Acessos Internos</h1>
+      <input type="text" placeholder="Buscar sistema ou recurso...">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Página Principal</a></li>
+        <li><a href="contatos.html"><i class="fa-solid fa-address-book"></i> Contatos</a></li>
+        <li><a href="organograma.html"><i class="fa-solid fa-sitemap"></i> Organograma</a></li>
+        <li><a href="historia.html"><i class="fa-solid fa-clock"></i> História</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="acessos-container">
+    <div class="welcome-section">
+      <div class="welcome-card">
+        <div class="welcome-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="welcome-content">
+          <h2>Bem-vindo ao Portal Interno</h2>
+          <p>Acesse os sistemas e recursos exclusivos para funcionários da CENTRAL-RJ</p>
+          <div class="user-info">
+            <i class="fa-solid fa-user"></i>
+            <span>Área restrita</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recursos Humanos -->
+    <section class="categoria-section" id="recursos-humanos">
+      <h2 class="categoria-titulo">
+        <i class="fa-solid fa-users"></i>
+        Recursos Humanos
+      </h2>
+      <div class="sistemas-grid">
+        <div class="sistema-card" data-search="contra cheque informe rendimentos holerite salario pagamento rh imposto renda">
+          <div class="card-icon rh">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+          </div>
+          <div class="card-content">
+            <h3>Contra Cheque e Informe de Rendimentos</h3>
+            <p>Acesse seu holerite mensal e informe anual para declaração do Imposto de Renda</p>
+            <div class="card-tags">
+              <span class="tag">Holerite</span>
+              <span class="tag">IR</span>
+              <span class="tag">Anual</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn-acesso" onclick="acessarSistema('contracheque-rendimentos')">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Almoxarifado -->
+    <section class="categoria-section" id="almoxarifado">
+      <h2 class="categoria-titulo">
+        <i class="fa-solid fa-warehouse"></i>
+        Almoxarifado e Materiais
+      </h2>
+      <div class="sistemas-grid">
+        <div class="sistema-card" data-search="catalogo materiais almoxarifado estoque produtos 2023 2024">
+          <div class="card-icon almox">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="card-content">
+            <h3>Catálogo de Materiais dos Almoxarifados</h3>
+            <p>Consulte o catálogo completo dos materiais disponíveis - 2023/2024</p>
+            <div class="card-tags">
+              <span class="tag">2023/2024</span>
+              <span class="tag">Estoque</span>
+              <span class="tag">Consulta</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn-acesso" onclick="acessarSistema('catalogo-materiais')">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Acessar
+            </a>
+          </div>
+        </div>
+
+        <div class="sistema-card" data-search="preenchimento padrao solicitacao materiais requisicao formulario almoxarifado">
+          <div class="card-icon almox">
+            <i class="fa-solid fa-clipboard-list"></i>
+          </div>
+          <div class="card-content">
+            <h3>Preenchimento Padrão para Solicitação de Materiais</h3>
+            <p>Formulário padronizado para requisição de materiais ao almoxarifado</p>
+            <div class="card-tags">
+              <span class="tag">Formulário</span>
+              <span class="tag">Padrão</span>
+              <span class="tag">Requisição</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn-acesso" onclick="acessarSistema('solicitacao-materiais')">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Acessar
+            </a>
+          </div>
+        </div>
+
+        <div class="sistema-card" data-search="cartao credenciamento requisicao materiais autorizacao acesso">
+          <div class="card-icon almox">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div class="card-content">
+            <h3>Cartão de Credenciamento para Requisição de Materiais</h3>
+            <p>Obtenha seu cartão de credenciamento para autorização de requisições</p>
+            <div class="card-tags">
+              <span class="tag">Credencial</span>
+              <span class="tag">Autorização</span>
+              <span class="tag">Acesso</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="#" class="btn-acesso" onclick="acessarSistema('credenciamento')">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suporte Técnico -->
+    <section class="categoria-section" id="suporte-tecnico">
+      <h2 class="categoria-titulo">
+        <i class="fas fa-computer"></i>
+        Serviço de Suporte de TI
+      </h2>
+      <div class="sistemas-grid">
+        <div class="sistema-card destaque" data-search="helpdesk chamados suporte tecnico ti informatica glpi">
+          <div class="card-icon suporte">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <div class="card-content">
+            <h3>HelpDesk - Abertura de Chamados</h3>
+            <p>Sistema GLPI para abertura e acompanhamento de chamados técnicos</p>
+            <div class="card-tags">
+              <span class="tag">GLPI</span>
+              <span class="tag">Chamados</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <a href="http://helpdesk.intranet.central.rj.gov.br/" target="_blank" class="btn-acesso">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informações Importantes -->
+    <section class="info-section">
+      <div class="info-cards">
+        <div class="info-card aviso">
+          <div class="info-icon">
+            <i class="fa-solid fa-exclamation-triangle"></i>
+          </div>
+          <div class="info-content">
+            <h3>Importante</h3>
+            <p>Todos os acessos são monitorados e registrados conforme política de segurança da informação da CENTRAL-RJ.</p>
+          </div>
+        </div>
+
+        <div class="info-card horario">
+          <div class="info-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="info-content">
+            <h3>Horário de Funcionamento</h3>
+            <p><strong>Sistemas:</strong> 24h/dia<br>
+               <strong>Suporte TI:</strong> 8h às 18h (dias úteis)</p>
+          </div>
+        </div>
+
+        <div class="info-card contato">
+          <div class="info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h3>Contatos de Suporte</h3>
+            <p><strong>TI:</strong> (21) 2333-9157<br>
+               <strong>RH:</strong> (21) 2333-9169<br>
+               <strong>Almoxarifado:</strong> (21) 2333-9154</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+
+  <script src="acessos-internos.js"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.acessos-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Seção de boas-vindas */
+.welcome-section {
+  margin-bottom: 40px;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, #192844, #005a92);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+}
+
+.welcome-content {
+  flex: 1;
+  z-index: 2;
+}
+
+.welcome-content h2 {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+}
+
+.user-info i {
+  font-size: 1.1rem;
+}
+
+/* Seções de categorias */
+.categoria-section {
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.categoria-titulo {
+  font-family: "Antenna Bold", sans-serif;
+  color: #192844;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #005a92;
+}
+
+.categoria-titulo i {
+  color: #005a92;
+  font-size: 1.6rem;
+}
+
+/* Grid de sistemas */
+.sistemas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+/* Cards de sistema */
+.sistema-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #f1f5f9;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.sistema-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: #005a92;
+}
+
+.sistema-card.destaque {
+  border-color: #dc2626;
+  background: linear-gradient(135deg, #fef2f2, #ffffff);
+}
+
+.sistema-card.destaque:hover {
+  border-color: #b91c1c;
+  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15);
+}
+
+/* Ícones dos cards */
+.card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon.rh {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.card-icon.almox {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.card-icon.suporte {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Conteúdo dos cards */
+.card-content {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.card-content h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.card-content p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Tags dos cards */
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-family: "Antenna Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Botões de ação */
+.card-action {
+  margin-top: auto;
+}
+
+.btn-acesso {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #005a92, #192844);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.btn-acesso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 90, 146, 0.3);
+  background: linear-gradient(135deg, #0066a3, #1a2f4f);
+}
+
+.sistema-card.destaque .btn-acesso {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.sistema-card.destaque .btn-acesso:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+/* Seção de informações */
+.info-section {
+  margin-bottom: 40px;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #005a92;
+}
+
+.info-card.aviso {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb, #ffffff);
+}
+
+.info-card.horario {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+}
+
+.info-card.contato {
+  border-left-color: #dc2626;
+  background: linear-gradient(135deg, #fef2f2, #ffffff);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  color: #005a92;
+}
+
+.info-card.aviso .info-icon {
+  color: #f59e0b;
+}
+
+.info-card.horario .info-icon {
+  color: #10b981;
+}
+
+.info-card.contato .info-icon {
+  color: #dc2626;
+}
+
+.info-content h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.info-content p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .acessos-container {
+    padding: 15px;
+  }
+
+  .welcome-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .welcome-content h2 {
+    font-size: 2rem;
+  }
+
+  .categoria-section {
+    padding: 25px 20px;
+  }
+
+  .sistemas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .categoria-titulo {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  .categoria-titulo {
+    font-size: 1.3rem;
+  }
+
+  .sistema-card {
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sistema-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.sistema-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.sistema-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.sistema-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.sistema-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Efeito de busca */
+.sistema-card.highlight {
+  border-color: #10b981 !important;
+  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+}

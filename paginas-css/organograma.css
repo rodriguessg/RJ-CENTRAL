@@ -1,0 +1,629 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.organograma-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 50px;
+  font-family: "Antenna Bold", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Organograma Chart */
+.organograma-chart {
+  background: transparent;
+  padding: 40px 20px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estrutura do organograma */
+.organograma-structure {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Níveis hierárquicos */
+.nivel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.nivel-1 {
+  margin-bottom: 100px;
+}
+
+.nivel-2 {
+  gap: 200px;
+  margin-bottom: 100px;
+  justify-content: center;
+}
+
+.nivel-3 {
+  gap: 40px;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.nivel-4 {
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1300px;
+  margin-bottom: 100px;
+}
+
+.nivel-5 {
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards dos funcionários */
+.funcionario-card {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 200px;
+  max-width: 220px;
+  text-align: center;
+  border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.funcionario-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Foto do funcionário */
+.funcionario-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Antenna Bold", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tag do cargo */
+.cargo-tag {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-family: "Antenna Bold", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Cores das tags por nível hierárquico */
+.nivel-1 .cargo-tag {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.nivel-2 .cargo-tag {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.nivel-3 .cargo-tag {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.nivel-4 .cargo-tag {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.nivel-5 .cargo-tag {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+/* Informações do funcionário */
+.funcionario-info {
+  text-align: center;
+  width: 100%;
+}
+
+.funcionario-info h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.funcionario-info .departamento {
+  font-family: "Antenna Regular", sans-serif;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+}
+
+.funcionario-info .sigla {
+  font-family: "Antenna Bold", sans-serif;
+  color: #475569;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Linhas de conexão usando pseudo-elementos centralizados */
+
+/* Linha vertical descendo da Presidência */
+.nivel-1::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linha horizontal conectando as 3 diretorias */
+.nivel-2::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 3px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linhas verticais subindo para cada diretoria */
+.nivel-2 .funcionario-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linha vertical descendo da Presidência para as assessorias */
+.nivel-1::before {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 150px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linha horizontal das assessorias */
+.nivel-3::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linhas verticais para cada assessoria */
+.nivel-3 .funcionario-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linha horizontal das superintendências */
+.nivel-4::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linhas verticais das diretorias para superintendências */
+.nivel-4 .funcionario-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linha horizontal das gerências */
+.nivel-5::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Linhas verticais das superintendências para gerências */
+.nivel-5 .funcionario-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 50px;
+  background-color: #64748b;
+  z-index: 1;
+}
+
+/* Cards específicos por nível */
+.nivel-1 .funcionario-card {
+  border-color: #dc2626;
+  transform: scale(1.1);
+}
+
+.nivel-2 .funcionario-card {
+  border-color: #10b981;
+}
+
+.nivel-3 .funcionario-card {
+  border-color: #f59e0b;
+}
+
+.nivel-4 .funcionario-card {
+  border-color: #3b82f6;
+}
+
+.nivel-5 .funcionario-card {
+  border-color: #8b5cf6;
+}
+
+/* Animação das linhas */
+.funcionario-card::before,
+.funcionario-card::after,
+.nivel::before,
+.nivel::after {
+  animation: drawLine 0.8s ease-out 1.5s both;
+}
+
+@keyframes drawLine {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+/* Para linhas horizontais */
+.nivel::before {
+  animation: drawLineHorizontal 0.8s ease-out 1.5s both;
+}
+
+@keyframes drawLineHorizontal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  margin: 3% auto;
+  padding: 40px;
+  border-radius: 25px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  color: #64748b;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #1e293b;
+}
+
+#modal-titulo {
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-family: "Antenna Regular", sans-serif;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #1e293b;
+}
+
+.tooltip.show {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 1400px) {
+  .nivel-2 {
+    gap: 150px;
+  }
+
+  .nivel-3 {
+    gap: 30px;
+  }
+
+  .nivel-4 {
+    gap: 25px;
+  }
+
+  .nivel-5 {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .organograma-structure {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .nivel-2 {
+    gap: 100px;
+  }
+
+  .nivel-3 {
+    gap: 25px;
+  }
+
+  .nivel-4 {
+    gap: 20px;
+  }
+
+  .nivel-5 {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .organograma-structure {
+    transform: scale(0.7);
+    transform-origin: top center;
+    min-height: 840px;
+  }
+
+  .nivel-2 {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .nivel-3 {
+    gap: 20px;
+  }
+
+  .nivel-4 {
+    gap: 15px;
+  }
+
+  .nivel-5 {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .organograma-structure {
+    transform: scale(0.5);
+    transform-origin: top center;
+    min-height: 600px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Animações */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nivel-1 .funcionario-card {
+  animation: slideInFromTop 0.8s ease-out;
+}
+
+.nivel-2 .funcionario-card:nth-child(1) {
+  animation: slideInFromLeft 0.6s ease-out 0.2s both;
+}
+
+.nivel-2 .funcionario-card:nth-child(2) {
+  animation: slideInFromRight 0.6s ease-out 0.2s both;
+}
+
+.nivel-3 .funcionario-card {
+  animation: fadeInScale 0.6s ease-out both;
+}
+
+.nivel-4 .funcionario-card {
+  animation: fadeInScale 0.5s ease-out both;
+}
+
+.nivel-5 .funcionario-card {
+  animation: fadeInScale 0.4s ease-out both;
+}

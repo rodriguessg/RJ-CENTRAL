@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organograma - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/organograma.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Organograma da CENTRAL</h1>
+      <input type="text" placeholder="Buscar departamento...">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#organograma"><i class="fa-solid fa-sitemap"></i> Estrutura</a></li>
+        <li><a href="#hierarquia"><i class="fa-solid fa-layer-group"></i> Hierarquia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="organograma-container">
+  <div class="organograma-section" id="organograma">
+    <h2 class="section-title">Estrutura Organizacional</h2>
+    
+    <div class="organograma-chart">
+      <!-- Linhas de Conexão Completas -->
+      <!-- Linha principal da presidência -->
+      <div class="connection-line line-vertical line-presidencia-vertical"></div>
+      <div class="connection-line line-horizontal line-presidencia-to-diretorias"></div>
+
+      <!-- Linhas das diretorias para superintendências -->
+      <div class="connection-line line-vertical line-dirpla-vertical"></div>
+      <div class="connection-line line-vertical line-diraf-vertical"></div>
+      <div class="connection-line line-vertical line-direo-vertical"></div>
+      <div class="connection-line line-horizontal line-superintendencias-horizontal"></div>
+
+      <!-- Linhas das assessorias -->
+      <div class="connection-line line-vertical line-assessorias-main-vertical"></div>
+      <div class="connection-line line-horizontal line-assessorias-horizontal"></div>
+      <div class="connection-line line-vertical line-chegab-vertical"></div>
+      <div class="connection-line line-vertical line-asstad-vertical"></div>
+      <div class="connection-line line-vertical line-assgcr-vertical"></div>
+      <div class="connection-line line-vertical line-assjur-vertical"></div>
+      <div class="connection-line line-vertical line-asscon-vertical"></div>
+      <div class="connection-line line-vertical line-correg-vertical"></div>
+      <div class="connection-line line-vertical line-ouvi-vertical"></div>
+      <div class="connection-line line-vertical line-asscom-vertical"></div>
+
+      <!-- Linhas das superintendências para gerências -->
+      <div class="connection-line line-vertical line-suplan-vertical"></div>
+      <div class="connection-line line-vertical line-suptin-vertical"></div>
+      <div class="connection-line line-vertical line-supadm-vertical"></div>
+      <div class="connection-line line-vertical line-supmrs-vertical"></div>
+      <div class="connection-line line-vertical line-supvip-vertical"></div>
+      <div class="connection-line line-vertical line-suptra-vertical"></div>
+      <div class="connection-line line-horizontal line-gerencias-horizontal"></div>
+      
+      <div class="organograma-structure">
+        <!-- Nível 1: Diretoria da Presidência -->
+        <div class="nivel nivel-1">
+          <div class="funcionario-card" data-funcionario="diretoria-presidencia">
+            <div class="cargo-tag">PRESI</div>
+            <div class="funcionario-foto">PR</div>
+            <div class="funcionario-info">
+              <h3>Diretoria da Presidência</h3>
+              <div class="departamento">Presidência</div>
+              <div class="sigla">PRESI</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nível 2: Diretorias Principais -->
+        <div class="nivel nivel-2">
+          <div class="funcionario-card" data-funcionario="diretoria-planejamento">
+            <div class="cargo-tag">DIR</div>
+            <div class="funcionario-foto">DP</div>
+            <div class="funcionario-info">
+              <h3>Diretoria de Planejamento</h3>
+              <div class="departamento">Planejamento</div>
+              <div class="sigla">DIRPLA</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="diretoria-admin-financas">
+            <div class="cargo-tag">DIR</div>
+            <div class="funcionario-foto">AF</div>
+            <div class="funcionario-info">
+              <h3>Diretoria de Administração e Finanças</h3>
+              <div class="departamento">Administração e Finanças</div>
+              <div class="sigla">DIRAF</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="diretoria-engenharia">
+            <div class="cargo-tag">DIR</div>
+            <div class="funcionario-foto">EO</div>
+            <div class="funcionario-info">
+              <h3>Diretoria de Engenharia e Operação</h3>
+              <div class="departamento">Engenharia e Operação</div>
+              <div class="sigla">DIREO</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nível 3: Assessorias da Presidência -->
+        <div class="nivel nivel-3">
+          <div class="funcionario-card" data-funcionario="chegab">
+            <div class="cargo-tag">GAB</div>
+            <div class="funcionario-foto">GB</div>
+            <div class="funcionario-info">
+              <h3>Gabinete da Presidência</h3>
+              <div class="departamento">Gabinete</div>
+              <div class="sigla">CHEGAB</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="asstad">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">TA</div>
+            <div class="funcionario-info">
+              <h3>Assessoria Técnica e Administrativa</h3>
+              <div class="departamento">Técnica e Administrativa</div>
+              <div class="sigla">ASSTAD</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="assgcr">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">GC</div>
+            <div class="funcionario-info">
+              <h3>Assessoria de Governança, Riscos e Compliance</h3>
+              <div class="departamento">Governança</div>
+              <div class="sigla">ASSGCR</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="assjur">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">JU</div>
+            <div class="funcionario-info">
+              <h3>Assessoria Jurídica</h3>
+              <div class="departamento">Jurídica</div>
+              <div class="sigla">ASSJUR</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="asscon">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">CO</div>
+            <div class="funcionario-info">
+              <h3>Assessoria de Gestão de Contratos</h3>
+              <div class="departamento">Contratos</div>
+              <div class="sigla">ASSCON</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="correg">
+            <div class="cargo-tag">COR</div>
+            <div class="funcionario-foto">CR</div>
+            <div class="funcionario-info">
+              <h3>Corregedoria</h3>
+              <div class="departamento">Corregedoria</div>
+              <div class="sigla">CORREG</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="ouvi">
+            <div class="cargo-tag">OUV</div>
+            <div class="funcionario-foto">OV</div>
+            <div class="funcionario-info">
+              <h3>Ouvidoria</h3>
+              <div class="departamento">Ouvidoria</div>
+              <div class="sigla">OUVI</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="asscom">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">CS</div>
+            <div class="funcionario-info">
+              <h3>Assessoria de Comunicação Social</h3>
+              <div class="departamento">Comunicação</div>
+              <div class="sigla">ASSCOM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nível 4: Superintendências -->
+        <div class="nivel nivel-4">
+          <!-- DIRPLA -->
+          <div class="funcionario-card" data-funcionario="suplan">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">PL</div>
+            <div class="funcionario-info">
+              <h3>Superintendência de Planejamento e Orçamento</h3>
+              <div class="departamento">Planejamento</div>
+              <div class="sigla">SUPLAN</div>
+            </div>
+          </div>
+          
+          <!-- DIRAF -->
+          <div class="funcionario-card" data-funcionario="suptin">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">TI</div>
+            <div class="funcionario-info">
+              <h3>Superintendência de Tecnologia da Informação</h3>
+              <div class="departamento">Tecnologia</div>
+              <div class="sigla">SUPTIN</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="supadm">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">AD</div>
+            <div class="funcionario-info">
+              <h3>Superintendência Administrativa</h3>
+              <div class="departamento">Administrativa</div>
+              <div class="sigla">SUPADM</div>
+            </div>
+          </div>
+          
+          <!-- DIREO -->
+          <div class="funcionario-card" data-funcionario="supmrs">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">MR</div>
+            <div class="funcionario-info">
+              <h3>Superintendência de Material Rodante e Sistemas Eletroeletrônicos</h3>
+              <div class="departamento">Material Rodante</div>
+              <div class="sigla">SUPMRS</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="supvip">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">VP</div>
+            <div class="funcionario-info">
+              <h3>Superintendência de Via Permanente, Obras Civis e Manutenção Predial</h3>
+              <div class="departamento">Via Permanente</div>
+              <div class="sigla">SUPVIP</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="suptra">
+            <div class="cargo-tag">SUP</div>
+            <div class="funcionario-foto">TR</div>
+            <div class="funcionario-info">
+              <h3>Superintendência de Manutenção e Operação de Transportes</h3>
+              <div class="departamento">Transportes</div>
+              <div class="sigla">SUPTRA</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="asspre">
+            <div class="cargo-tag">ASS</div>
+            <div class="funcionario-foto">PE</div>
+            <div class="funcionario-info">
+              <h3>Assessoria de Projetos Especiais</h3>
+              <div class="departamento">Projetos Especiais</div>
+              <div class="sigla">ASSPRE</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nível 5: Gerências -->
+        <div class="nivel nivel-5">
+          <!-- Gerências DIRPLA -->
+          <div class="funcionario-card" data-funcionario="gerpla">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">GP</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Planejamento</h3>
+              <div class="departamento">Planejamento</div>
+              <div class="sigla">GERPLA</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="gerort">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">OR</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Orçamento</h3>
+              <div class="departamento">Orçamento</div>
+              <div class="sigla">GERORT</div>
+            </div>
+          </div>
+          
+          <!-- Gerências DIRAF -->
+          <div class="funcionario-card" data-funcionario="gertin">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">TG</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Tecnologia da Informação</h3>
+              <div class="departamento">Tecnologia</div>
+              <div class="sigla">GERTIN</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="geradm">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">GA</div>
+            <div class="funcionario-info">
+              <h3>Gerência Administrativa</h3>
+              <div class="departamento">Administrativa</div>
+              <div class="sigla">GERADM</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="gerlic">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">LC</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Licitações e Contratos</h3>
+              <div class="departamento">Licitações</div>
+              <div class="sigla">GERLIC</div>
+            </div>
+          </div>
+          
+          <!-- Gerências DIREO -->
+          <div class="funcionario-card" data-funcionario="gersis">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">SE</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Sistemas Eletroeletrônicos</h3>
+              <div class="departamento">Sistemas</div>
+              <div class="sigla">GERSIS</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="germar">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">MG</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Material Rodante</h3>
+              <div class="departamento">Material</div>
+              <div class="sigla">GERMAR</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="gervip">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">VG</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Via Permanente e Obras Civis</h3>
+              <div class="departamento">Via Permanente</div>
+              <div class="sigla">GERVIP</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="germap">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">MP</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Manutenção Predial</h3>
+              <div class="departamento">Manutenção</div>
+              <div class="sigla">GERMAP</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="germat">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">MT</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Manutenção de Transportes</h3>
+              <div class="departamento">Manutenção</div>
+              <div class="sigla">GERMAT</div>
+            </div>
+          </div>
+          
+          <div class="funcionario-card" data-funcionario="geropt">
+            <div class="cargo-tag">GER</div>
+            <div class="funcionario-foto">OP</div>
+            <div class="funcionario-info">
+              <h3>Gerência de Operação de Transportes</h3>
+              <div class="departamento">Operação</div>
+              <div class="sigla">GEROPT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <!-- Modal para detalhes -->
+  <div id="modal-detalhes" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-titulo"></h2>
+      <div id="modal-corpo"></div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+
+  <script src="org.js"></script>
+</body>
+</html>
