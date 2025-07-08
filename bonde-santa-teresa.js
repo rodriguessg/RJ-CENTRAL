@@ -1,61 +1,70 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const searchButton = document.querySelector(".search-section button")
-  const searchInput = document.querySelector(".search-section input")
+// Função para abrir visualização completa do monitoramento
+function abrirVisualizacaoCompleta() {
+  const url =
+    "https://monitoramento.mobilesat.com.br/locator/index.html?t=4ebee7c35e2e2fbedde92f4b2611c141F0AA094FB415B295867B3BD93520050BB6566DD7"
+  window.open(url, "_blank", "width=1200,height=800,scrollbars=yes,resizable=yes")
+}
 
-  // Funcionalidade de busca
-  if (searchButton && searchInput) {
-    searchButton.addEventListener("click", () => {
-      const searchTerm = searchInput.value.toLowerCase()
+// Função para baixar PDF (placeholder)
+function baixarPDF() {
+  alert("Funcionalidade em desenvolvimento. Em breve você poderá baixar o guia completo do Bonde de Santa Teresa.")
+}
 
-      if (searchTerm) {
-        const sections = document.querySelectorAll("section")
-        let found = false
+// Simulação de dados em tempo real para o monitoramento
+function atualizarDadosMonitoramento() {
+  const composicoesElement = document.getElementById("composicoes-ativas")
+  const proximaPartidaElement = document.getElementById("proxima-partida")
+  const statusLinhaElement = document.getElementById("status-linha")
+  const capacidadeElement = document.getElementById("capacidade-atual")
 
-        sections.forEach((section) => {
-          const sectionText = section.textContent.toLowerCase()
-          if (sectionText.includes(searchTerm)) {
-            section.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-
-            section.style.background = "linear-gradient(135deg, #fff8e1, #ffffff)"
-            section.style.transition = "background 0.5s ease"
-
-            setTimeout(() => {
-              section.style.background = ""
-            }, 2000)
-
-            found = true
-            return
-          }
-        })
-
-        if (!found) {
-          mostrarNotificacao("Termo não encontrado. Tente: horários, tarifas, trajeto, galeria", "info")
-        }
-      }
-    })
-
-    searchInput.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
-        event.preventDefault()
-        searchButton.click()
-      }
-    })
+  if (composicoesElement) {
+    // Simula número de composições ativas (1-3)
+    const composicoes = Math.floor(Math.random() * 3) + 1
+    composicoesElement.textContent = `${composicoes} ativa${composicoes > 1 ? "s" : ""}`
   }
 
-  // Smooth scroll para links internos
-  const menuLinks = document.querySelectorAll("nav a[href^='#']")
+  if (proximaPartidaElement) {
+    // Simula próxima partida (5-20 minutos)
+    const minutos = Math.floor(Math.random() * 16) + 5
+    proximaPartidaElement.textContent = `${minutos} minutos`
+  }
 
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
+  if (statusLinhaElement) {
+    // Status da linha (90% chance de estar operacional)
+    const operacional = Math.random() > 0.1
+    if (operacional) {
+      statusLinhaElement.textContent = "Operacional"
+      statusLinhaElement.className = "info-value status-operacional"
+    } else {
+      statusLinhaElement.textContent = "Manutenção"
+      statusLinhaElement.className = "info-value status-manutencao"
+    }
+  }
+
+  if (capacidadeElement) {
+    // Capacidade atual
+    const capacidades = ["Normal", "Moderada", "Alta"]
+    const capacidade = capacidades[Math.floor(Math.random() * capacidades.length)]
+    capacidadeElement.textContent = capacidade
+  }
+}
+
+// Smooth scroll para âncoras
+document.addEventListener("DOMContentLoaded", () => {
+  // Atualizar dados de monitoramento a cada 30 segundos
+  atualizarDadosMonitoramento()
+  setInterval(atualizarDadosMonitoramento, 30000)
+
+  // Smooth scroll para links de âncora
+  const links = document.querySelectorAll('a[href^="#"]')
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault()
-      const targetId = link.getAttribute("href").substring(1)
-      const targetSection = document.getElementById(targetId)
+      const targetId = this.getAttribute("href")
+      const targetElement = document.querySelector(targetId)
 
-      if (targetSection) {
-        targetSection.scrollIntoView({
+      if (targetElement) {
+        targetElement.scrollIntoView({
           behavior: "smooth",
           block: "start",
         })
@@ -63,45 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Modal da galeria
-  const fotoCards = document.querySelectorAll(".foto-card")
-  const modal = document.createElement("div")
-  modal.className = "modal-galeria"
-  modal.innerHTML = `
-    <div class="modal-content-galeria">
-      <span class="close-modal">&times;</span>
-      <img class="modal-img" src="/placeholder.svg" alt="">
-      <div class="modal-caption"></div>
-    </div>
-  `
-  document.body.appendChild(modal)
-
-  const modalImg = modal.querySelector(".modal-img")
-  const modalCaption = modal.querySelector(".modal-caption")
-  const closeModal = modal.querySelector(".close-modal")
-
-  fotoCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const img = card.querySelector(".foto-img")
-      const overlay = card.querySelector(".foto-overlay")
-
-      modalImg.src = img.src
-      modalCaption.innerHTML = overlay.innerHTML
-      modal.style.display = "block"
-    })
-  })
-
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none"
-  })
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none"
-    }
-  })
-
-  // Animação dos elementos ao scroll
+  // Animação de entrada para elementos quando ficam visíveis
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -116,137 +87,104 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }, observerOptions)
 
-  const animatedElements = document.querySelectorAll(".foto-card, .info-bloco")
-
+  // Observar elementos para animação
+  const animatedElements = document.querySelectorAll(".info-card, .galeria-item, .pratica-card, .contato-card")
   animatedElements.forEach((el) => {
     el.style.opacity = "0"
     el.style.transform = "translateY(20px)"
-    el.style.transition = "all 0.6s ease-out"
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
     observer.observe(el)
   })
 
-  // Status em tempo real
-  function atualizarStatus() {
-    const agora = new Date()
-    const hora = agora.getHours()
-    const diaSemana = agora.getDay()
+  // Funcionalidade de busca simples
+  const searchInput = document.querySelector('input[placeholder="Buscar informações..."]')
+  const searchButton = document.querySelector("button")
 
-    let funcionando = false
+  if (searchInput && searchButton) {
+    searchButton.addEventListener("click", () => {
+      const searchTerm = searchInput.value.toLowerCase().trim()
+      if (searchTerm) {
+        // Buscar por texto na página
+        const allText = document.body.innerText.toLowerCase()
+        if (allText.includes(searchTerm)) {
+          // Destacar resultado (implementação básica)
+          alert(`Encontrado: "${searchTerm}" na página. Use Ctrl+F para localizar.`)
+        } else {
+          alert(`Termo "${searchTerm}" não encontrado na página.`)
+        }
+      }
+    })
 
-    if (diaSemana >= 1 && diaSemana <= 5) {
-      if (hora >= 8 && hora < 17) funcionando = true
-    } else {
-      if (hora >= 9 && hora < 16) funcionando = true
-    }
-
-    const horariosBloco = document.querySelector(".info-bloco.horarios")
-    if (horariosBloco) {
-      const existingStatus = horariosBloco.querySelector(".status-atual")
-      if (existingStatus) existingStatus.remove()
-
-      const status = document.createElement("div")
-      status.className = "status-atual"
-      status.innerHTML = `
-        <i class="fa-solid fa-circle" style="color: ${funcionando ? "#28a745" : "#dc3545"};"></i>
-        ${funcionando ? "Em funcionamento" : "Fora de funcionamento"}
-      `
-      status.style.cssText = `
-        margin-top: 10px;
-        padding: 8px 12px;
-        background: ${funcionando ? "#d4edda" : "#f8d7da"};
-        border-radius: 10px;
-        font-size: 0.8rem;
-        font-family: 'Antenna Bold', sans-serif;
-        color: ${funcionando ? "#155724" : "#721c24"};
-        text-align: center;
-      `
-
-      horariosBloco.appendChild(status)
-    }
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        searchButton.click()
+      }
+    })
   }
-
-  atualizarStatus()
-  setInterval(atualizarStatus, 60000)
 })
 
-// Função para baixar PDF
-function baixarPDF() {
-  mostrarNotificacao("Preparando download do guia...", "info")
+// Função para verificar se o iframe está carregado
+function verificarIframeCarregado() {
+  const iframe = document.getElementById("monitoramento-iframe")
+  if (iframe) {
+    iframe.addEventListener("load", () => {
+      console.log("Monitoramento carregado com sucesso")
+    })
 
-  setTimeout(() => {
-    mostrarNotificacao("Download iniciado! Verifique sua pasta de downloads.", "success")
-
-    const btn = event.target
-    const originalText = btn.innerHTML
-    btn.innerHTML = '<i class="fa-solid fa-check"></i> Download Iniciado!'
-    btn.style.background = "linear-gradient(135deg, #28a745, #20c997)"
-
-    setTimeout(() => {
-      btn.innerHTML = originalText
-      btn.style.background = ""
-    }, 3000)
-  }, 1000)
+    iframe.addEventListener("error", () => {
+      console.log("Erro ao carregar monitoramento")
+      // Mostrar mensagem de erro se necessário
+    })
+  }
 }
 
-// Função para mostrar notificações
-function mostrarNotificacao(mensagem, tipo = "info") {
-  const notificacao = document.createElement("div")
-  notificacao.className = `notificacao ${tipo}`
+// Verificar iframe quando a página carregar
+document.addEventListener("DOMContentLoaded", verificarIframeCarregado)
 
-  const cores = {
-    success: "#28a745",
-    error: "#dc3545",
-    info: "#17a2b8",
-    warning: "#ffc107",
+// Função para atualizar horário da última atualização
+function atualizarHorarioAtualizacao() {
+  const agora = new Date()
+  const horario = agora.toLocaleTimeString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+
+  const updateTimeElement = document.querySelector(".update-time span")
+  if (updateTimeElement) {
+    updateTimeElement.textContent = `Última atualização: ${horario}`
   }
-
-  const icones = {
-    success: "check-circle",
-    error: "exclamation-circle",
-    info: "info-circle",
-    warning: "exclamation-triangle",
-  }
-
-  notificacao.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: ${cores[tipo]};
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      z-index: 1000;
-      animation: slideInRight 0.3s ease-out;
-      max-width: 300px;
-      font-family: 'Antenna Regular', sans-serif;
-      font-size: 0.9rem;
-    ">
-      <i class="fa-solid fa-${icones[tipo]}" style="margin-right: 8px;"></i>
-      ${mensagem}
-    </div>
-  `
-
-  document.body.appendChild(notificacao)
-
-  setTimeout(() => {
-    notificacao.remove()
-  }, 3000)
 }
 
-// CSS para animação da notificação
+// Atualizar horário a cada minuto
+setInterval(atualizarHorarioAtualizacao, 60000)
+
+// CSS adicional para status de manutenção
 const style = document.createElement("style")
 style.textContent = `
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
+    .status-manutencao {
+        color: #ff9800 !important;
     }
-    to {
-      transform: translateX(0);
-      opacity: 1;
+    
+    .info-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
-  }
+    
+    .iframe-container {
+        position: relative;
+    }
+    
+    .iframe-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 49%, rgba(255, 193, 7, 0.1) 50%, transparent 51%);
+        pointer-events: none;
+        z-index: 1;
+    }
 `
 document.head.appendChild(style)

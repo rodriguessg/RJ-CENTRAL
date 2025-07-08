@@ -1,0 +1,502 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Container principal */
+.governanca-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+/* Seção de introdução */
+.intro-section {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-family: "Antenna Bold", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.intro-text p {
+  margin-bottom: 15px;
+}
+
+/* Seções de governança */
+.governance-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.governance-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho das seções */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+.section-icon i {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.section-header h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Conteúdo das seções */
+.section-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Responsabilidades */
+.responsibilities {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.responsibilities h4 {
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.responsibilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.responsibilities li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Tabelas de membros */
+.members-table {
+  margin: 20px 0;
+}
+
+.members-table h4 {
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.members-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.members-table thead {
+  background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.members-table th {
+  padding: 12px 10px;
+  text-align: left;
+  color: white;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.members-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+}
+
+.members-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.members-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-note {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Tabelas pequenas */
+.members-table.small table {
+  font-size: 0.8rem;
+}
+
+.members-table.small th,
+.members-table.small td {
+  padding: 8px;
+}
+
+/* Links de documentos */
+.document-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(220, 38, 38, 0.3);
+}
+
+.document-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(220, 38, 38, 0.4);
+}
+
+.document-link i {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+/* Subseções de comitês */
+.committee-subsection {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border-left: 4px solid #f59e0b;
+}
+
+.committee-subsection h4 {
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.committee-subsection h4 i {
+  margin-right: 10px;
+  color: #f59e0b;
+}
+
+/* Caixa de destaque */
+.highlight-box {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 18px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.highlight-box i {
+  font-size: 1.3rem;
+  color: #d97706;
+  margin-right: 12px;
+  margin-top: 3px;
+}
+
+.highlight-box div {
+  flex: 1;
+}
+
+.highlight-box strong {
+  color: #92400e;
+  font-family: "Antenna Bold", sans-serif;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.highlight-box p {
+  margin-bottom: 6px;
+  color: #78350f;
+}
+
+.highlight-box a {
+  color: #92400e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.highlight-box a:hover {
+  text-decoration: underline;
+}
+
+/* Cards de comitês de apoio */
+.support-committees {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.committee-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.committee-icon {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+.committee-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.committee-card h5 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.committee-card p {
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .governanca-container {
+    padding: 15px 10px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .governance-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .members-table table {
+    font-size: 0.75rem;
+  }
+
+  .members-table th,
+  .members-table td {
+    padding: 8px 6px;
+  }
+
+  .support-committees {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .committee-subsection {
+    padding: 15px;
+  }
+
+  .highlight-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight-box i {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .governance-section {
+    padding: 12px;
+  }
+
+  .section-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .members-table {
+    overflow-x: auto;
+  }
+
+  .members-table table {
+    min-width: 450px;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.governance-section {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.governance-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.governance-section:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.governance-section:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.governance-section:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.governance-section:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.governance-section:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.committee-card {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.committee-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.committee-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.committee-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.committee-card:nth-child(4) {
+  animation-delay: 0.25s;
+}

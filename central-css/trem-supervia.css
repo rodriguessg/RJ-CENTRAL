@@ -18,13 +18,13 @@
 
 body {
   font-family: "Antenna Regular", sans-serif;
-  background: linear-gradient(135deg, #fff8e1, #f5f5f5);
+  background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
   line-height: 1.5;
   color: #333;
 }
 
 /* Container principal */
-/* .bonde-container {
+/* .trem-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
@@ -38,7 +38,7 @@ body {
 
 /* Hero Section - Compacto */
 .hero-section {
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   color: white;
   padding: 50px 20px;
   position: relative;
@@ -116,25 +116,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.badge.novo {
+.badge.concessao {
   background: rgba(76, 175, 80, 0.9);
-  animation: pulse 2s infinite;
 }
 
-.badge.patrimonio {
+.badge.metropolitana {
   background: rgba(156, 39, 176, 0.9);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .hero-image {
@@ -143,7 +130,7 @@ body {
   align-items: center;
 }
 
-.bonde-illustration {
+.trem-illustration {
   width: 150px;
   height: 150px;
   background: rgba(255, 255, 255, 0.2);
@@ -205,19 +192,19 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #ffc107, #ff8f00);
+  background: linear-gradient(90deg, #1976d2, #0d47a1);
 }
 
 .info-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: #ffc107;
+  border-color: #1976d2;
 }
 
 .card-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -225,7 +212,7 @@ body {
   margin: 0 auto 15px;
   font-size: 1.5rem;
   color: white;
-  box-shadow: 0 3px 12px rgba(255, 193, 7, 0.4);
+  box-shadow: 0 3px 12px rgba(25, 118, 210, 0.4);
 }
 
 .card-content h3 {
@@ -241,253 +228,14 @@ body {
   font-size: 0.9rem;
 }
 
-.preco {
+.numero-destaque {
   font-family: "Antenna Bold", sans-serif;
   font-size: 1.6rem;
-  color: #ffc107;
+  color: #1976d2;
   margin-bottom: 8px !important;
 }
 
-/* Monitoramento Section */
-.monitoramento-section {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f0f8ff, #ffffff);
-}
-
-.monitoramento-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e3f2fd;
-}
-
-.monitoramento-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.status-info {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Antenna Bold", sans-serif;
-  color: #333;
-}
-
-.status-online {
-  color: #4caf50;
-  animation: pulse-status 2s infinite;
-}
-
-@keyframes pulse-status {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
-}
-
-.update-time {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.update-time i {
-  color: #2196f3;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.monitoramento-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-visualizacao-completa {
-  background: linear-gradient(135deg, #2196f3, #1976d2);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-family: "Antenna Bold", sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 3px 12px rgba(33, 150, 243, 0.3);
-}
-
-.btn-visualizacao-completa:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
-  background: linear-gradient(135deg, #42a5f5, #2196f3);
-}
-
-.iframe-container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border: 2px solid #e3f2fd;
-  margin-bottom: 25px;
-}
-
-.iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 15px;
-}
-
-.monitoramento-info {
-  margin-bottom: 25px;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 20px;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #2196f3;
-  transition: all 0.3s ease;
-}
-
-.info-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.info-item i {
-  font-size: 1.5rem;
-  color: #2196f3;
-  width: 30px;
-  text-align: center;
-}
-
-.info-content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.info-label {
-  font-size: 0.85rem;
-  color: #666;
-  font-family: "Antenna Regular", sans-serif;
-}
-
-.info-value {
-  font-size: 1.1rem;
-  font-family: "Antenna Bold", sans-serif;
-  color: #333;
-}
-
-.status-operacional {
-  color: #4caf50;
-}
-
-.legenda-monitoramento {
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  border-radius: 15px;
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-}
-
-.legenda-monitoramento h4 {
-  font-family: "Antenna Bold", sans-serif;
-  color: #333;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legenda-monitoramento h4 i {
-  color: #2196f3;
-}
-
-.legenda-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.legenda-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.legenda-cor {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.bonde-ativo {
-  background: #ffc107;
-  box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
-}
-
-.estacao-ativa {
-  background: #4caf50;
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
-}
-
-
-.ponto-interesse {
-  background: #ff5722;
-  box-shadow: 0 0 8px rgba(255, 87, 34, 0.5);
-}
-
-/* Galeria Explicativa - Compacto */
-.galeria-section {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-}
-
+/* Section Title */
 .section-title {
   font-family: "Antenna Bold", sans-serif;
   font-size: 2rem;
@@ -501,11 +249,147 @@ body {
 }
 
 .section-title i {
-  color: #ffc107;
+  color: #1976d2;
   font-size: 1.6rem;
 }
 
-.galeria-explicativa {
+/* Sobre Section - Compacto */
+.sobre-section {
+  padding: 50px 20px;
+  background: white;
+}
+
+.sobre-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.sobre-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sobre-text .destaque {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 1.1rem;
+  color: #1976d2;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  border-radius: 12px;
+  border-left: 4px solid #1976d2;
+}
+
+.sobre-text p {
+  margin-bottom: 15px;
+}
+
+.servicos-destaque {
+  background: linear-gradient(135deg, #e8f5e8, #ffffff);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px solid #4caf50;
+  display: flex;
+  gap: 15px;
+  align-items: start;
+}
+
+.servico-icon {
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.servico-content h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #4caf50;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.servico-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.servico-content li {
+  padding: 4px 0;
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+.servico-content li:before {
+  content: "▶";
+  color: #4caf50;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.area-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.area-item i {
+  color: #4caf50;
+}
+
+.sobre-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #1976d2;
+}
+
+.highlight-card i {
+  font-size: 2rem;
+  color: #1976d2;
+  margin-bottom: 12px;
+}
+
+.highlight-card h4 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.highlight-card p {
+  font-size: 0.9rem;
+}
+
+/* Malha Section */
+.malha-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.malha-explicativa {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -513,7 +397,7 @@ body {
   margin: 0 auto;
 }
 
-.galeria-item {
+.malha-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
@@ -526,26 +410,26 @@ body {
   transition: all 0.3s ease;
 }
 
-.galeria-item:hover {
+.malha-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: #ffc107;
+  border-color: #1976d2;
 }
 
-.galeria-item.destaque {
-  border-color: #ffc107;
-  background: linear-gradient(135deg, #fff8e1, #ffffff);
+.malha-item.destaque {
+  border-color: #1976d2;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
 }
 
-.galeria-item:nth-child(even) {
+.malha-item:nth-child(even) {
   grid-template-columns: 1fr 1fr;
 }
 
-.galeria-item:nth-child(even) .item-image {
+.malha-item:nth-child(even) .item-image {
   order: 2;
 }
 
-.galeria-item:nth-child(even) .item-content {
+.malha-item:nth-child(even) .item-content {
   order: 1;
 }
 
@@ -556,14 +440,14 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.galeria-img {
+.malha-img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.galeria-item:hover .galeria-img {
+.malha-item:hover .malha-img {
   transform: scale(1.05);
 }
 
@@ -578,7 +462,7 @@ body {
 }
 
 .item-content h3 i {
-  color: #ffc107;
+  color: #1976d2;
   font-size: 1.2rem;
 }
 
@@ -612,203 +496,137 @@ body {
   border: 1px solid #e0e0e0;
 }
 
-.detail-tag.operacao {
+.detail-tag.ramais {
   background: linear-gradient(135deg, #4caf50, #45a049);
   color: white;
   border: none;
 }
 
-.detail-tag.obras {
+.detail-tag.extensoes {
   background: linear-gradient(135deg, #ff9800, #f57c00);
   color: white;
   border: none;
 }
 
-.detail-tag.patrimonio {
+.detail-tag.quilometragem {
   background: linear-gradient(135deg, #9c27b0, #7b1fa2);
   color: white;
   border: none;
 }
 
-.detail-tag.historico {
-  background: linear-gradient(135deg, #795548, #5d4037);
-  color: white;
-  border: none;
-}
-
-.detail-tag.cartao-postal {
-  background: linear-gradient(135deg, #e91e63, #c2185b);
-  color: white;
-  border: none;
-}
-
-.detail-tag.arte {
-  background: linear-gradient(135deg, #673ab7, #512da8);
-  color: white;
-  border: none;
-}
-
-.detail-tag.treinamento {
+.detail-tag.central {
   background: linear-gradient(135deg, #2196f3, #1976d2);
   color: white;
   border: none;
 }
 
-.detail-tag.experiencia {
+.detail-tag.japeri {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+  border: none;
+}
+
+.detail-tag.santa-cruz {
+  background: linear-gradient(135deg, #795548, #5d4037);
+  color: white;
+  border: none;
+}
+
+.detail-tag.belford {
+  background: linear-gradient(135deg, #607d8b, #455a64);
+  color: white;
+  border: none;
+}
+
+.detail-tag.saracuruna {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  color: white;
+  border: none;
+}
+
+.detail-tag.modernas {
+  background: linear-gradient(135deg, #673ab7, #512da8);
+  color: white;
+  border: none;
+}
+
+.detail-tag.acessiveis {
+  background: linear-gradient(135deg, #009688, #00796b);
+  color: white;
+  border: none;
+}
+
+.detail-tag.integradas {
   background: linear-gradient(135deg, #ff5722, #d84315);
   color: white;
   border: none;
 }
 
-/* Sobre Section - Compacto */
-.sobre-section {
+/* Municípios Section */
+.municipios-section {
   padding: 50px 20px;
   background: white;
 }
 
-.sobre-content {
+.municipios-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.sobre-text {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.sobre-text .destaque {
-  font-family: "Antenna Bold", sans-serif;
-  font-size: 1.1rem;
-  color: #ffc107;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: linear-gradient(135deg, #fff8e1, #ffffff);
-  border-radius: 12px;
-  border-left: 4px solid #ffc107;
-}
-
-.sobre-text p {
-  margin-bottom: 15px;
-}
-
-.novidade-destaque {
-  background: linear-gradient(135deg, #e8f5e8, #ffffff);
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 20px;
-  border: 2px solid #4caf50;
-  display: flex;
-  gap: 15px;
-  align-items: start;
-}
-
-.novidade-icon {
-  font-size: 2rem;
-  color: #4caf50;
-}
-
-.novidade-content h3 {
-  font-family: "Antenna Bold", sans-serif;
-  color: #4caf50;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.sobre-highlights {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-}
-
-.highlight-card {
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  border-top: 3px solid #ffc107;
-}
-
-.highlight-card i {
-  font-size: 2rem;
-  color: #ffc107;
-  margin-bottom: 12px;
-}
-
-.highlight-card h4 {
-  font-family: "Antenna Bold", sans-serif;
-  color: #333;
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-.highlight-card p {
-  font-size: 0.9rem;
-}
-
-/* Trajeto Section - Compacto */
-.trajeto-section {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-}
-
-.trajeto-mapa {
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.trajeto-linha {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.ponto-trajeto {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: white;
+.municipio-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
   border-radius: 15px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 15px;
-  position: relative;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #1976d2;
+  transition: all 0.3s ease;
 }
 
-.ponto-trajeto.destaque {
-  border: 2px solid #ffc107;
+.municipio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.municipio-card.capital {
+  border-top-color: #ffc107;
   background: linear-gradient(135deg, #fff8e1, #ffffff);
 }
 
-.ponto-icon {
+.municipio-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  margin: 0 auto 15px;
+  font-size: 1.3rem;
   color: white;
-  flex-shrink: 0;
 }
 
-.ponto-info h4 {
+.municipio-card.capital .municipio-icon {
+  background: linear-gradient(135deg, #ffc107, #ff8f00);
+}
+
+.municipio-card h3 {
   font-family: "Antenna Bold", sans-serif;
   color: #333;
+  margin-bottom: 5px;
   font-size: 1.1rem;
-  margin-bottom: 3px;
 }
 
-.ponto-info p {
+.municipio-card p {
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
 }
 
-.ponto-tipo {
+.municipio-tag {
   padding: 3px 10px;
   border-radius: 10px;
   font-size: 0.7rem;
@@ -817,29 +635,96 @@ body {
   letter-spacing: 0.5px;
 }
 
-.inicio-tag {
-  background: #4caf50;
-  color: white;
-}
-.destaque-tag {
+.capital-tag {
   background: #ffc107;
   color: #333;
 }
-.normal-tag {
-  background: #2196f3;
-  color: white;
-}
-.fim-tag {
-  background: #f44336;
+
+.baixada-tag {
+  background: #4caf50;
   color: white;
 }
 
-.trajeto-connector {
-  width: 3px;
-  height: 20px;
-  background: linear-gradient(to bottom, #ffc107, #ff8f00);
-  margin: 0 auto;
-  border-radius: 2px;
+.metropolitana-tag {
+  background: #2196f3;
+  color: white;
+}
+
+/* Parceria Section */
+.parceria-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.parceria-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.parceria-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.parceria-text .destaque {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 1.1rem;
+  color: #1976d2;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  border-radius: 12px;
+  border-left: 4px solid #1976d2;
+}
+
+.parceria-text p {
+  margin-bottom: 15px;
+}
+
+.apoio-areas {
+  background: linear-gradient(135deg, #e8f5e8, #ffffff);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px solid #4caf50;
+}
+
+.apoio-areas h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #4caf50;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.area-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.area-item i {
+  color: #4caf50;
+}
+
+.parceria-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Práticas Section - Compacto */
@@ -860,13 +745,13 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  border-top: 3px solid #ffc107;
+  border-top: 3px solid #1976d2;
 }
 
 .pratica-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -898,7 +783,7 @@ body {
 
 .pratica-card li:before {
   content: "▶";
-  color: #ffc107;
+  color: #1976d2;
   font-size: 0.7rem;
   position: absolute;
   left: 0;
@@ -909,13 +794,13 @@ body {
   border-bottom: none;
 }
 
-/* Download Section - Compacto */
-.download-section {
+/* Site Section - Compacto */
+.site-section {
   padding: 50px 20px;
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
 }
 
-.download-card {
+.site-card {
   background: white;
   border-radius: 20px;
   padding: 30px;
@@ -928,32 +813,32 @@ body {
   margin: 0 auto;
 }
 
-.download-icon {
+.site-icon {
   font-size: 3rem;
-  color: #dc3545;
+  color: #1976d2;
 }
 
-.download-content h3 {
+.site-content h3 {
   font-family: "Antenna Bold", sans-serif;
   color: #333;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.download-content p {
+.site-content p {
   color: #666;
   margin-bottom: 12px;
   line-height: 1.5;
   font-size: 0.95rem;
 }
 
-.download-info {
+.site-info {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-.download-info span {
+.site-info span {
   background: #f8f9fa;
   padding: 4px 10px;
   border-radius: 10px;
@@ -964,8 +849,8 @@ body {
   gap: 4px;
 }
 
-.btn-download {
-  background: linear-gradient(135deg, #dc3545, #c82333);
+.btn-site {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   color: white;
   padding: 12px 25px;
   border-radius: 20px;
@@ -976,13 +861,13 @@ body {
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 12px rgba(220, 53, 69, 0.3);
+  box-shadow: 0 3px 12px rgba(25, 118, 210, 0.3);
 }
 
-.btn-download:hover {
+.btn-site:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
-  background: linear-gradient(135deg, #e74c3c, #dc3545);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+  background: linear-gradient(135deg, #2196f3, #1976d2);
 }
 
 /* Contato Section - Compacto */
@@ -1003,13 +888,13 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  border-top: 3px solid #ffc107;
+  border-top: 3px solid #1976d2;
 }
 
 .contato-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ffc107, #ff8f00);
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1032,56 +917,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Responsividade para monitoramento */
-@media (max-width: 768px) {
-  .monitoramento-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .status-info {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
-
-  .monitoramento-controls {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .iframe-container {
-    height: 350px;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .legenda-items {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .monitoramento-container {
-    padding: 20px;
-  }
-
-  .iframe-container {
-    height: 300px;
-  }
-
-  .btn-visualizacao-completa {
-    font-size: 0.8rem;
-    padding: 10px 16px;
-  }
-
-  .info-item {
-    padding: 15px;
-  }
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .hero-content {
@@ -1100,16 +935,16 @@ body {
     justify-content: center;
   }
 
-  .galeria-item {
+  .malha-item {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .galeria-item:nth-child(even) .item-image {
+  .malha-item:nth-child(even) .item-image {
     order: 1;
   }
 
-  .galeria-item:nth-child(even) .item-content {
+  .malha-item:nth-child(even) .item-content {
     order: 2;
   }
 
@@ -1118,12 +953,17 @@ body {
     gap: 30px;
   }
 
-  .novidade-destaque {
+  .parceria-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .servicos-destaque {
     flex-direction: column;
     text-align: center;
   }
 
-  .download-card {
+  .site-card {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 15px;
@@ -1136,20 +976,22 @@ body {
 
   .praticas-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
   .contato-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+  }
+
+  .municipios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-section {
-    padding: 30px 15px;
-  }
-
   .hero-title {
     font-size: 1.8rem;
   }
@@ -1164,36 +1006,71 @@ body {
     gap: 8px;
   }
 
-  .galeria-item {
+  .malha-item {
     padding: 20px;
   }
 
   .item-content h3 {
     font-size: 1.2rem;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .item-description {
-    font-size: 0.9rem;
-  }
-
-  .galeria-img {
-    height: 180px;
-  }
-
-  .download-card {
+  .site-card {
     padding: 20px;
   }
 
-  .download-content h3 {
-    font-size: 1.2rem;
+  .municipios-grid {
+    grid-template-columns: 1fr;
   }
+}
 
-  .download-info {
-    justify-content: center;
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .btn-download {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+.info-card,
+.malha-item,
+.highlight-card,
+.pratica-card,
+.contato-card,
+.municipio-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.malha-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.malha-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.malha-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.municipio-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.municipio-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.municipio-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.municipio-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.municipio-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.municipio-card:nth-child(6) {
+  animation-delay: 0.6s;
 }

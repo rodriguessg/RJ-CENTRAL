@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonde de Santa Teresa - CENTRAL-RJ</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #fff8e1, #f5f5f5);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-input {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            outline: none;
+            transition: all 0.3s ease;
+            width: 250px;
+        }
+
+        .search-input:focus {
+            border-color: #ffc107;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 1.25rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .badge.novo {
+            background: rgba(76, 175, 80, 0.9);
+            animation: pulse 2s infinite;
+        }
+
+        .badge.patrimonio {
+            background: rgba(156, 39, 176, 0.9);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bonde-illustration {
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Info Cards */
+        .info-section {
+            padding: 3rem 2rem;
+            background: white;
+            margin-top: -1.5rem;
+            position: relative;
+            z-index: 3;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffc107, #ff8f00);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #ffc107;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 3px 12px rgba(255, 193, 7, 0.4);
+        }
+
+        .card-content h3 {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .preco {
+            font-weight: bold;
+            font-size: 1.6rem;
+            color: #ffc107;
+            margin-bottom: 0.5rem !important;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: #ffc107;
+            font-size: 1.6rem;
+        }
+
+        /* Monitoramento Section */
+        .monitoramento-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f0f8ff, #ffffff);
+        }
+
+        .monitoramento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e3f2fd;
+        }
+
+        .monitoramento-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .status-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .status-online {
+            color: #4caf50;
+            animation: pulse-status 2s infinite;
+        }
+
+        @keyframes pulse-status {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .update-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .update-time i {
+            color: #2196f3;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .btn-visualizacao-completa {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 3px 12px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn-visualizacao-completa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+            background: linear-gradient(135deg, #42a5f5, #2196f3);
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #e3f2fd;
+            margin-bottom: 1.5rem;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #2196f3;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #2196f3;
+            width: 30px;
+            text-align: center;
+        }
+
+        .info-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .status-operacional {
+            color: #4caf50;
+        }
+
+        .legenda-monitoramento {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .legenda-monitoramento h4 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legenda-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .legenda-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .legenda-cor {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .bonde-ativo { background: #ffc107; box-shadow: 0 0 8px rgba(255, 193, 7, 0.5); }
+        .estacao-ativa { background: #4caf50; box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); }
+        .trajeto-linha { background: #2196f3; box-shadow: 0 0 8px rgba(33, 150, 243, 0.5); }
+        .ponto-interesse { background: #ff5722; box-shadow: 0 0 8px rgba(255, 87, 34, 0.5); }
+
+        /* Galeria Section */
+        .galeria-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
+
+        .galeria-explicativa {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .galeria-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #ffc107;
+        }
+
+        .galeria-item.destaque {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff8e1, #ffffff);
+        }
+
+        .galeria-item:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .galeria-item:nth-child(even) .item-image {
+            order: 2;
+        }
+
+        .galeria-item:nth-child(even) .item-content {
+            order: 1;
+        }
+
+        .item-image {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .galeria-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover .galeria-img {
+            transform: scale(1.05);
+        }
+
+        .item-content h3 {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .item-content h3 i {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        .item-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .item-description strong {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .item-details {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .detail-tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .detail-tag.operacao { background: linear-gradient(135deg, #4caf50, #45a049); color: white; border: none; }
+        .detail-tag.obras { background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border: none; }
+        .detail-tag.patrimonio { background: linear-gradient(135deg, #9c27b0, #7b1fa2); color: white; border: none; }
+        .detail-tag.historico { background: linear-gradient(135deg, #795548, #5d4037); color: white; border: none; }
+        .detail-tag.cartao-postal { background: linear-gradient(135deg, #e91e63, #c2185b); color: white; border: none; }
+
+        /* Sobre Section */
+        .sobre-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sobre-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .sobre-text .destaque {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fff8e1, #ffffff);
+            border-radius: 0.75rem;
+            border-left: 4px solid #ffc107;
+        }
+
+        .sobre-text p {
+            margin-bottom: 1rem;
+        }
+
+        .novidade-destaque {
+            background: linear-gradient(135deg, #e8f5e8, #ffffff);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 2px solid #4caf50;
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .novidade-icon {
+            font-size: 2rem;
+            color: #4caf50;
+        }
+
+        .novidade-content h3 {
+            font-weight: bold;
+            color: #4caf50;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sobre-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            border-top: 3px solid #ffc107;
+        }
+
+        .highlight-card i {
+            font-size: 2rem;
+            color: #ffc107;
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-card h4 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Trajeto Section */
+        .trajeto-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
+
+        .trajeto-mapa {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .trajeto-linha {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .ponto-trajeto {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .ponto-trajeto:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .ponto-trajeto.destaque {
+            border: 2px solid #ffc107;
+            background: linear-gradient(135deg, #fff8e1, #ffffff);
+        }
+
+        .ponto-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .ponto-info h4 {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .ponto-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .ponto-tipo {
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .inicio-tag { background: #4caf50; color: white; }
+        .destaque-tag { background: #ffc107; color: #333; }
+        .normal-tag { background: #2196f3; color: white; }
+        .fim-tag { background: #f44336; color: white; }
+
+        .trajeto-connector {
+            width: 3px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ffc107, #ff8f00);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Práticas Section */
+        .praticas-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .praticas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pratica-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #ffc107;
+            transition: all 0.3s ease;
+        }
+
+        .pratica-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .pratica-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .pratica-card h3 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .pratica-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .pratica-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .pratica-card li:before {
+            content: "▶";
+            color: #ffc107;
+            font-size: 0.7rem;
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        .pratica-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .download-icon {
+            font-size: 3rem;
+            color: #dc3545;
+        }
+
+        .download-content h3 {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .download-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .download-info {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .download-info span {
+            background: #f8f9fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.75rem;
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.25rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(220, 53, 69, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+            background: linear-gradient(135deg, #e74c3c, #dc3545);
+        }
+
+        /* Contato Section */
+        .contato-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contato-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #ffc107;
+            transition: all 0.3s ease;
+        }
+
+        .contato-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contato-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffc107, #ff8f00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .contato-card h3 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .contato-card p {
+            color: #666;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .contato-card p strong {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo i {
+            color: #ffc107;
+            font-size: 2rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .footer p {
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer .copyright {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-search {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .galeria-item {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .galeria-item:nth-child(even) .item-image {
+                order: 1;
+            }
+
+            .galeria-item:nth-child(even) .item-content {
+                order: 2;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .novidade-destaque {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .download-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .monitoramento-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .status-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .iframe-container {
+                height: 350px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legenda-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .galeria-item {
+                padding: 1.5rem;
+            }
+
+            .item-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .galeria-img {
+                height: 200px;
+            }
+
+            .download-card {
+                padding: 1.5rem;
+            }
+
+            .download-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .btn-download {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.25rem;
+            }
+
+            .monitoramento-container {
+                padding: 1.5rem;
+            }
+
+            .iframe-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-train"></i>
+                </div>
+                <h1 class="header-title">Bonde de Santa Teresa</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <i class="fa-solid fa-train"></i>
+                        Bonde de Santa Teresa
+                    </h1>
+                    <p class="hero-subtitle">Uma viagem pela história e cultura carioca</p>
+                    <p class="hero-description">
+                        Descubra o Rio de Janeiro de uma forma única e autêntica. Os icônicos bondes amarelos conectam o Centro à charmosa Santa Teresa, passando pelos históricos Arcos da Lapa.
+                    </p>
+                    <div class="hero-badges">
+                        <span class="badge patrimonio">
+                            <i class="fa-solid fa-landmark"></i>
+                            Patrimônio Cultural
+                        </span>
+                        <span class="badge novo">
+                            <i class="fa-solid fa-star"></i>
+                            Ramal Paula Mattos Reinaugurado 2025
+                        </span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="bonde-illustration">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informações Rápidas -->
+        <section class="info-section">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Horários</h3>
+                        <p><strong>Segunda a Sexta:</strong> 8h às 17h</p>
+                        <p><strong>Sáb, Dom e Feriados:</strong> 9h às 16h</p>
+                        <p><small>Partidas a cada 15-20 minutos</small></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tarifa</h3>
+                        <p class="preco">R$ 20,00</p>
+                        <p><small>Ida e volta incluída</small></p>
+                        <p><small>Embarque em ambos os sentidos</small></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Embarque</h3>
+                        <p><strong>Rua Lélio Gama</strong></p>
+                        <p><small>Próximo à estação Carioca do Metrô</small></p>
+                        <p><small>Centro do Rio de Janeiro</small></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Destino</h3>
+                        <p><strong>Santa Teresa</strong></p>
+                        <p><small>Largo das Neves</small></p>
+                        <p><small>Bairro histórico e cultural</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitoramento em Tempo Real -->
+        <section class="monitoramento-section" id="monitoramento">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    Monitoramento em Tempo Real
+                </h2>
+                
+                <div class="monitoramento-container">
+                    <div class="monitoramento-header">
+                        <div class="status-info">
+                            <div class="status-indicator">
+                                <i class="fa-solid fa-circle status-online"></i>
+                                <span>Sistema Online</span>
+                            </div>
+                            <div class="update-time">
+                                <i class="fa-solid fa-sync-alt"></i>
+                                <span>Atualização em tempo real</span>
+                            </div>
+                        </div>
+                        <div class="monitoramento-controls">
+                            <button class="btn-visualizacao-completa" onclick="abrirVisualizacaoCompleta()">
+                                <i class="fa-solid fa-external-link-alt"></i>
+                                Visualização Completa
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="iframe-container">
+                        <iframe 
+                            id="monitoramento-iframe"
+                            src="https://monitoramento.mobilesat.com.br/locator/index.html?t=4ebee7c35e2e2fbedde92f4b2611c141F0AA094FB415B295867B3BD93520050BB6566DD7"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Monitoramento em Tempo Real - Bonde de Santa Teresa">
+                        </iframe>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fa-solid fa-train"></i>
+                            <div class="info-content">
+                                <span class="info-label">Composições Ativas</span>
+                                <span class="info-value">2 Bondes</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <div class="info-content">
+                                <span class="info-label">Próxima Partida</span>
+                                <span class="info-value">5 minutos</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-route"></i>
+                            <div class="info-content">
+                                <span class="info-label">Status da Linha</span>
+                                <span class="info-value status-operacional">Operacional</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-users"></i>
+                            <div class="info-content">
+                                <span class="info-label">Capacidade Atual</span>
+                                <span class="info-value">Normal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="legenda-monitoramento">
+                        <h4><i class="fa-solid fa-info-circle"></i> Legenda do Monitoramento</h4>
+                        <div class="legenda-items">
+                            <div class="legenda-item">
+                                <div class="legenda-cor bonde-ativo"></div>
+                                <span>Bonde em Operação</span>
+                            </div>
+                            <div class="legenda-item">
+                                <div class="legenda-cor estacao-ativa"></div>
+                                <span>Estação Ativa</span>
+                            </div>
+                            <div class="legenda-item">
+                                <div class="legenda-cor trajeto-linha"></div>
+                                <span>Linha do Trajeto</span>
+                            </div>
+                            <div class="legenda-item">
+                                <div class="legenda-cor ponto-interesse"></div>
+                                <span>Ponto de Interesse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria Explicativa -->
+        <section class="galeria-section" id="galeria">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-camera"></i>
+                    Conheça o Bonde de Santa Teresa
+                </h2>
+                
+                <div class="galeria-explicativa">
+                    <!-- Mapa das Linhas -->
+                    <div class="galeria-item destaque">
+                        <div class="item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Mapa das linhas do Bonde de Santa Teresa" class="galeria-img">
+                        </div>
+                        <div class="item-content">
+                            <h3><i class="fa-solid fa-map"></i> Esquema das Linhas</h3>
+                            <p class="item-description">
+                                <strong>Mapa oficial das linhas do sistema de bondes de Santa Teresa.</strong> 
+                                O esquema mostra os trechos em operação (linha dourada) e os trechos em obras (linha pontilhada). 
+                                Atualmente, o sistema opera desde a Estação Carioca até o Terminal Paula Mattos/Largo das Neves, 
+                                passando por pontos históricos como os Arcos da Lapa, Largo do França e Mercado.
+                            </p>
+                            <div class="item-details">
+                                <span class="detail-tag operacao">Em Operação</span>
+                                <span class="detail-tag obras">Trechos em Obras</span>
+                                <span class="detail-tag">Distâncias em km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bonde Histórico -->
+                    <div class="galeria-item">
+                        <div class="item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Bonde amarelo histórico de Santa Teresa" class="galeria-img">
+                        </div>
+                        <div class="item-content">
+                            <h3><i class="fa-solid fa-train"></i> Composições Históricas</h3>
+                            <p class="item-description">
+                                <strong>Os icônicos bondes amarelos são verdadeiros patrimônios culturais.</strong> 
+                                Tombados pelo Instituto Estadual do Patrimônio Cultural (Inepac) em 1988, essas composições 
+                                preservam características originais do século XX. Cada bonde tem capacidade limitada e 
+                                mantém o charme autêntico com bancos de madeira e estrutura metálica tradicional.
+                            </p>
+                            <div class="item-details">
+                                <span class="detail-tag patrimonio">Tombado 1988</span>
+                                <span class="detail-tag">Lotação Limitada</span>
+                                <span class="detail-tag">Estrutura Original</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arcos da Lapa -->
+                    <div class="galeria-item">
+                        <div class="item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Bonde passando pelos Arcos da Lapa" class="galeria-img">
+                        </div>
+                        <div class="item-content">
+                            <h3><i class="fa-solid fa-archway"></i> Passagem pelos Arcos da Lapa</h3>
+                            <p class="item-description">
+                                <strong>O momento mais emblemático da viagem é a passagem pelos Arcos da Lapa.</strong> 
+                                Construído no século XVIII como aqueduto, hoje é um dos cartões postais mais famosos do Rio. 
+                                O bonde atravessa sobre esta estrutura histórica, oferecendo uma perspectiva única e 
+                                inesquecível da arquitetura colonial e da vista da cidade.
+                            </p>
+                            <div class="item-details">
+                                <span class="detail-tag historico">Séc. XVIII</span>
+                                <span class="detail-tag cartao-postal">Cartão Postal</span>
+                                <span class="detail-tag">Vista Única</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Santa Teresa -->
+                    <div class="galeria-item">
+                        <div class="item-image">
+                            <img src="/placeholder.svg?height=300&width=400" alt="Ruas de Santa Teresa com ateliês e casarões" class="galeria-img">
+                        </div>
+                        <div class="item-content">
+                            <h3><i class="fa-solid fa-palette"></i> Bairro de Santa Teresa</h3>
+                            <p class="item-description">
+                                <strong>Santa Teresa é o coração cultural e artístico do Rio de Janeiro.</strong> 
+                                O bairro abriga dezenas de ateliês de artistas, galerias, restaurantes charmosos e 
+                                casarões históricos. As ruas de paralelepípedo e a arquitetura colonial preservada 
+                                criam uma atmosfera única, tornando cada passeio uma verdadeira viagem no tempo.
+                            </p>
+                            <div class="item-details">
+                                <span class="detail-tag">Centro Artístico</span>
+                                <span class="detail-tag">Gastronomia</span>
+                                <span class="detail-tag">Arquitetura Colonial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre o Bonde -->
+        <section class="sobre-section" id="sobre">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-heart"></i>
+                    Mais que um Transporte, um Ícone Cultural
+                </h2>
+                
+                <div class="sobre-content">
+                    <div class="sobre-text">
+                        <p class="destaque">
+                            A CENTRAL é a responsável por operar o serviço de transporte de passageiros dos bondes que circulam no bairro de Santa Teresa, no Rio de Janeiro.
+                        </p>
+                        
+                        <p>
+                            Reconhecidos como símbolos do próprio bairro onde operam, os Bondes de Santa Teresa conectam o Centro da cidade a Santa Teresa. Os bondinhos transcendem a função de mero transporte entre o Centro e o bairro - eles são um ícone da cultura carioca.
+                        </p>
+                        
+                        <p>
+                            Com suas icônicas composições amarelas, representam uma atração imperdível para quem deseja explorar a cidade de uma maneira singular. <strong>Tombados pelo Instituto Estadual do Patrimônio Cultural (Inepac) em 1988</strong>, os bondes preservam um importante capítulo da história do Rio de Janeiro e mantêm viva uma tradição centenária.
+                        </p>
+
+                        <div class="novidade-destaque">
+                            <div class="novidade-icon">
+                                <i class="fa-solid fa-sparkles"></i>
+                            </div>
+                            <div class="novidade-content">
+                                <h3>Novidade 2025!</h3>
+                                <p>
+                                    Após mais de uma década desativado, o <strong>ramal Paula Mattos</strong> dos bondinhos de Santa Teresa foi reinaugurado em janeiro de 2025. Este trecho crucial conecta o Largo da Carioca ao Largo das Neves, resgatando um capítulo significativo da história do bairro.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sobre-highlights">
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-camera"></i>
+                            <h4>Experiência Única</h4>
+                            <p>Trajeto pelos Arcos da Lapa e ruas históricas com ateliês e mirantes</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-palette"></i>
+                            <h4>Arte e Cultura</h4>
+                            <p>Santa Teresa é conhecida por seus ateliês de artistas e vida cultural intensa</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-eye"></i>
+                            <h4>Vistas Panorâmicas</h4>
+                            <p>Mirantes com vista privilegiada para toda a cidade do Rio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trajeto -->
+        <section class="trajeto-section" id="trajeto">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-route"></i>
+                    Trajeto e Pontos de Interesse
+                </h2>
+                
+                <div class="trajeto-mapa">
+                    <div class="trajeto-linha">
+                        <div class="ponto-trajeto">
+                            <div class="ponto-icon">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <div class="ponto-info">
+                                <h4>Largo da Carioca</h4>
+                                <p>Rua Lélio Gama - Próximo ao Metrô Carioca</p>
+                                <span class="ponto-tipo inicio-tag">INÍCIO</span>
+                            </div>
+                        </div>
+
+                        <div class="trajeto-connector"></div>
+
+                        <div class="ponto-trajeto destaque">
+                            <div class="ponto-icon">
+                                <i class="fa-solid fa-archway"></i>
+                            </div>
+                            <div class="ponto-info">
+                                <h4>Arcos da Lapa</h4>
+                                <p>Passagem pelo cartão postal do Rio</p>
+                                <span class="ponto-tipo destaque-tag">DESTAQUE</span>
+                            </div>
+                        </div>
+
+                        <div class="trajeto-connector"></div>
+
+                        <div class="ponto-trajeto">
+                            <div class="ponto-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="ponto-info">
+                                <h4>Ruas Históricas</h4>
+                                <p>Construções coloniais e arquitetura preservada</p>
+                                <span class="ponto-tipo normal-tag">TRAJETO</span>
+                            </div>
+                        </div>
+
+                        <div class="trajeto-connector"></div>
+
+                        <div class="ponto-trajeto">
+                            <div class="ponto-icon">
+                                <i class="fa-solid fa-flag-checkered"></i>
+                            </div>
+                            <div class="ponto-info">
+                                <h4>Largo das Neves</h4>
+                                <p>Santa Teresa - Centro cultural e artístico</p>
+                                <span class="ponto-tipo fim-tag">DESTINO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informações Práticas -->
+        <section class="praticas-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-info-circle"></i>
+                    Informações Práticas
+                </h2>
+                
+                <div class="praticas-grid">
+                    <div class="pratica-card">
+                        <div class="pratica-icon">
+                            <i class="fa-solid fa-ticket-alt"></i>
+                        </div>
+                        <h3>Como Comprar</h3>
+                        <ul>
+                            <li>Pagamento no embarque</li>
+                            <li>Dinheiro ou cartão</li>
+                            <li>Bilhete ida e volta</li>
+                            <li>Válido para ambos os sentidos</li>
+                        </ul>
+                    </div>
+
+                    <div class="pratica-card">
+                        <div class="pratica-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3>Capacidade</h3>
+                        <ul>
+                            <li>Lotação limitada</li>
+                            <li>Chegada por ordem</li>
+                            <li>Aguarde na fila</li>
+                            <li>Respeite os idosos</li>
+                        </ul>
+                    </div>
+
+                    <div class="pratica-card">
+                        <div class="pratica-icon">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h3>Dicas de Viagem</h3>
+                        <ul>
+                            <li>Leve câmera fotográfica</li>
+                            <li>Vista roupas confortáveis</li>
+                            <li>Chegue com antecedência</li>
+                            <li>Aproveite as vistas</li>
+                        </ul>
+                    </div>
+
+                    <div class="pratica-card">
+                        <div class="pratica-icon">
+                            <i class="fa-solid fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Importante</h3>
+                        <ul>
+                            <li>Sujeito a condições climáticas</li>
+                            <li>Manutenções programadas</li>
+                            <li>Consulte funcionamento</li>
+                            <li>Siga as orientações</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download PDF -->
+        <section class="download-section">
+            <div class="container">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="download-content">
+                        <h3>Guia Completo do Bonde de Santa Teresa</h3>
+                        <p>Baixe o guia completo com todas as informações, mapas detalhados, história e dicas para sua viagem nos bondes de Santa Teresa.</p>
+                        <div class="download-info">
+                            <span><i class="fa-solid fa-file"></i> PDF - 2.5 MB</span>
+                            <span><i class="fa-solid fa-language"></i> Português</span>
+                            <span><i class="fa-solid fa-calendar"></i> Atualizado em 2025</span>
+                        </div>
+                    </div>
+                    <div class="download-action">
+                        <button class="btn-download" onclick="baixarPDF()">
+                            <i class="fa-solid fa-download"></i>
+                            Clique aqui para acessar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato e Informações -->
+        <section class="contato-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-phone"></i>
+                    Contato e Informações
+                </h2>
+                
+                <div class="contato-grid">
+                    <div class="contato-card">
+                        <div class="contato-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h3>Central de Informações</h3>
+                        <p><strong>(21) 2333-9000</strong></p>
+                        <p>Segunda a Sexta: 8h às 18h</p>
+                    </div>
+
+                    <div class="contato-card">
+                        <div class="contato-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3>E-mail</h3>
+                        <p><strong>bonde@central.rj.gov.br</strong></p>
+                        <p>Dúvidas e informações</p>
+                    </div>
+
+                    <div class="contato-card">
+                        <div class="contato-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3>Site Oficial</h3>
+                        <p><strong>www.rj.gov.br/bondesdesantateresa</strong></p>
+                        <p>Informações atualizadas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Função para abrir visualização completa do monitoramento
+        function abrirVisualizacaoCompleta() {
+            window.open(
+                "https://monitoramento.mobilesat.com.br/locator/index.html?t=4ebee7c35e2e2fbedde92f4b2611c141F0AA094FB415B295867B3BD93520050BB6566DD7",
+                "_blank",
+                "width=1200,height=800,scrollbars=yes,resizable=yes"
+            );
+        }
+
+        // Função para baixar PDF
+        function baixarPDF() {
+            // Implementar download do PDF
+            alert("Funcionalidade de download será implementada em breve!");
+        }
+
+        // Atualizar horário em tempo real
+        function atualizarHorario() {
+            const agora = new Date();
+            const horario = agora.toLocaleTimeString('pt-BR');
+            
+            // Atualizar elementos que mostram horário se existirem
+            const elementosHorario = document.querySelectorAll('.horario-atual');
+            elementosHorario.forEach(elemento => {
+                elemento.textContent = horario;
+            });
+        }
+
+        // Atualizar a cada segundo
+        setInterval(atualizarHorario, 1000);
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animação de entrada para elementos quando ficam visíveis
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animação
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.info-card, .galeria-item, .pratica-card, .contato-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Funcionalidade de busca
+        document.querySelector('.search-btn')?.addEventListener('click', function() {
+            const searchInput = document.querySelector('.search-input');
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (searchTerm) {
+                // Buscar texto na página
+                const allText = document.body.innerText.toLowerCase();
+                if (allText.includes(searchTerm)) {
+                    // Destacar resultado (implementação básica)
+                    alert(`Encontrado: "${searchTerm}" na página!`);
+                } else {
+                    alert(`Termo "${searchTerm}" não encontrado na página.`);
+                }
+            }
+        });
+
+        // Enter key para busca
+        document.querySelector('.search-input')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-btn').click();
+            }
+        });
+
+        // Lazy loading para imagens
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Inicialização quando a página carrega
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Site do Bonde de Santa Teresa carregado com sucesso!');
+            
+            // Verificar se o iframe do monitoramento carregou
+            const iframe = document.getElementById('monitoramento-iframe');
+            if (iframe) {
+                iframe.addEventListener('load', function() {
+                    console.log('Monitoramento em tempo real carregado');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

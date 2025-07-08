@@ -1,0 +1,576 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #192844 0%, #005a92 100%);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin-bottom: 25px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-family: "Antenna Regular", sans-serif;
+}
+
+/* Hero Animation */
+.hero-animation {
+  position: relative;
+}
+
+.transport-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.transport-item {
+  font-size: 3.5rem;
+  opacity: 0.8;
+  animation: transportFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+.transport-item.bonde {
+  animation-delay: 0s;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+}
+
+.transport-item.trem {
+  animation-delay: 1.3s;
+}
+
+.transport-item.teleferico {
+  animation-delay: 2.6s;
+}
+
+@keyframes transportFloat {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translateY(-12px) scale(1.1);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-8px) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Content Cards */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.content-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(90deg, #192844 67.81%, #005a92 100%);
+  color: white;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header i {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.card-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.card-header h2 {
+  font-size: 1.6rem;
+  font-family: "Antenna Bold", sans-serif;
+  margin: 0;
+}
+
+.card-content {
+  padding: 20px 25px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Seções específicas */
+.intro-section .content-card {
+  border-left: 4px solid #005a92;
+}
+
+.activities-section .content-card {
+  border-left: 4px solid #192844;
+}
+
+.objectives-section .content-card {
+  border-left: 4px solid #4a90e2;
+}
+
+/* Actions Grid */
+.actions-section {
+  margin: 30px 0;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.action-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+  border-left: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card:nth-child(1) {
+  border-left-color: #f5a623;
+  animation-delay: 0.1s;
+}
+
+.action-card:nth-child(2) {
+  border-left-color: #7ed321;
+  animation-delay: 0.2s;
+}
+
+.action-card:nth-child(3) {
+  border-left-color: #50e3c2;
+  animation-delay: 0.3s;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.action-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 90, 146, 0.05), transparent);
+  animation: cardShimmer 4s infinite;
+}
+
+@keyframes cardShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Hologram Effect */
+.action-icon {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hologram-effect {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #192844, #005a92);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.emoji-icon {
+  font-size: 2rem;
+  z-index: 2;
+  position: relative;
+  animation: hologramPulse 2s ease-in-out infinite;
+}
+
+.action-card:nth-child(1) .emoji-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes hologramPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+  }
+}
+
+.action-card:nth-child(1) .emoji-icon {
+  animation: bondeHologramPulse 2s ease-in-out infinite;
+}
+
+@keyframes bondeHologramPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+  }
+}
+
+.hologram-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.1) 2px,
+    rgba(255, 255, 255, 0.1) 4px
+  );
+  animation: hologramScan 3s linear infinite;
+}
+
+@keyframes hologramScan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.action-content h3 {
+  font-size: 1.2rem;
+  font-family: "Antenna Bold", sans-serif;
+  color: #192844;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.action-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+/* Commitment Section */
+.commitment-section {
+  margin-top: 30px;
+}
+
+.commitment-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #005a92;
+  position: relative;
+}
+
+.commitment-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, rgba(0, 90, 146, 0.1) 50%, transparent 51%);
+  animation: commitmentGlow 4s ease-in-out infinite;
+}
+
+@keyframes commitmentGlow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.commitment-card .card-header {
+  background: linear-gradient(90deg, #005a92 0%, #192844 100%);
+}
+
+.commitment-card .card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.commitment-card .card-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #192844;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background: #192844;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .central-container {
+    padding: 12px;
+  }
+
+  .actions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .transport-item {
+    font-size: 2.8rem;
+  }
+
+  .card-header {
+    padding: 15px 20px;
+  }
+
+  .card-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-content {
+    padding: 18px 20px;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .action-card {
+    padding: 18px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hologram-effect {
+    width: 60px;
+    height: 60px;
+  }
+
+  .emoji-icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .central-container {
+    padding: 8px;
+  }
+
+  .hero-section {
+    padding: 25px 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .transport-item {
+    font-size: 2.2rem;
+  }
+
+  .card-header {
+    padding: 12px 15px;
+  }
+
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+  }
+
+  .action-card {
+    padding: 15px 12px;
+  }
+
+  .action-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .action-content p {
+    font-size: 0.9rem;
+  }
+
+  .commitment-card .card-content p {
+    font-size: 1rem;
+  }
+
+  .hologram-effect {
+    width: 55px;
+    height: 55px;
+  }
+
+  .emoji-icon {
+    font-size: 1.6rem;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estados de foco para acessibilidade */
+.content-card:focus-within {
+  outline: 3px solid #005a92;
+  outline-offset: 2px;
+}
+
+.action-card:focus-within {
+  outline: 3px solid #005a92;
+  outline-offset: 2px;
+}

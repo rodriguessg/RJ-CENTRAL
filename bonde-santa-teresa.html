@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="central-css/footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
 <body>
 <div class="logo">
   <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
@@ -119,6 +118,103 @@
     </div>
   </section>
 
+  <!-- Monitoramento em Tempo Real -->
+  <section class="monitoramento-section" id="monitoramento">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fa-solid fa-satellite-dish"></i>
+        Monitoramento em Tempo Real
+      </h2>
+      
+      <div class="monitoramento-container">
+        <div class="monitoramento-header">
+          <div class="status-info">
+            <div class="status-indicator">
+              <i class="fa-solid fa-circle status-online"></i>
+              <span>Sistema Online</span>
+            </div>
+            <div class="update-time">
+              <i class="fa-solid fa-sync-alt"></i>
+              <span>Atualização em tempo real</span>
+            </div>
+          </div>
+          <div class="monitoramento-controls">
+            <button class="btn-visualizacao-completa" onclick="abrirVisualizacaoCompleta()">
+              <i class="fa-solid fa-external-link-alt"></i>
+              Visualização Completa
+            </button>
+          </div>
+        </div>
+        
+        <div class="iframe-container">
+          <iframe 
+            id="monitoramento-iframe"
+            src="https://monitoramento.mobilesat.com.br/locator/index.html?t=4ebee7c35e2e2fbedde92f4b2611c141F0AA094FB415B295867B3BD93520050BB6566DD7"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Monitoramento em Tempo Real - Bonde de Santa Teresa">
+          </iframe>
+        </div>
+        
+        <div class="monitoramento-info">
+          <div class="info-grid">
+            <div class="info-item">
+              <i class="fa-solid fa-train"></i>
+              <div class="info-content">
+                <span class="info-label">Composições Ativas</span>
+                <span class="info-value" id="composicoes-ativas">Carregando...</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-clock"></i>
+              <div class="info-content">
+                <span class="info-label">Próxima Partida</span>
+                <span class="info-value" id="proxima-partida">Carregando...</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-route"></i>
+              <div class="info-content">
+                <span class="info-label">Status da Linha</span>
+                <span class="info-value status-operacional" id="status-linha">Operacional</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-users"></i>
+              <div class="info-content">
+                <span class="info-label">Capacidade Atual</span>
+                <span class="info-value" id="capacidade-atual">Normal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="legenda-monitoramento">
+          <h4><i class="fa-solid fa-info-circle"></i> Legenda do Monitoramento</h4>
+          <div class="legenda-items">
+            <div class="legenda-item">
+              <div class="legenda-cor bonde-ativo"></div>
+              <span>Bonde em Operação</span>
+            </div>
+            <div class="legenda-item">
+              <div class="legenda-cor estacao-ativa"></div>
+              <span>Estação Ativa</span>
+            </div>
+            <div class="legenda-item">
+              <div class="legenda-cor trajeto-linha"></div>
+              <span>Linha do Trajeto</span>
+            </div>
+            <div class="legenda-item">
+              <div class="legenda-cor ponto-interesse"></div>
+              <span>Ponto de Interesse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Galeria Explicativa -->
   <section class="galeria-section" id="galeria">
     <div class="container">
@@ -131,7 +227,7 @@
         <!-- Mapa das Linhas -->
         <div class="galeria-item destaque">
           <div class="item-image">
-            <img src="img/bonde-img/linhas.png" alt="Mapa das linhas do Bonde de Santa Teresa" class="galeria-img">
+            <img src="img/mapa-linhas-bonde.png" alt="Mapa das linhas do Bonde de Santa Teresa" class="galeria-img">
           </div>
           <div class="item-content">
             <h3><i class="fa-solid fa-map"></i> Esquema das Linhas</h3>
@@ -152,7 +248,7 @@
         <!-- Bonde Histórico -->
         <div class="galeria-item">
           <div class="item-image">
-            <img src="img/bonde-img/bonde1.jpeg" alt="Bonde amarelo histórico de Santa Teresa" class="galeria-img">
+            <img src="/placeholder.svg?height=300&width=400" alt="Bonde amarelo histórico de Santa Teresa" class="galeria-img">
           </div>
           <div class="item-content">
             <h3><i class="fa-solid fa-train"></i> Composições Históricas</h3>
@@ -173,7 +269,7 @@
         <!-- Arcos da Lapa -->
         <div class="galeria-item">
           <div class="item-image">
-            <img src="img/bonde-img/lapa.jpg" alt="Bonde passando pelos Arcos da Lapa" class="galeria-img">
+            <img src="/placeholder.svg?height=300&width=400" alt="Bonde passando pelos Arcos da Lapa" class="galeria-img">
           </div>
           <div class="item-content">
             <h3><i class="fa-solid fa-archway"></i> Passagem pelos Arcos da Lapa</h3>
@@ -194,7 +290,7 @@
         <!-- Santa Teresa -->
         <div class="galeria-item">
           <div class="item-image">
-            <img src="img/bonde-img/bairros.jpg" alt="Ruas de Santa Teresa com ateliês e casarões" class="galeria-img">
+            <img src="/placeholder.svg?height=300&width=400" alt="Ruas de Santa Teresa com ateliês e casarões" class="galeria-img">
           </div>
           <div class="item-content">
             <h3><i class="fa-solid fa-palette"></i> Bairro de Santa Teresa</h3>
@@ -236,7 +332,7 @@
         <!-- Experiência do Passeio -->
         <div class="galeria-item">
           <div class="item-image">
-            <img src="img/bonde-img/turista.jpg" alt="Turistas aproveitando a vista durante o passeio de bonde" class="galeria-img">
+            <img src="/placeholder.svg?height=300&width=400" alt="Turistas aproveitando a vista durante o passeio de bonde" class="galeria-img">
           </div>
           <div class="item-content">
             <h3><i class="fa-solid fa-heart"></i> Experiência Inesquecível</h3>
@@ -456,7 +552,7 @@
           <div class="download-info">
             <span><i class="fa-solid fa-file"></i> PDF - 2.5 MB</span>
             <span><i class="fa-solid fa-language"></i> Português</span>
-            <span><i class="fa-solid fa-calendar"></i> Atualizado em 2025</span>
+            <span class="fa-solid fa-calendar"></i> Atualizado em 2025</span>
           </div>
         </div>
         <div class="download-action">

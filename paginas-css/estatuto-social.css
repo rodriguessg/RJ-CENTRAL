@@ -1,0 +1,645 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Container principal */
+.estatuto-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #192844, #005a92);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin-bottom: 25px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-family: "Antenna Bold", sans-serif;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.hero-icon {
+  font-size: 4rem;
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Cards de conteúdo */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho dos cards */
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  margin: -20px -20px 20px -20px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 12px 12px 0 0;
+  color: white;
+}
+
+.card-header i {
+  font-size: 1.3rem;
+  margin-right: 12px;
+}
+
+.card-header h2 {
+  font-size: 1.4rem;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Conteúdo dos cards */
+.card-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card-content p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Grid de informações */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.info-label {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: #475569;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.status-active {
+  background: #10b981;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Flow Container - Mantendo compacto apenas esta seção */
+.flow-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+  overflow-x: auto;
+  min-height: 280px;
+}
+
+.flow-step {
+  flex: 1;
+  max-width: 250px;
+  min-width: 220px;
+}
+
+.flow-card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out both;
+  text-align: center;
+}
+
+.flow-card.original {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+
+.flow-card.revision {
+  border-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+.flow-card.current {
+  border-color: #dc2626;
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+}
+
+.flow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.flow-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.flow-card.original .flow-icon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.flow-card.revision .flow-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.flow-card.current .flow-icon {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  animation: pdfPulse 2s ease-in-out infinite;
+}
+
+@keyframes pdfPulse {
+  0%,
+  100% {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 3px 10px rgba(220, 38, 38, 0.4), 0 0 0 6px rgba(220, 38, 38, 0.1);
+  }
+}
+
+.flow-card h3 {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.flow-date {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+}
+
+.flow-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.detail-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateX(3px);
+}
+
+.detail-item strong {
+  font-family: "Antenna Bold", sans-serif;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.85rem;
+}
+
+.detail-item p {
+  color: #64748b;
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Setas do Fluxo */
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  margin-top: 60px;
+  flex-shrink: 0;
+}
+
+.flow-arrow i {
+  font-size: 2rem;
+  color: #3b82f6;
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%,
+  100% {
+    transform: translateX(0);
+    color: #3b82f6;
+  }
+  50% {
+    transform: translateX(6px);
+    color: #1d4ed8;
+  }
+}
+
+/* Botão Principal do PDF */
+.pdf-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.pdf-main-button {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+  min-width: 100px;
+  justify-content: center;
+}
+
+.pdf-main-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+}
+
+.pdf-main-button i {
+  font-size: 1.2rem;
+}
+
+/* Caixa de destaque */
+.highlight-box {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 18px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.highlight-box i {
+  font-size: 1.3rem;
+  color: #d97706;
+  margin-right: 12px;
+  margin-top: 3px;
+}
+
+.highlight-box div {
+  flex: 1;
+}
+
+.highlight-box strong {
+  color: #92400e;
+  font-family: "Antenna Bold", sans-serif;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.highlight-box p {
+  margin: 0;
+  color: #78350f;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .estatuto-container {
+    padding: 12px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .estatuto-container {
+    padding: 10px;
+  }
+
+  .hero-section {
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-icon {
+    margin-top: 15px;
+    font-size: 3rem;
+  }
+
+  .content-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .card-header {
+    padding: 15px;
+    margin: -15px -15px 15px -15px;
+  }
+
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+
+  .flow-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    min-height: auto;
+  }
+
+  .flow-step {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .flow-arrow {
+    height: auto;
+    margin-top: 0;
+    transform: rotate(90deg);
+  }
+
+  .flow-arrow i {
+    font-size: 1.5rem;
+  }
+
+  .flow-card {
+    padding: 15px;
+  }
+
+  .flow-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .flow-card h3 {
+    font-size: 1rem;
+  }
+
+  .detail-item {
+    padding: 8px;
+  }
+
+  .pdf-main-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .hero-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-header {
+    padding: 12px;
+    margin: -15px -15px 12px -15px;
+  }
+
+  .card-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-content {
+    font-size: 0.9rem;
+  }
+
+  .flow-card {
+    padding: 12px;
+  }
+
+  .flow-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .flow-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .flow-date {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .detail-item {
+    padding: 6px;
+  }
+
+  .detail-item strong {
+    font-size: 0.8rem;
+  }
+
+  .detail-item p {
+    font-size: 0.75rem;
+  }
+
+  .pdf-main-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
+
+  .highlight-box {
+    padding: 15px;
+  }
+
+  .highlight-box strong {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-card {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.content-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.content-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.content-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.flow-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.flow-step:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.flow-step:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estados de foco para acessibilidade */
+.content-card:focus-within {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.pdf-main-button:focus {
+  outline: 3px solid #dc2626;
+  outline-offset: 2px;
+}
