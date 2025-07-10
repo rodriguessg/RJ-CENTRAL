@@ -1,0 +1,289 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Container principal */
+.compliance-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+/* Seções de compliance */
+.compliance-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.compliance-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho das seções */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+.section-icon i {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.section-header h3 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Conteúdo das seções */
+.section-content {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.section-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Link para documento */
+.document-link {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+/* Informações do comitê */
+.committee-info {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #3b82f6;
+}
+
+.committee-info h4 {
+  color: #1e293b;
+  margin-bottom: 8px;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+.committee-info a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.committee-info a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ Items */
+.faq-item {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
+}
+
+.faq-item h4 {
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+.faq-item p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.faq-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ícones específicos por seção */
+#etica-integridade .section-icon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+#codigo-conduta .section-icon {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+#comite-etica .section-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+#programa-integridade .section-icon {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+#perguntas-respostas .section-icon {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .compliance-container {
+    padding: 20px 10px;
+  }
+
+  .compliance-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .faq-item {
+    padding: 20px;
+  }
+
+  .btn-download {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compliance-section {
+    padding: 15px;
+  }
+
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-item h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.compliance-section {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.compliance-section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.compliance-section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.compliance-section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.compliance-section:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.compliance-section:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Melhorias de acessibilidade */
+.section-content a:focus,
+.btn-download:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

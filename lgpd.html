@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LGPD - Lei Geral de Proteção de Dados - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/lgpd.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+      <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro"> 
+    <section class="search-section">
+      <h1>Lei Geral de Proteção de Dados - LGPD</h1>
+      <input type="text" placeholder="Buscar informação">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#o-que-e-lgpd"><i class="fa-solid fa-info-circle"></i> O que é LGPD</a></li>
+        <li><a href="#dados-pessoais"><i class="fa-solid fa-user-shield"></i> Dados Pessoais</a></li>
+        <li><a href="#principios"><i class="fa-solid fa-list-check"></i> Princípios</a></li>
+        <li><a href="#direitos-titular"><i class="fa-solid fa-user-check"></i> Direitos do Titular</a></li>
+        <li><a href="#agentes-tratamento"><i class="fa-solid fa-users-cog"></i> Agentes de Tratamento</a></li>
+        <li><a href="#contato-dpo"><i class="fa-solid fa-envelope"></i> Contato DPO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- O que é a LGPD -->
+    <section class="content-card" id="o-que-e-lgpd">
+      <div class="card-header">
+        <i class="fa-solid fa-shield-alt"></i>
+        <h2>O que é a LGPD?</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          A Lei Geral de Proteção de Dados pessoais - <strong>lei 13.709/18</strong> – disciplina a relação de proteção de dados pessoais (Pessoas Físicas), tratados por Pessoas Jurídicas, Públicas ou Privadas, com o objetivo de proteger os direitos fundamentais de liberdade e privacidade do cidadão.
+        </p>
+        <p>
+          Esta lei estabelece regras claras sobre coleta, armazenamento, tratamento e compartilhamento de dados pessoais, garantindo maior controle aos cidadãos sobre suas informações pessoais e criando um ambiente mais seguro e transparente para o tratamento de dados no Brasil.
+        </p>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-certificate"></i>
+            LEI FEDERAL 13.709/18
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-eye"></i>
+            PROTEÇÃO DE DADOS
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-user-shield"></i>
+            DIREITOS FUNDAMENTAIS
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dados Pessoais -->
+    <section class="content-card" id="dados-pessoais">
+      <div class="card-header">
+        <i class="fa-solid fa-user-shield"></i>
+        <h2>Dados Pessoais</h2>
+      </div>
+      <div class="card-content">
+        <div class="dados-section">
+          <h3><strong>O que é Dado Pessoal?</strong></h3>
+          <p>Informação relacionada a pessoa natural identificada ou identificável.</p>
+        </div>
+        
+        <div class="dados-section">
+          <h3><strong>O que é Dado Pessoal Sensível?</strong></h3>
+          <p>
+            Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural.
+          </p>
+        </div>
+
+        <div class="info-badges">
+          <span class="badge dados-comum">
+            <i class="fa-solid fa-user"></i>
+            DADOS COMUNS
+          </span>
+          <span class="badge dados-sensiveis">
+            <i class="fa-solid fa-user-lock"></i>
+            DADOS SENSÍVEIS
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Princípios -->
+    <section class="content-card" id="principios">
+      <div class="card-header">
+        <i class="fa-solid fa-list-check"></i>
+        <h2>Princípios (Art. 6)</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          A LGPD estabelece princípios fundamentais que devem orientar o tratamento de dados pessoais, garantindo que as atividades de processamento sejam realizadas de forma ética, transparente e respeitosa aos direitos dos titulares.
+        </p>
+        <p>
+          <strong>Total de princípios estabelecidos:</strong> 11 princípios<br>
+          <strong>Aplicação:</strong> Obrigatória para todos os agentes de tratamento<br>
+          <strong>Objetivo:</strong> Garantir proteção e transparência no tratamento de dados
+        </p>
+        
+        <!-- Toggle para Princípios -->
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-principios" class="toggle-checkbox">
+          <label for="toggle-principios" class="toggle-button">
+            <i class="fa-solid fa-balance-scale"></i>
+            Ver Todos os Princípios
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="principios-grid">
+              <div class="principio-item">
+                <h4>Boa-Fé</h4>
+                <p>Adoção de medidas de segurança nas fases do tratamento de dados pessoais, para que terceiros não tenham acesso a essas informações, evitando qualquer forma de tratamento inadequado ou ilícito.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Finalidade</h4>
+                <p>Realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Adequação</h4>
+                <p>Compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Necessidade</h4>
+                <p>Limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Livre Acesso</h4>
+                <p>Garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Qualidade dos Dados</h4>
+                <p>Garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Transparência</h4>
+                <p>Garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Segurança</h4>
+                <p>Utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Prevenção</h4>
+                <p>Adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Não Discriminação</h4>
+                <p>Impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos.</p>
+              </div>
+              
+              <div class="principio-item">
+                <h4>Responsabilização e Prestação de Contas</h4>
+                <p>Demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direitos do Titular -->
+    <section class="content-card" id="direitos-titular">
+      <div class="card-header">
+        <i class="fa-solid fa-user-check"></i>
+        <h2>Direitos do Titular (Art. 18)</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          O titular dos dados pessoais tem direito a obter do controlador, em relação aos dados do titular por ele tratados, a qualquer momento e mediante requisição. Estes direitos garantem ao cidadão controle total sobre suas informações pessoais.
+        </p>
+        <p>
+          <strong>Total de direitos garantidos:</strong> 9 direitos fundamentais<br>
+          <strong>Exercício:</strong> A qualquer momento mediante requisição<br>
+          <strong>Gratuidade:</strong> Acesso facilitado e gratuito
+        </p>
+        
+        <!-- Toggle para Direitos -->
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-direitos" class="toggle-checkbox">
+          <label for="toggle-direitos" class="toggle-button">
+            <i class="fa-solid fa-user-check"></i>
+            Ver Todos os Direitos
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="direitos-list">
+              <div class="direito-item">
+                <span>Confirmação da existência de tratamento</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Acesso aos dados</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Correção de dados incompletos, inexatos ou desatualizados</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto nesta Lei</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa e observados os segredos comercial e industrial, de acordo com a regulamentação do órgão controlador</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Eliminação dos dados pessoais tratados com o consentimento do titular, exceto nas hipóteses previstas no art. 16 desta Lei</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Informação das entidades públicas e privadas com as quais o controlador realizou uso compartilhado de dados</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa</span>
+              </div>
+              
+              <div class="direito-item">
+                <span>Revogação do consentimento, nos termos do § 5º do art. 8º desta Lei</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agentes de Tratamento -->
+    <section class="content-card" id="agentes-tratamento">
+      <div class="card-header">
+        <i class="fa-solid fa-users-cog"></i>
+        <h2>Agentes de Tratamento (Art. 5 e Art. 37 ao 41)</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          A LGPD define três tipos de agentes responsáveis pelo tratamento de dados pessoais, cada um com funções e responsabilidades específicas no processo de proteção e tratamento adequado das informações pessoais.
+        </p>
+        <p>
+          <strong>Tipos de agentes:</strong> 3 categorias principais<br>
+          <strong>Responsabilidades:</strong> Definidas pelos artigos 5 e 37 ao 41<br>
+          <strong>Aplicação na CENTRAL:</strong> Todos os agentes devidamente designados
+        </p>
+        
+        <!-- Toggle para Agentes -->
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-agentes" class="toggle-checkbox">
+          <label for="toggle-agentes" class="toggle-button">
+            <i class="fa-solid fa-users-cog"></i>
+            Ver Detalhes dos Agentes
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="agentes-grid">
+              <div class="agente-item">
+                <h4>Controlador</h4>
+                <p><strong>Definição:</strong> Pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais.</p>
+                <div class="central-info">
+                  <p><strong>No âmbito da CENTRAL:</strong> Em todos os tratamentos de dados, a CENTRAL é o agente de tratamento que detém as decisões sobre os mesmos. Sendo assim, a CENTRAL sempre exerce o papel de Controlador dos dados pessoais que trata.</p>
+                </div>
+              </div>
+              
+              <div class="agente-item">
+                <h4>Operador</h4>
+                <p><strong>Definição:</strong> Pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.</p>
+                <div class="central-info">
+                  <p><strong>Na CENTRAL:</strong> Em diversos tratamentos a CENTRAL tem operadores contratados (terceiros), em que exercem suas atividades que contemplam tratamento de dados pessoais.</p>
+                </div>
+              </div>
+              
+              <div class="agente-item">
+                <h4>Encarregado de Proteção de Dados</h4>
+                <p><strong>Definição:</strong> Pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+                <div class="central-info">
+                  <p><strong>Designação na CENTRAL:</strong> A CENTRAL designou seus Encarregados pelo Tratamento de Dados Pessoais através da PORTARIA CENTRAL SEI Nº 565 DE 19 DE SETEMBRO DE 2023.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato DPO -->
+    <section class="content-card" id="contato-dpo">
+      <div class="card-header">
+        <i class="fa-solid fa-envelope"></i>
+        <h2>Contato - Encarregado de Proteção de Dados (DPO)</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          A CENTRAL designou oficialmente seus Encarregados pelo Tratamento de Dados Pessoais, que atuam como canal direto de comunicação entre a instituição, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).
+        </p>
+        <p>
+          <strong>Responsáveis designados:</strong> 2 profissionais qualificados<br>
+          <strong>Designação oficial:</strong> PORTARIA CENTRAL SEI Nº 565/2023<br>
+          <strong>Disponibilidade:</strong> Canal de atendimento permanente
+        </p>
+        
+        <div class="contato-info">
+          <div class="dpo-details">
+            <h3><strong>Encarregados pelo Tratamento de Dados Pessoais - DPO</strong></h3>
+            <ul class="dpo-list">
+              <li>Fernando Kaczelnik</li>
+              <li>Priscilla Barbosa Dantas</li>
+            </ul>
+            
+            <div class="contato-email">
+              <p><strong>E-mail para contato:</strong></p>
+              <a href="mailto:encarregado@central.rj.gov.br" class="email-link">
+                encarregado@central.rj.gov.br
+              </a>
+            </div>
+            
+            <div class="documento-oficial">
+              <a href="pdfs/portarias/portaria-central-sei-565-2023.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>PORTARIA CENTRAL SEI Nº 565 DE 19 DE SETEMBRO DE 2023</span>
+                <small>(Designação dos Encarregados da CENTRAL)</small>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-badges">
+          <span class="badge contato">
+            <i class="fa-solid fa-phone"></i>
+            CANAL OFICIAL
+          </span>
+          <span class="badge disponivel">
+            <i class="fa-solid fa-clock"></i>
+            DISPONÍVEL 24H
+          </span>
+          <span class="badge gratuito">
+            <i class="fa-solid fa-envelope"></i>
+            ATENDIMENTO GRATUITO
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+</body>
+</html>

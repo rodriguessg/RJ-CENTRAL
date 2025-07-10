@@ -1,0 +1,349 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Container principal */
+.documentos-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+/* Seção de introdução */
+.intro-section {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-family: "Antenna Bold", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.intro-text p {
+  margin-bottom: 15px;
+}
+
+/* Seções de documentos */
+.documentos-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.documentos-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabeçalho das seções */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.section-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+}
+
+.section-icon i {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.section-header h3 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Conteúdo das seções */
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Item de documento */
+.documento-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.documento-item:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Informações do documento */
+.documento-info {
+  flex: 1;
+}
+
+.documento-data {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.documento-titulo {
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-family: "Antenna Bold", sans-serif;
+  line-height: 1.4;
+}
+
+/* Ações do documento */
+.documento-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-acessar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-acessar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.btn-acessar:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Ícones específicos por seção */
+#codigos .section-icon {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+#regulamentos .section-icon {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+#politicas .section-icon {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+#regimentos .section-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .documentos-container {
+    padding: 20px 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .documentos-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .documento-item {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .documento-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .documentos-section {
+    padding: 15px;
+  }
+
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .documento-item {
+    padding: 15px;
+  }
+
+  .btn-acessar {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.documentos-section {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.documentos-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.documentos-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.documentos-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.documentos-section:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Melhorias de acessibilidade */
+.btn-acessar:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animação de sucesso para cópia */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-copy.copied {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Tooltip para links copiados */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: "Link copiado!";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip.show::after {
+  opacity: 1;
+}
