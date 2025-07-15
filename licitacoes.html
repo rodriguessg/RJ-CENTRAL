@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licitações - Central do Brasil</title>
     <link rel="stylesheet" href="paginas-css/licitacoes.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
 </head>
-<style>
+
+<body>
+    <div class="container">
+      
+      <style>
     * {
   margin: 0;
   padding: 0;
@@ -194,12 +198,14 @@
 }
 
 /* Seção de Documentos */
-.documents-section {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
+details[open] .documents-section {
+  max-height: none;
+  overflow: visible;
+  padding: 20px 25px;
   background: #f8f9fa;
+  transition: none;
 }
+
 
 .toggle-checkbox:checked ~ .documents-section {
   max-height: 2000px;
@@ -401,20 +407,57 @@
     font-size: 0.85rem;
   }
 }
+details.licitacao-toggle summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+details.licitacao-toggle[open] summary .toggle-text::before {
+  content: "- ";
+}
+
+details.licitacao-toggle summary i {
+  transition: transform 0.3s ease;
+}
+
+details.licitacao-toggle[open] summary i {
+  transform: rotate(180deg);
+}
+
+details.licitacao-toggle .documents-section {
+  padding: 20px 25px;
+  background: #f8f9fa;
+
+}
+
+
+details.licitacao-toggle .documents-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 25px; /* para evitar pular no fechamento */
+  background: #f8f9fa;
+}
+
+details.licitacao-toggle[open] .documents-section {
+  max-height: 2000px; /* valor alto suficiente para todo conteúdo */
+  padding: 20px 25px; /* restaura o padding quando aberto */
+}
+
 
 </style>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="logo-section">
-                <img src="img/logo-central.png" alt="Logo Central do Brasil" class="logo">
-                <div class="title-section">
-                    <h1>Central do Brasil</h1>
-                    <p class="subtitle">Licitações e Contratos</p>
-                </div>
-            </div>
-        </div>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
 
         <!-- Main Content -->
         <div class="main-content">
@@ -460,162 +503,167 @@
                     </div>
                 </div>
 
-                <!-- Toggle para documentos -->
-                <input type="checkbox" id="documentos-pregao" class="toggle-checkbox">
-                <label for="documentos-pregao" class="details-toggle">
-                    <span class="toggle-text">+ DETALHES</span>
-                    <i class="fas fa-chevron-down"></i>
-                </label>
+               <!-- Substitua apenas esta parte do seu código anterior pela versão abaixo -->
 
-                <div class="documents-section">
-                    <div class="documents-grid">
-                        <!-- Documentos Iniciais -->
-                        <div class="doc-category">
-                            <h4><i class="fas fa-file-alt"></i> Documentos Iniciais</h4>
-                            <div class="doc-list">
-                                <a href="pdfs/pregao-003-2024/aviso-licitacao-diario-oficial.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso de Licitação no Diário Oficial</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/estudo-tecnico-preliminar.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Estudo Técnico Preliminar</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/termo-referencia-material-servico.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Termo de Referência de Material de Serviço</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/anexo-documentacao-habilitacao.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Anexo - Documentação de habilitação</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/edital-licitacao.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Edital de Licitação</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/anexo-matriz-riscos.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Anexo - Matriz de Riscos</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/minuta-contrato.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Minuta de Contrato</span>
-                                </a>
-                            </div>
-                        </div>
+<!-- Toggle para documentos -->
+<details class="licitacao-toggle">
+  <summary class="details-toggle">
+    <span class="toggle-text">+ DETALHES</span>
+    <i class="fas fa-chevron-down"></i>
+  </summary>
 
-                        <!-- Esclarecimentos -->
-                        <div class="doc-category">
-                            <h4><i class="fas fa-question-circle"></i> Esclarecimentos</h4>
-                            <div class="doc-list">
-                                <a href="pdfs/pregao-003-2024/nota-esclarecimento-1.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Nota de Esclarecimento 1</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/nota-esclarecimento-2.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Nota de Esclarecimento 2</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/nota-esclarecimento-3.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Nota de Esclarecimento 3</span>
-                                </a>
-                            </div>
-                        </div>
+  <div class="documents-section">
+    <div class="documents-grid">
+      <!-- Documentos Iniciais -->
+      <div class="doc-category">
+        <h4><i class="fas fa-file-alt"></i> Documentos Iniciais</h4>
+        <div class="doc-list">
+          <a href="pdfs/pregao-003-2024/aviso-licitacao-diario-oficial.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso de Licitação no Diário Oficial</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/estudo-tecnico-preliminar.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Estudo Técnico Preliminar</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/termo-referencia-material-servico.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Termo de Referência de Material de Serviço</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/anexo-documentacao-habilitacao.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Anexo - Documentação de habilitação</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/edital-licitacao.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Edital de Licitação</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/anexo-matriz-riscos.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Anexo - Matriz de Riscos</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/minuta-contrato.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Minuta de Contrato</span>
+          </a>
+        </div>
+      </div>
 
-                        <!-- Avisos -->
-                        <div class="doc-category">
-                            <h4><i class="fas fa-bell"></i> Avisos e Retomadas</h4>
-                            <div class="doc-list">
-                                <a href="pdfs/pregao-003-2024/aviso-processo-vigilancia.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Processo Vigilância</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-1.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-2.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 2</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-3.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 3</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-4.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 4</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-5.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 5</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-6.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 6</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-retomada-7.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso Retomada 7</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-1.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso 1</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/aviso-2.pdf" target="_blank" class="doc-link">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Aviso 2</span>
-                                </a>
-                            </div>
-                        </div>
+      <!-- Esclarecimentos -->
+      <div class="doc-category">
+        <h4><i class="fas fa-question-circle"></i> Esclarecimentos</h4>
+        <div class="doc-list">
+          <a href="pdfs/pregao-003-2024/nota-esclarecimento-1.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Nota de Esclarecimento 1</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/nota-esclarecimento-2.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Nota de Esclarecimento 2</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/nota-esclarecimento-3.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Nota de Esclarecimento 3</span>
+          </a>
+        </div>
+      </div>
 
-                        <!-- Desclassificações -->
-                        <div class="doc-category">
-                            <h4><i class="fas fa-times-circle"></i> Desclassificações</h4>
-                            <div class="doc-list">
-                                <a href="pdfs/pregao-003-2024/desclassificacao-plima.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Plima</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-vigafort.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Vigafort</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-angels.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Angels</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-flystar.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Flystar</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-innova-air.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Innova Air</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-lfo-peres.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação LFO Peres</span>
-                                </a>
-                                <a href="pdfs/pregao-003-2024/desclassificacao-vigfat.pdf" target="_blank" class="doc-link desclassificacao">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>Desclassificação Inabilitação Vigfat</span>
-                                </a>
-                            </div>
-                        </div>
+      <!-- Avisos -->
+      <div class="doc-category">
+        <h4><i class="fas fa-bell"></i> Avisos e Retomadas</h4>
+        <div class="doc-list">
+          <a href="pdfs/pregao-003-2024/aviso-processo-vigilancia.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Processo Vigilância</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-1.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-2.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 2</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-3.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 3</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-4.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 4</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-5.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 5</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-6.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 6</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-retomada-7.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso Retomada 7</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-1.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso 1</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/aviso-2.pdf" target="_blank" class="doc-link">
+            <i class="fas fa-file-pdf"></i>
+            <span>Aviso 2</span>
+          </a>
+        </div>
+      </div>
 
-                        <!-- Resultado -->
-                        <div class="doc-category">
-                            <h4><i class="fas fa-trophy"></i> Resultado Final</h4>
-                            <div class="doc-list">
-                                <a href="pdfs/pregao-003-2024/do-adjudicacao-homologacao.pdf" target="_blank" class="doc-link resultado">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>DO Adjudicação e Homologação</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Desclassificações -->
+      <div class="doc-category">
+        <h4><i class="fas fa-times-circle"></i> Desclassificações</h4>
+        <div class="doc-list">
+          <a href="pdfs/pregao-003-2024/desclassificacao-plima.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Plima</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-vigafort.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Vigafort</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-angels.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Angels</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-flystar.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Flystar</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-innova-air.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Innova Air</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-lfo-peres.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação LFO Peres</span>
+          </a>
+          <a href="pdfs/pregao-003-2024/desclassificacao-vigfat.pdf" target="_blank" class="doc-link desclassificacao">
+            <i class="fas fa-file-pdf"></i>
+            <span>Desclassificação Inabilitação Vigfat</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="doc-category">
+        <h4><i class="fas fa-trophy"></i> Resultado Final</h4>
+        <div class="doc-list">
+          <a href="pdfs/pregao-003-2024/do-adjudicacao-homologacao.pdf" target="_blank" class="doc-link resultado">
+            <i class="fas fa-file-pdf"></i>
+            <span>DO Adjudicação e Homologação</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</details>
+
                 </div>
             </div>
         </div>

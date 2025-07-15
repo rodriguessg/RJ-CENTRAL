@@ -1,0 +1,459 @@
+/* Definindo as fontes com @font-face */
+@font-face {
+  font-family: "Antenna Regular";
+  src: url("fonts/antenna-regular.woff2") format("woff2"), url("fonts/antenna-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Antenna Bold";
+  src: url("fonts/antenna-bold.woff2") format("woff2"), url("fonts/antenna-bold.woff") format("woff");
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Antenna Regular", sans-serif;
+  background: #f8fafc;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* Container principal */
+.main-container {
+  max-width: 1400px; /* Conforme solicitado */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cards de conteúdo - Design limpo como na imagem */
+.content-card {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.content-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.content-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.content-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.content-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.content-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Header dos cards - Estilo exato da imagem */
+.card-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.card-header.green,
+.card-header.blue,
+.card-header.purple,
+.card-header.orange {
+  background: white;
+}
+
+/* Ícone do header - Estilo da imagem com fundo verde */
+.card-header i {
+  font-size: 1.5rem;
+  color: white;
+  background: #10b981; /* Verde padrão */
+  padding: 12px;
+  border-radius: 8px;
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cores dos ícones para cada tipo de card */
+.card-header.blue i {
+  background: #3b82f6; /* Azul */
+}
+
+.card-header.purple i {
+  background: #8b5cf6; /* Roxo */
+}
+
+.card-header.orange i {
+  background: #f97316; /* Laranja */
+}
+
+.card-header h2 {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.025em;
+}
+
+/* Conteúdo dos cards */
+.card-content {
+  padding: 24px;
+}
+
+.card-content p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: justify;
+}
+
+.card-content p:last-of-type {
+  margin-bottom: 20px;
+}
+
+.card-content p strong {
+  color: #1f2937;
+  font-family: "Antenna Bold", sans-serif;
+}
+
+/* Badges informativos */
+.info-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.oficial {
+  background: #10b981;
+}
+
+.badge.transparencia {
+  background: #3b82f6;
+}
+
+.badge.acesso {
+  background: #8b5cf6;
+}
+
+.badge i {
+  font-size: 0.9rem;
+}
+
+/* Sistema de Toggle */
+.toggle-section {
+  margin-top: 24px;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #dc2626; /* Vermelho padrão para o botão de toggle */
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+.toggle-button:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+}
+
+.toggle-button i:first-child {
+  font-size: 1rem;
+}
+
+.toggle-button .toggle-icon {
+  margin-left: auto;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-button .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f9fafb;
+  border-radius: 0 0 6px 6px;
+}
+
+.toggle-checkbox:checked + .toggle-button + .toggle-content {
+  max-height: 1200px; /* Ajustado para comportar mais documentos */
+  padding: 20px; /* Adicionado padding para o conteúdo do toggle */
+  border: 1px solid #e5e7eb;
+  border-top: none;
+}
+
+/* Grid de documentos */
+.documentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+  /* Removido padding aqui, pois já está no .toggle-content */
+}
+
+.documento-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: white;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.documento-link:hover {
+  border-color: #dc2626;
+  background: #fef2f2;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.15);
+  text-decoration: none;
+  color: #dc2626;
+}
+
+.documento-link i {
+  font-size: 1.2rem;
+  color: #dc2626;
+  min-width: 18px;
+}
+
+.documento-link span {
+  font-family: "Antenna Bold", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .card-header {
+    padding: 16px 20px;
+  }
+
+  .card-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .card-header i {
+    font-size: 1.3rem;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-content p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .toggle-button {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .toggle-content {
+    padding: 15px;
+  }
+
+  .documentos-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    /* Removido padding aqui */
+  }
+
+  .documento-link {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 12px;
+  }
+
+  .card-header {
+    padding: 14px 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .card-header i {
+    font-size: 1.2rem;
+    padding: 8px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .toggle-button {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toggle-button .toggle-icon {
+    margin-left: 0;
+  }
+
+  .toggle-content {
+    padding: 12px;
+  }
+
+  .documento-link {
+    padding: 10px 14px;
+  }
+
+  .documento-link span {
+    font-size: 0.85rem;
+  }
+
+  .documentos-grid {
+    /* Removido padding aqui */
+  }
+}
+
+/* Animações CSS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estados de foco para acessibilidade */
+.toggle-button:focus,
+.documento-link:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Melhorias visuais */
+.content-card {
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-button,
+.documento-link {
+  will-change: transform;
+}
+
+/* Tipografia melhorada */
+.card-content p {
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+/* Melhor contraste para leitura */
+.card-content p {
+  color: #4b5563;
+}
+
+.card-content p strong {
+  color: #1f2937;
+}
+
+/* Estilo específico para seções importantes */
+.highlight-section {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.highlight-section p {
+  margin-bottom: 0;
+  color: #065f46;
+  font-weight: 500;
+}

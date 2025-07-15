@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Serviços e Programas - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/acoes-programa.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Carta de Serviços e Programas</h1>
+      <input type="text" placeholder="Buscar informação">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#carta-de-servicos"><i class="fa-solid fa-file-contract"></i> Carta de Serviços</a></li>
+        <li><a href="#programas"><i class="fa-solid fa-lightbulb"></i> Programas</a></li>
+        <li><a href="#acoes"><i class="fa-solid fa-chart-line"></i> Ações</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- Carta de Serviços -->
+    <section class="content-card" id="carta-de-servicos">
+      <div class="card-header green">
+        <i class="fa-solid fa-file-contract"></i>
+        <h2>Carta de Serviços</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          Uma das principais ações do poder público para comunicação com a sociedade é a 
+          <strong>Carta de Serviços</strong>. Ela foi instituída e regulamentada por intermédio da 
+          Lei Federal 13.460/2017, Lei Estadual 6.052/2011 e Decreto nº 46.836/2019, e objetiva 
+          incentivar o controle social, informar os serviços prestados pelo órgão ou entidade, 
+          as formas de acesso, a obtenção desses serviços e os respectivos compromissos de 
+          atendimento com o público.
+        </p>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-gavel"></i>
+            Base Legal
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-users"></i>
+            Controle Social
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-handshake"></i>
+            Compromisso Público
+          </span>
+        </div>
+        <p>
+          Para acessar a Carta de Serviços da CENTRAL, <a href="pdfs/carta-de-servicos/carta-de-servicos.pdf" target="_blank" class="documento-link-inline">clique aqui <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Programas -->
+    <section class="content-card" id="programas">
+      <div class="card-header blue">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h2>Programas</h2>
+      </div>
+      <div class="card-content">
+        <p>A CENTRAL desenvolve diversos programas com foco em responsabilidade social e parcerias estratégicas para o desenvolvimento e bem-estar da sociedade.</p>
+        
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-responsabilidade-social" class="toggle-checkbox">
+          <label for="toggle-responsabilidade-social" class="toggle-button">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            Responsabilidade Social
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <p>A CENTRAL está comprometida com ações que promovem o desenvolvimento sustentável e o impacto positivo na comunidade.</p>
+              <!-- Se houver um documento específico para Responsabilidade Social, adicione aqui -->
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-convenio-ciee" class="toggle-checkbox">
+          <label for="toggle-convenio-ciee" class="toggle-button">
+            <i class="fa-solid fa-file-contract"></i>
+            CONVÊNIO CIEE 2022
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/programas/convenio-ciee-2022.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Convênio CIEE 2022 - Detalhes</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-convenio-santa-cabrini" class="toggle-checkbox">
+          <label for="toggle-convenio-santa-cabrini" class="toggle-button">
+            <i class="fa-solid fa-file-contract"></i>
+            CONVÊNIO SANTA CABRINI 2022
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/programas/convenio-santa-cabrini-2022.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Convênio Santa Cabrini 2022 - Detalhes</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ações -->
+    <section class="content-card" id="acoes">
+      <div class="card-header purple">
+        <i class="fa-solid fa-chart-line"></i>
+        <h2>Ações</h2>
+      </div>
+      <div class="card-content">
+        <p>A CENTRAL implementa ações estratégicas para aprimorar seus processos e serviços, com destaque para o Plano Estratégico e Diretor de Tecnologia da Informação e Comunicação (PEDTIC).</p>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-pedtic-2024-2027" class="toggle-checkbox">
+          <label for="toggle-pedtic-2024-2027" class="toggle-button">
+            <i class="fa-solid fa-laptop-code"></i>
+            PEDTIC - PLANO ESTRATÉGICO E DIRETOR DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO - 2024 - 2027
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <p>O PEDTIC é o documento que orienta as ações de tecnologia da informação e comunicação da CENTRAL para o período de 2024 a 2027.</p>
+              <a href="pdfs/pedtic/pedtic-2024-2027.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>PEDTIC 2024-2027 Completo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-revisao-pedtic" class="toggle-checkbox">
+          <label for="toggle-revisao-pedtic" class="toggle-button">
+            <i class="fa-solid fa-file-pen"></i>
+            Revisão do PEDTIC (agosto de 2024)
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/pedtic/revisao-pedtic-agosto-2024.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Relatório de Revisão PEDTIC - Agosto 2024</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-pedtic-2025" class="toggle-checkbox">
+          <label for="toggle-pedtic-2025" class="toggle-button">
+            <i class="fa-solid fa-calendar-check"></i>
+            PEDTIC 2025
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/pedtic/pedtic-2025.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>PEDTIC 2025 - Versão Final</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-analise-pedtic" class="toggle-checkbox">
+          <label for="toggle-analise-pedtic" class="toggle-button">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            Análise PEDTIC
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/pedtic/analise-pedtic.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Documento de Análise do PEDTIC</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-pedtic-2025-final" class="toggle-checkbox">
+          <label for="toggle-pedtic-2025-final" class="toggle-button">
+            <i class="fa-solid fa-file-circle-check"></i>
+            PEDTIC_2025.pdf (Versão Final)
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="pdfs/pedtic/PEDTIC_2025_final.pdf" target="_blank" class="documento-link">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Download PEDTIC_2025.pdf</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+</body>
+</html>
