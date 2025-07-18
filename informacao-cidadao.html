@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OuvERJ - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/cidadao.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Sistema OuvERJ</h1>
+      <input type="text" placeholder="Buscar informação">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#sobre-ouverj"><i class="fa-solid fa-bullhorn"></i> Sobre o OuvERJ</a></li>
+        <li><a href="#informacoes-acesso"><i class="fa-solid fa-clipboard-list"></i> Informações para Acesso</a></li>
+        <li><a href="#acessar-sistema"><i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Sistema</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- Sobre o Sistema OuvERJ -->
+    <section class="content-card" id="sobre-ouverj">
+      <div class="card-header blue">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h2>Sobre o Sistema OuvERJ</h2>
+      </div>
+      <div class="card-content">
+        <div class="text-content-box">
+          <p>
+            Permite que qualquer pessoa, física ou jurídica, encaminhe pedidos de acesso à informação, acompanhe o prazo e receba a resposta da solicitação realizada aos órgãos e entidades do Poder Executivo do Estado do Rio de Janeiro.
+          </p>
+          <p>
+            O OuvERJ é o sistema de ouvidoria e transparência informatizado oficial para o registro eletrônico de solicitações de acesso à informação, a ser utilizado pela Rede de Ouvidorias e Transparência do Poder Executivo do Estado do Rio de Janeiro, por determinação do Decreto nº 48.727 de 03 de outubro de 2023, sendo a Ouvidoria e Transparência Geral do Estado (OGE-RJ) seu órgão central.
+          </p>
+        </div>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-gavel"></i>
+            Decreto nº 48.727/2023
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-eye"></i>
+            Transparência
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-handshake"></i>
+            Acesso à Informação
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informações Básicas para Pedido de Acesso à Informação -->
+    <section class="content-card" id="informacoes-acesso">
+      <div class="card-header green">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <h2>Informações para Pedido de Acesso à Informação</h2>
+      </div>
+      <div class="card-content">
+        <div class="text-content-box">
+          <p><strong><i class="fa-solid fa-location-dot"></i> Localização:</strong> Av. Nossa Senhora de Copacabana, 493 - 5º andar - Copacabana - Rio de Janeiro/RJ</p>
+          <p><strong><i class="fa-solid fa-clock"></i> Horário de Funcionamento:</strong> Segunda a sexta-feira das 10h às 17h</p>
+          <p><strong><i class="fa-solid fa-user-tie"></i> Responsável pelo SIC:</strong> Priscilla Dantas</p>
+          <p><strong><i class="fa-solid fa-phone"></i> Telefone para orientação e esclarecimento de dúvidas:</strong> (21) 2333-9139</p>
+          <p><strong><i class="fa-solid fa-envelope"></i> E-mail:</strong> <a href="mailto:ouvidoria@central.rj.gov.br" class="email-link">ouvidoria@central.rj.gov.br</a></p>
+          <p><strong><i class="fa-solid fa-user-shield"></i> Autoridade responsável pelo monitoramento da implementação da Lei de Acesso a Informação:</strong> Priscilla Dantas</p>
+          <p class="info-text">Para mais informações, acessar o menu principal o canal "Ouvidoria".</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acessar Sistema OuvERJ -->
+    <section class="content-card" id="acessar-sistema">
+      <div class="card-header orange">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <h2>Acessar Sistema OuvERJ</h2>
+      </div>
+      <div class="card-content">
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-ouverj-link" class="toggle-checkbox">
+          <label for="toggle-ouverj-link" class="toggle-button">
+            <i class="fa-solid fa-globe"></i>
+            Link do sistema OuvERJ, para registro do pedido de informação
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="https://www.rj.gov.br/ouverj/" target="_blank" class="documento-link">
+                <i class="fa-solid fa-link"></i>
+                <span>Acessar OuvERJ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+</body>
+</html>

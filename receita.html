@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas e Despesas - CENTRAL-RJ</title>
+  <link rel="icon" href="./" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="central-css/styles.css">
+  <link rel="stylesheet" href="paginas-css/receita.css">
+  <link rel="stylesheet" href="central-css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="img/Logo.png" alt="Governo do Estado do Rio de Janeiro">
+    <section class="search-section">
+      <h1>Receitas e Despesas</h1>
+      <input type="text" placeholder="Buscar informação">
+      <button>BUSCAR</button>
+    </section>
+    <img src="img/gov_rj.png" alt="Governo do Estado do Rio de Janeiro">
+  </div>
+
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-solid fa-home"></i> Voltar ao Início</a></li>
+        <li><a href="#visao-geral"><i class="fa-solid fa-chart-line"></i> Visão Geral</a></li>
+        <li><a href="#receitas-detalhes"><i class="fa-solid fa-arrow-down-to-line"></i> Detalhes das Receitas</a></li>
+        <li><a href="#despesas-detalhes"><i class="fa-solid fa-arrow-up-from-bracket"></i> Detalhes das Despesas</a></li>
+        <li><a href="#acesso-portal"><i class="fa-solid fa-link"></i> Acesso ao Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- Visão Geral -->
+    <section class="content-card" id="visao-geral">
+      <div class="card-header green">
+        <i class="fa-solid fa-chart-line"></i>
+        <h2>Visão Geral</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          O Portal de Transparência Fiscal do Governo do Estado do Rio de Janeiro apresenta de forma detalhada as receitas e despesas do Governo.
+        </p>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-eye"></i>
+            Transparência Fiscal
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            Arrecadações e Gastos
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-building-columns"></i>
+            Gestão Pública
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detalhes das Receitas -->
+    <section class="content-card" id="receitas-detalhes">
+      <div class="card-header purple">
+        <i class="fa-solid fa-arrow-down-to-line"></i>
+        <h2>Detalhes das Receitas</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          Nas Receitas são lançadas as arrecadações, em nível de categoria econômica, dos tributos estaduais e demais receitas realizadas pelo Tesouro Estadual, assim como pelas Autarquias, Fundações e Fundos que possuem receita própria. Com estes recursos o Estado, através de seus órgãos e entidades, realiza ações e serviços públicos, investimentos e o custeio da máquina pública.
+        </p>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            Tributos Estaduais
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-coins"></i>
+            Receita Própria
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-gears"></i>
+            Custeio da Máquina Pública
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detalhes das Despesas -->
+    <section class="content-card" id="despesas-detalhes">
+      <div class="card-header orange">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        <h2>Detalhes das Despesas</h2>
+      </div>
+      <div class="card-content">
+        <p>
+          Nas Despesas são fornecidas informações sobre os gastos realizados pelos órgãos e entidades estaduais em decorrência dos pagamentos para servidores públicos e fornecedores de materiais, serviços e obras, deduzidos, quando for o caso, os impostos e contribuições exigidos pela legislação.
+        </p>
+        <div class="info-badges">
+          <span class="badge oficial">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            Gastos Públicos
+          </span>
+          <span class="badge transparencia">
+            <i class="fa-solid fa-users"></i>
+            Servidores e Fornecedores
+          </span>
+          <span class="badge acesso">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            Conformidade Legal
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acesso ao Portal da Transparência -->
+    <section class="content-card" id="acesso-portal">
+      <div class="card-header blue">
+        <i class="fa-solid fa-globe"></i>
+        <h2>Acesse no Portal da Transparência</h2>
+      </div>
+      <div class="card-content">
+        <p class="intro-text-portal">
+          Para encontrar as informações sobre receitas e despesas da CENTRAL no Portal da Transparência, acesse os links abaixo:
+        </p>
+        
+        <!-- Toggle para Receitas -->
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-receitas" class="toggle-checkbox">
+          <label for="toggle-receitas" class="toggle-button">
+            <i class="fa-solid fa-arrow-down-to-line"></i>
+            Acessar Portal de Receitas
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="https://tfe.fazenda.rj.gov.br/tfe/web/receitagenerica" target="_blank" class="documento-link">
+                <i class="fa-solid fa-link"></i>
+                <span>Portal de Transparência - Receitas</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toggle para Despesas -->
+        <div class="toggle-section">
+          <input type="checkbox" id="toggle-despesas" class="toggle-checkbox">
+          <label for="toggle-despesas" class="toggle-button">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            Acessar Portal de Despesas
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          </label>
+          <div class="toggle-content">
+            <div class="documentos-grid">
+              <a href="https://tfe.fazenda.rj.gov.br/tfe/web/despesalivre" target="_blank" class="documento-link">
+                <i class="fa-solid fa-link"></i>
+                <span>Portal de Transparência - Despesas</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <img class="gov" src="img/gov_rj.png" alt="gov">
+    </div>
+    <div class="footer-column">
+        <h3>Companhia Estadual de Engenharia de Transportes e Logística</h3>
+        <p>Av. Nossa Senhora de Copacabana, 493 - 5° Andar - Copacabana, Rio de Janeiro, RJ - CEP 22.031-000
+          CNPJ: 04.585.463/0001-13</p>
+    </div>
+    <div class="footer-column">
+       <img src="img/proderj.png" alt="proderj">
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,3045 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Licitações - Central do Brasil</title>
+ 
+</head>
+<body>
+  <div class="main-container">
+      <!-- Main Content Area -->
+      <div class="main-content">
+
+         <style>
+    /* Reset e Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f7f6;
+    }
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header do Site */
+    .site-header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .site-header .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .site-header .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .site-header .site-logo {
+      height: 40px;
+      width: 40px;
+      object-fit: contain;
+    }
+    .site-header .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .site-header .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .site-header .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .site-header .main-nav a:hover {
+      color: #3498db;
+    }
+    .mobile-menu-toggle {
+      display: none; /* Hidden on desktop */
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none; /* Hidden by default */
+      background-color: #34495e;
+      padding: 15px 20px;
+      position: absolute;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 0;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+    .mobile-menu a:hover {
+      background-color: #2c3e50;
+    }
+
+    /* Header da Página (Licitações) */
+    .header-page {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header-page .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .header-page .title-section h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 3px;
+    }
+    .header-page .subtitle {
+      font-size: 1rem;
+      color: #7f8c8d;
+      font-weight: 500;
+    }
+
+    /* Conteúdo Principal */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .year-heading {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    /* Cartão de Licitação */
+    .licitacao-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .licitacao-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+    .licitacao-card .card-header {
+      padding: 15px 25px;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .licitacao-card .card-header i {
+        font-size: 1.5rem;
+    color: white;
+    background: #3b82f6;
+    padding: 12px;
+    border-radius: 8px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    }
+    .licitacao-card .card-header h2 {
+          font-family: "Antenna Bold", sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.025em;
+    }
+    .licitacao-card .card-content {
+      padding: 20px 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .licitacao-card .info-list {
+      display: grid;
+      gap: 10px 20px;
+      margin-bottom: 15px;
+    }
+    .licitacao-card .info-item {
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+    .licitacao-card .info-item .label {
+      font-weight: 600;
+      color: #555;
+      flex-shrink: 0;
+    }
+    .licitacao-card .info-item .value {
+      flex: 1;
+    }
+
+    /* Status Badges */
+    .status-aberto, .status-encerrado, .status-fracassado {
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+    .status-aberto {
+      background-color: #e6f7ed;
+      color: #27ae60;
+      border: 1px solid #27ae60;
+    }
+    .status-encerrado {
+      background-color: #E74C3C; /* Updated to solid red */
+      color: white; /* Updated to white text */
+      border: none; /* Removed border */
+    }
+    .status-fracassado {
+      background-color: #fff3e0;
+      color: #f39c12;
+      border: 1px solid #f39c12;
+    }
+
+    /* Objeto da Licitação */
+    .text-content-box {
+      background-color: #f8f8f8;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .text-content-box .label {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .text-content-box .objeto-text {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* Detalhes (Toggle) */
+    details.licitacao-toggle {
+      border-top: 1px solid #eee;
+      margin-top: 15px;
+      padding-top: 15px;
+    }
+    details.licitacao-toggle summary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background-color: #3b82f6; /* Updated to solid red */
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 4px; /* Adjusted border-radius */
+      list-style: none; /* Remove default marker */
+      outline: none; /* Remove outline on focus */
+      transition: background-color 0.3s ease;
+    }
+    details.licitacao-toggle summary:hover {
+      background-color: #c0392b; /* Darker red on hover */
+    }
+    details.licitacao-toggle summary::-webkit-details-marker {
+      display: none; /* Hide default marker for Webkit browsers */
+    }
+    details.licitacao-toggle summary .toggle-text::before {
+      content: "+ ";
+    }
+    details.licitacao-toggle[open] summary .toggle-text::before {
+      content: "- ";
+    }
+    details.licitacao-toggle summary i {
+      transition: transform 0.3s ease;
+    }
+    details.licitacao-toggle[open] summary i {
+      transform: rotate(180deg);
+    }
+    details.licitacao-toggle .documents-section {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 25px; /* Keep padding consistent with card-content */
+      background-color: #fcfcfc;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+    details.licitacao-toggle[open] .documents-section {
+      max-height: 2000px; /* A large enough value to accommodate content */
+      padding: 20px 25px;
+    }
+    .documents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .doc-category {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+    }
+    .doc-category h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .doc-category h4 i {
+      color: #3498db; /* Icon color for category */
+    }
+    .doc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .doc-link:hover {
+      background: #e9ecef;
+      transform: translateX(3px);
+      border-color: #3498db;
+    }
+    .doc-link i {
+      font-size: 0.9rem;
+      color: #e74c3c; /* Default for PDF icon */
+    }
+    .doc-link.desclassificacao {
+      background: #ffebee;
+      border-color: #ffcdd2;
+    }
+    .doc-link.desclassificacao i {
+      color: #c0392b;
+    }
+    .doc-link.resultado {
+      background: #e8f5e8;
+      border-color: #c8e6c9;
+    }
+    .doc-link.resultado i {
+      color: #27ae60;
+    }
+
+    /* Footer do Site */
+    .site-footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 40px 0;
+      margin-top: 40px;
+    }
+    .site-footer .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .site-footer .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #3498db;
+    }
+    .site-footer .footer-section p,
+    .site-footer .footer-section ul {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #bdc3c7;
+    }
+    .site-footer .footer-section ul {
+      list-style: none;
+    }
+    .site-footer .footer-section a {
+      color: #bdc3c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .site-footer .footer-section a:hover {
+      color: #3498db;
+    }
+    .site-footer .footer-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .site-footer .footer-logo {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+    .site-footer .footer-site-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+    }
+    .site-footer .footer-social a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+    }
+    .site-footer .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #34495e;
+      font-size: 0.85rem;
+      color: #7f8c8d;
+    }
+
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .site-header .main-nav {
+        display: none; /* Hide desktop nav on smaller screens */
+      }
+      .mobile-menu-toggle {
+        display: block; /* Show mobile toggle */
+      }
+      .mobile-menu.open {
+        display: block; /* Show mobile menu when open */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 15px;
+      }
+      .header-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+      }
+      .header-page .logo-section {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .header-page .logo {
+        width: 50px;
+        height: 50px;
+      }
+      .header-page .title-section h1 {
+        font-size: 1.8rem;
+      }
+      .header-page .subtitle {
+        font-size: 0.9rem;
+      }
+      .licitacao-card .card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 15px 20px;
+      }
+      .licitacao-card .card-header h2 {
+        font-size: 1.1rem;
+      }
+      .licitacao-card .info-list {
+        grid-template-columns: 1fr; /* Stack info items on small screens */
+      }
+      .licitacao-card .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      details.licitacao-toggle summary {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+      }
+      .documents-grid {
+        grid-template-columns: 1fr;
+      }
+      .site-footer .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .site-footer .footer-logo-area {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header .site-title {
+        font-size: 1.3rem;
+      }
+      .header-page .title-section h1 {
+        font-size: 1.5rem;
+      }
+      .licitacao-card .card-header h2 {
+        font-size: 1rem;
+      }
+      .licitacao-card .info-item,
+      .licitacao-card .text-content-box .objeto-text,
+      .doc-link {
+        font-size: 0.8rem;
+      }
+      .status-aberto, .status-encerrado, .status-fracassado {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+      }
+    }
+  </style>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+          <!-- Ano 2025 -->
+          <h3 class="year-heading">2025</h3>
+          <!-- EDITAL DE PREGÃO PRESENCIAL N.° 001/CENTRAL/2025 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO PRESENCIAL N.° 001/CENTRAL/2025</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-aberto">ABERTO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">--/--/----</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Maior Lance ou Oferta</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Presencial.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 0,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000000/2025</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Alienação (venda) dos trilhos remanescentes da reforma do Sistema de Bondes de Santa Teresa.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (6)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Aviso de Licitacao DOERJ.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Aviso de Licitação DOERJ</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Termo de Referencia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Termo de Referência</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Edital.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Relatorio de Vistoria de Baixa.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Relatório de Vistoria de Baixa</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Minuta de Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Minuta de Contrato</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2025/Homologacao DOERJ.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Homologação DOERJ</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- Ano 2024 -->
+          <h3 class="year-heading">2024</h3>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 006/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 006/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">31/10/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 92.584,36</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000030/2024</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de Serviços de Reperfilamento de 20 (Vinte) Aros de Rodas, dos Rodeiros dos Bondes de Santa Teresa.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (10)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 01 Estudo Tecnico Preliminar.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 01 Estudo Tecnico Preliminar</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 02 Mapa de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 02 Mapa de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 03 Termo de Referencia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 03 Termo de Referencia</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 04 Anexo Especificacao Tecnica do Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 04 Anexo Especificacao Tecnica do Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 05 Anexo Desenho de Referencia 1.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 05 Anexo Desenho de Referencia 1</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 06 Anexo Desenho de Referencia 2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 06 Anexo Desenho de Referencia 2</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 07 Edital de Licitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 07 Edital de Licitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 08 Anexo Documentacao de Habilitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 08 Anexo Documentacao de Habilitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 09 Anexo Matriz de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 09 Anexo Matriz de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 10 Minuta de Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 10 Minuta de Contrato</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 11 Aviso Continuidade.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 11 Aviso Continuidade</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-trophy"></i> Resultado Final (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 006CENTRAL2024/PE 006 12 Homologacao PE0006_24.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 006 12 Homologacao PE0006_24</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 005/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 005/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">22/10/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 7.664.141,04</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000837/2024.</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de empresa especializada para prestação de serviços, em conformidade com as normas legais e regulamentares aplicáveis, de assistência médica, clínica e cirúrgica, hospitalar e ambulatorial, geral e especializada e atendimento de urgência, pronto-socorro, pronto-atendimento, obstétrica/maternidade, serviços de análise diagnóstica de atendimento laboratorial, métodos complementares de diagnósticos, radiodiagnóstico e tratamento, em âmbito estadual, com base no rol de procedimentos da Agência Nacional de Saúde Suplementar – ANS e consoante ao que estabelece a Lei Federal no 9.656/98 e suas alterações, aos grupos de beneficiários previstos no item 9.2.2, com possibilidade de upgrade, por um período de até 12 (doze) meses
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (7)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 01 Aviso de Licitacao Plano de Saude DOERJ.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 01 Aviso de Licitacao Plano de Saude DOERJ</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 02 Termo de Referencia de Material_Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 02 Termo de Referencia de Material_Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 03 Edital_de_Licitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 03 Edital_de_Licitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 04 Mapa de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 04 Mapa de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 05 Anexo Matriz de Risco.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 05 Anexo Matriz de Risco</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 06 Anexo Documentacao de Habilitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 06 Anexo Documentacao de Habilitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 07 Minuta_de_Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 07 Minuta_de_Contrato</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (8)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 08 NotaEsclarecimentos-1_PlanoSaúde.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 08 NotaEsclarecimentos-1_PlanoSaúde</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 09 NotaEsclarecimentos-1_PlanoSaúde-AnexoI.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 09 NotaEsclarecimentos-1_PlanoSaúde-AnexoI</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 10 NotaEsclarecimentos-1_PlanoSaúde-AnexoII.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 10 NotaEsclarecimentos-1_PlanoSaúde-AnexoII</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 11 NotaEsclarecimentos_2_AnexoIII.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 11 NotaEsclarecimentos_2_AnexoIII</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 12 NotaEsclarecimentos_PlanoSaúde_2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 12 NotaEsclarecimentos_PlanoSaúde_2</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 12 NotaEsclarecimentos_PlanoSaude_3.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 12 NotaEsclarecimentos_PlanoSaúde_3</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 13 NotaEsclarecimentos_4.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 13 NotaEsclarecimentos_4</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 14 NotaEsclarecimentos_5.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 14 NotaEsclarecimentos_5</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 15 AvisoRetomadaPE5-24.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 15 AvisoRetomadaPE5-24</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-trophy"></i> Resultado Final (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2024/PE 005 16 Homologacao PE0005_24.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 005 16 Homologacao PE0005_24</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 004/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 004/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">15/10/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 76.622,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000733/2024</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de FILTRO COADOR DE CAFÉ, GARRAFA TÉRMICA, AÇÚCAR, ADOÇANTE e CAFÉ.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (10)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 01 Aviso de Licitacao DOERJ.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 01 Aviso de Licitacao DOERJ</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 02 Estudo Tecnico Preliminar.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 02 Estudo Tecnico Preliminar</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 03 Termo de Referencia de Material_Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 03 Termo de Referencia de Material_Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 04 Anexo Documentacao de Habilitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 04 Anexo Documentacao de Habilitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 05 Edital de Licitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 05 Edital de Licitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 06 Mapa de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 06 Mapa de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 07 Matriz de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 07 Matriz de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 08 Minuta de Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 08 Minuta de Contrato</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 09 Anexo Cronograma de Entrga.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 09 Anexo Cronograma de Entrga</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 10 Comprovante de envio ao TCE-RJ.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 10 Comprovante de envio ao TCE-RJ</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 11 AvisoRetomadaPE_CafeEtc-2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 11 AvisoRetomadaPE_CafeEtc-2</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-trophy"></i> Resultado Final (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2024/PE 004 24 12 Homologacao PE0004_24.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 004 24 12 Homologacao PE0004_24</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 003/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 003/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">03/12/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 2.974.908,64</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000912/2024</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Prestação de Serviços continuados de vigilância desarmada, diurna e noturna, pelo período de 12 (doze) meses, com regime de dedicação exclusiva de mão de obra, a serem executados nas dependências do Sistema de Bonde de Santa Teresa e Teleférico do Morro do Alemão.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (7)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 1 - Aviso de licitacao Vigilancia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 1 - Aviso de licitacao Vigilancia</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 2 - Estudo_Tecnico_Preliminar.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 2 - Estudo_Tecnico_Preliminar</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 3 - Termo_de_Referencia_de_Material_Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 3 - Termo_de_Referencia_de_Material_Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 4 - Anexo___Documentacao_de_Habilitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 4 - Anexo___Documentacao_de_Habilitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 5 - Edital_de_Licitacao_vigilancia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 5 - Edital_de_Licitacao_vigilancia</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 6 - Anexo___Matriz_de_Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 6 - Anexo___Matriz_de_Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 7 - Minuta_de_Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 7 - Minuta_de_Contrato</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (5)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 11 AvisoProcesso_Vigilancia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 11 AvisoProcesso_Vigilancia</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 13 AvisoRetomadaPE_Vigilancia-2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 13 AvisoRetomadaPE_Vigilancia-2</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 14 AvisoRetomadaPE_Vigilancia-3.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 14 AvisoRetomadaPE_Vigilancia-3</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 16 AvisoRetomadaPE_Vigilancia-5.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 16 AvisoRetomadaPE_Vigilancia-5</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 17 AvisoRetomadaPE_Vigilancia-6_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 17 AvisoRetomadaPE_Vigilancia-6_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-times-circle"></i> Desclassificação/Inabilitação (3)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 25 INNOVA AIR SERVICOS TECNICOS LTDA ME (13.411.9260001-11).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 25 INNOVA AIR SERVICOS TECNICOS LTDA ME</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 26 L.F.O PERES MANUTENCAO E SERVICOS (34.540.3970001-26).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 26 L.F.O PERES MANUTENCAO E SERVICOS</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 27 VIGFAT VIGILANCIA PATRIMONIAL LTDA.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 27 VIGFAT VIGILANCIA PATRIMONIAL LTDA</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-trophy"></i> Resultado Final (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Edital 03.2024/003 28 DOERJ_PE0003_24_Adjudicacao_e_Homologacao.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>003 28 DOERJ_PE0003_24_Adjudicacao_e_Homologacao</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">23/08/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 588.000,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001312/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Prestação de Serviços de Revitalização com Substituição, Fornecimento e Testes de Peças e Equipamentos nos Bondes 16, 17 e 18, situada na Rua Carlos Brandt, nº 14 – Santa Teresa – Rio de Janeiro – RJ
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (12)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 1 - Edital de Licitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 1 - Edital de Licitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 2 - Estudo Tecnico Preliminar.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 2 - Estudo Tecnico Preliminar</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 3 - Termo de Referencia.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 3 - Termo de Referencia</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 4 - Anexo1 (TR) Especificacao Tecnica.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 4 - Anexo1 (TR) Especificacao Tecnica</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 5 - Anexo2 (TR) Modelo de Proposta de Precos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 5 - Anexo2 (TR) Modelo de Proposta de Precos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 6 - Anexo3 (TR) Cronograma Fisico de Execucao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 6 - Anexo3 (TR) Cronograma Fisico de Execucao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 7 - Anexo4 (TR) Modelo de Ordem de Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 7 - Anexo4 (TR) Modelo de Ordem de Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 8 - Anexo5 (TR) Planilha de Servicos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 8 - Anexo5 (TR) Planilha de Servicos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 9 - Mapa de Riscos.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 9 - Mapa de Riscos</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 10 - Anexo6 (TR) Roteiro de Manutencao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 10 - Anexo6 (TR) Roteiro de Manutencao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 11 - Anexo (TR) documentacao de Habilitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 11 - Anexo (TR) documentacao de Habilitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 12 - Minuta de Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 12 - Minuta de Contrato</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (3)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 13 - AvisoAberturaPE2-24.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 13 - AvisoAberturaPE2-24</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 14 - AVISORetomada.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 14 - AVISORetomada</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 002CENTRAL2024/PE 002_24 15 - AVISO2aRetomada.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 002_24 15 - AVISO2aRetomada</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 001/CENTRAL/2024 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 001/CENTRAL/2024</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/06/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 76.440,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000043/2024</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Prestação de serviços gráficos para confecção de 300.000 (trezentos mil) bilhetes personalizados para atender ao ingresso de passageiros nos Bondes de Santa Teresa.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/SEI_75772388_Edital_de_Licitacao_5.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>SEI_75772388_Edital_de_Licitacao_5</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/SEI_74831560_Termo_de_Referencia_de_Material_Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>SEI_74831560_Termo_de_Referencia_de_Material_Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/4 PE001 2024_Anexo_Modelo_Bilhete_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>4 PE001 2024_Anexo_Modelo_Bilhete_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/5 PE001 2024_Minuta_de_Contrato_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>5 PE001 2024_Minuta_de_Contrato_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/2 PE001 2024 Aviso Bilhetes DO_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>2 PE001 2024 Aviso Bilhetes DO_0_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/7 PE001 2024_ AvisoRetomadaPE1_24.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>7 PE001 2024_ AvisoRetomadaPE1_24</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 001CENTRAL2024/6 PE001 2024_ NotaEsclarecimentos1_BilheteBondes.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>6 PE001 2024_ NotaEsclarecimentos1_BilheteBondes</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- Ano 2023 -->
+          <h3 class="year-heading">2023</h3>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 018/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 018/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/06/2024</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço por Lote</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 27.699,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001458/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          aquisição de peças veiculares, óleos e graxas diversas para aplicação na manutenção dos bondes em operação e no caminhão de manutenção da rede aérea e aquisição de peças veiculares, óleos e graxas diversas para aplicação na manutenção dos bondes em operação e no caminhão de manutenção da rede aérea.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 018CENTRAL2023/PE 0018_2023 Edital de Licitaç╞o_1.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 0018_2023 Edital de Licitaç╞o_1</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 018CENTRAL2023/PE 0018_2023 Publicacao D. O..pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 0018_2023 Publicacao D. O.</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 017/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 017/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">26/12/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 4.045.523,64</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001327/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação do plano de saúde
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/1 PE 017 - Edital de Licitacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>1 PE 017 - Edital de Licitacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/2 PE 017 - Aviso de Licitacao DO.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>2 PE 017 - Aviso de Licitacao DO</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/3 PE 017 - Termo de Referencia de Material_Servico.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>3 PE 017 - Termo de Referencia de Material_Servico</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/4 PE 017 - Minuta de Contrato.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>4 PE 017 - Minuta de Contrato</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (3)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/5 PE 017 - Nota de Esclarecimentos - 1_PE0017_23_Plano.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>5 PE 017 - Nota de Esclarecimentos - 1_PE0017_23_Plano</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/6 PE 017 - Anexo Nota de Esclarecimentos 1_PE0017_23_Plano_RelatorioAnexo.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>6 PE 017 - Anexo Nota de Esclarecimentos 1_PE0017_23_Plano_RelatorioAnexo</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/7 PE 017 - Notas de Esclarecimentos - 02 a 04.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>7 PE 017 - Notas de Esclarecimentos - 02 a 04</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/8 PE 017 - Aviso de remarcacao D O.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>8 PE 017 - Aviso de remarcacao D O</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-contract"></i> Minuta Retificada (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/9 PE 017 - Minuta de Contrato Retificada (67117649).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>9 PE 017 - Minuta de Contrato Retificada (67117649)</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-exclamation-circle"></i> Erratas (3)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/11 PE017 - Aviso Errata (1).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>11 PE017 - Aviso Errata (1)</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/11 PE017 - Aviso Errata.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>11 PE017 - Aviso Errata</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/14 PE 017 - ERRATA D.O. 21_02_2024.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>14 PE 017 - ERRATA D.O. 21_02_2024</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-exclamation-triangle"></i> Impugnação (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/12 PE 017 - Email pedido de Impugnacao 2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>12 PE 017 - Email pedido de Impugnacao 2</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-check-circle"></i> Decisões/Despachos (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/13 PE 017 - Decis╞o do PRESIDENTE sobre a Impugnaç╞o 20_02_2024 (1).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>13 PE 017 - Decis╞o do PRESIDENTE sobre a Impugnaç╞o 20_02_2024 (1)</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/15 PE 017 - Despacho de manutencao da Revogacao.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>15 PE 017 - Despacho de manutencao da Revogacao</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/16 PE 017 - Retificacao do Despacho.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>16 PE 017 - Retificacao do Despacho</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 017CENTRAL2023/17 PE 017 - Despacho do Presidente revogando D O 2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>17 PE 017 - Despacho do Presidente revogando D O 2</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 016/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 016/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">13/12/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 39.076,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001244/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de empresa especializada para realização dos serviços de poda, corte e extração de tocos de árvores e supressão de vegetação, incluindo posterior limpeza geral, na oficina dos bondes de Santa Teresa
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 016CENTRAL2023/PE 0016_2023 Edital Poda.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 0016_2023 Edital Poda</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 016CENTRAL2023/PE 0016_2023 Publicacao DO.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 0016_2023 Publicacao DO</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 015/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 015/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">06/11/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">SEI-100006/001417/2022</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 38.165,74</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001417/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          O objeto do presente pregão eletrônico é a aquisição de 06 (seis) GRAVADOR DIGITAL DE IMAGEM - HD5 - 600 - WIFI – GPS.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 015CENTRAL2023/Edital Gravador.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Gravador</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 015CENTRAL2023/D.O. Gravador.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Gravador</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 014/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 014/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/10/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 74.305,33</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">º SEI-100006/001713/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de Dormentes de Madeira (1,60 x 0,20 x 0,16)m, para aplicação no sistema de via permanente sobre os Arcos da Lapa e o viaduto sobre a avenida República do Paraguay e Dormentes de madeira (2,00 x 0,20 x 0,16)m, para aplicação no sistema de via permanente no rodo da estação carioca, conforme descrição no Termo de Referência, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 014CENTRAL2023/Edital Dormentes 1713_22.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Dormentes 1713_22</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 014CENTRAL2023/D.O. Dormentes 1713_22_1.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Dormentes 1713_22_1</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 013/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 013/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">26/10/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 122.141,37</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001293/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de 70 (setenta) carretilhas, conforme descrição no Termo de Referência, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 013CENTRAL2023/Edital Carretilha 1293_23.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Carretilha 1293_23</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 013CENTRAL2023/D.O. Carretilha 1293_23_2.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Carretilha 1293_23_2</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 012/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 012/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">06/11/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 70.625.796,73</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001175/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de empresa para elaboração de Projeto Executivo e execução de serviços complementares de recuperação da via permanente e da rede aérea no Sistema de Bondes de Santa Teresa da Cidade do Rio de Janeiro - "Ramal Dois Irmãos - Silvestre" e "Ramal Largo do Guimarães - Largo das Neves", conforme as especificações contidas no Edital e Anexos, que embora não transcritos fazem parte integrante deste instrumento, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL e a Lei Federal nº 13.303/2016
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Edital de Licitacao PE 0012_2023_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital de Licitacao PE 0012_2023_0_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Termo de Referencia e Anexos_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Termo de Referencia e Anexos_0_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Minuta de Contrato_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Minuta de Contrato_0_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Publicaç╞o DO_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Publicaç╞o DO_0_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Esclarecimentos 1175_0_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Esclarecimentos 1175_0_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-exclamation-triangle"></i> Impugnação (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/PE 0012 - Resposta à Impugnaç╞o_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>PE 0012 - Resposta à Impugnaç╞o</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 012CENTRAL2023/Pedido de Impugnaç╞o Elmo-Azvi_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Pedido de Impugnaç╞o Elmo-Azvi</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 011/CENTRAL/2023 R1 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 011/CENTRAL/2023 R1</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">06 / 11 / 2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 127.196,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000758/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de clínica especializada em exames médicos ocupacionais, para a realização de exames médicos admissionais, periódicos, de retorno ao trabalho, de mudança de função e demissionais, bem como realização de exames laboratoriais complementares a que os empregados ativos e empregados extra quadro da Companhia Estadual de Engenharia de Transportes e Logística - CENTRAL estarão submetidos para pleno atendimento à NR 7- Norma Regulamentadora 7, da Secretaria do Trabalho, do Ministério da Economia, conforme as especificações contidas neste termo, no instrumento convocatório e seus respectivos anexos
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023 R1/SEI_ERJ Edital de Licitaç╞o PE 011_2023_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>SEI_ERJ Edital de Licitaç╞o PE 011_2023_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023 R1/Aviso PE_011 2023_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Aviso PE_011 2023_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023 R1/IOERJ - Remarcada_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>IOERJ - Remarcada_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 011/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 011/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">06 / 11 / 2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 127.196,00</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000758/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          O objeto do presente pregão eletrônico é a contratação de clínica especializada em exames médicos ocupacionais, para a realização de exames médicos admissionais, periódicos, de retorno ao trabalho, de mudança de função e demissionais, bem como realização de exames laboratoriais complementares a que os empregados ativos e empregados extra quadro da Companhia Estadual de Engenharia de Transportes e Logística – CENTRAL estarão submetidos para pleno atendimento à NR 7- Norma Regulamentadora 7, da Secretaria do Trabalho, do Ministério da Economia, conforme as especificações contidas neste termo, no instrumento convocatório e seus respectivos anexos.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023/SEI_ERJ Edital de Licitaç╞o PE 011_2023.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>SEI_ERJ Edital de Licitaç╞o PE 011_2023</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023/Aviso PE_011 2023.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Aviso PE_011 2023</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-times-circle"></i> Revogação (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 011CENTRAL2023/IOERJ - Revogada_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>IOERJ - Revogada_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 010/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 010/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">26/10/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 267.574,30</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000664/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de empresa especializada em engenharia elétrica para realizar os serviços de reparos e manutenção na subestação retificadora dos bondes de Santa Teresa, de acordo com as especificações constantes deste Edital e seus Anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência. (Anexo - I).
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 010CENTRAL2023/Edital Subestaç╞o_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Subestaç╞o_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 010CENTRAL2023/D.O. Subestacao_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Subestacao_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 010CENTRAL2023/Resposta ao Pedido de Esclarecimento PE0010_23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Resposta ao Pedido de Esclarecimento PE0010_23_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-check-circle"></i> Decisões (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 010CENTRAL2023/Decis╞o sobre Recurso PE 10 _0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Decis╞o sobre Recurso PE 10 _0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 010CENTRAL2023/Despacho de Decis╞o Sobre Recurso 664_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Despacho de Decis╞o Sobre Recurso 664_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 009/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 009/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">29/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço por Lote</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 112.958,51</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001256/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de Equipamentos de Proteção Individual (EPI), de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 009CENTRAL2023/Edital 09.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital 09</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 009CENTRAL2023/Publicaç╞o DO edital 09.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Publicaç╞o DO edital 09</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 008/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 008/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">29/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 27.745,62</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001418/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de 28 (vinte e oito) ROLAMENTOS, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 008CENTRAL2023/Edital PE008_23 1418_22_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital PE008_23 1418_22_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 008CENTRAL2023/D.O. PE008_23 Rolamento 1418 22_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. PE008_23 Rolamento 1418 22_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 007/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 007/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">06/10/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor taxa administrativa.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 8.674.097,60</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000589/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Prestação de serviço de administração e emissão de CARTÕES magnéticos com chip, conforme tecnologia disponível ou outra inovação que venha a ser disponibilizada, para concessão dos benefícios auxílio-alimentação, em refeições e/ou gêneros alimentícios (alimentação).
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/Edital Inversores do compressor 459 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Inversores do compressor 459 23_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/D.O. Inversor do Compressor 459 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Inversor do Compressor 459 23_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-exclamation-circle"></i> Erratas (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/3 - PE 0007_2023 ERRATA 589_23.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>3 - PE 0007_2023 ERRATA 589_23</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-question-circle"></i> Esclarecimentos (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/4 - PE 0007_2023 Nota de Esclarecimento 589_23.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>4 - PE 0007_2023 Nota de Esclarecimento 589_23</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/6 - PE 0007_2023 Pedido de Esclarecimento 6 7 PE007.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>6 - PE 0007_2023 Pedido de Esclarecimento 6 7 PE007</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-exclamation-triangle"></i> Impugnação (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/5 - PE 0007_2023 E-mail Resposta a Impugnaç╞o.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>5 - PE 0007_2023 E-mail Resposta a Impugnaç╞o</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/7 - PE 0007_2023 Pedido de impugnaç╞o BK Bank Tickt.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>7 - PE 0007_2023 Pedido de impugnaç╞o BK Bank Tickt</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-check-circle"></i> Decisões (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/9 - PE 0007_2023 Despacho de Decis╞o Sobre Recurso V.R. V.A..pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>9 - PE 0007_2023 Despacho de Decis╞o Sobre Recurso V.R. V.A.</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-trophy"></i> Resultado Final (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/10 - PE 0007_2023 Homologaç╞o verocheque.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>10 - PE 0007_2023 Homologaç╞o verocheque</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/11 - PE 0007_2023 Homologaç╞o Personal net.pdf" target="_blank" class="doc-link resultado">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>11 - PE 0007_2023 Homologaç╞o Personal net</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 006/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 006/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">22/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 49.450,68</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000459/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          O objeto do presente pregão eletrônico é a aquisição de 05 (cinco) INVERSORES DOCOMPRESSOR, CFW11 - 13 A - Cod. BRCFW110013T40FAZ, (SIGA: ID 148305) para realização das manutenções preventivas e corretivas necessárias do material rodante (bonde), de acordo com as especificações constantes neste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/Edital Inversores do compressor 459 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Inversores do compressor 459 23_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 007CENTRAL2023/D.O. Inversor do Compressor 459 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D.O. Inversor do Compressor 459 23_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 005/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 005/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">22/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 147.203,10</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000373/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          O objeto do presente pregão eletrônico é a aquisição de 06 (seis) INVERSORES AUXILIAR CFW-11T45A BRCFW110045T4OFAZ (SIGA: ID 147999) para realização das manutenções preventivas e corretivas necessárias do material rodante (bonde), de acordo com as especificações constantes neste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2023/Edital Licitacao Compressor do Inversor 373 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Licitacao Compressor do Inversor 373 23_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 005CENTRAL2023/D. O. Licitacao Compressor do Inversor 373 23_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>D. O. Licitacao Compressor do Inversor 373 23_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 004/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 004/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-fracassado">FRACASSADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 45.875,16</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001138/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de serviços de Empresa Especializada para o reperfilamento de 12(doze) aros de roda, a serem aplicados nos seguintes bondes: 21 e 22, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-contract"></i> Contratos (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2023 - R1/Contrato 04.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Contrato 04</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2023 - R1/EXTRATO DE ATA DE REGISTRO DE PREÇOS.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>EXTRATO DE ATA DE REGISTRO DE PREÇOS</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2023 - R1/EXTRATO DE INSTRUMENTO CONTRATUAL (1).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>EXTRATO DE INSTRUMENTO CONTRATUAL (1)</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 004CENTRAL2023 - R1/NOTA DE EMPENHO (2).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>NOTA DE EMPENHO (2)</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 003/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 003/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/09/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço global</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 2.802.132,25</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/001021/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de serviços prestação de serviços de bondes elétricos de transporte de passageiros no Sistema de Bondes de Santa Teresa/RJ, por meio de disponibilização de mão de obra qualificada, conforme as especificações contidas no Edital; Termo de Referência - Anexo I do Edital e o Formulário de Proposta de Preços - Anexo II do Edital, que embora não transcritos fazem parte integrante deste instrumento, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-contract"></i> Contratos (3)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 003CENTRAL2023/CONTRATO 03.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>CONTRATO 03</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 003CENTRAL2023/EXTRATO DE ATA DE REGISTRO DE PREÇOS.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>EXTRATO DE ATA DE REGISTRO DE PREÇOS</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/N.º 003CENTRAL2023/NOTA DE EMPENHO (1).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>NOTA DE EMPENHO (1)</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">22/08/2023</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 326.584,71</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000649/2023</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de serviços prestação de serviços de engenharia visando a recuperação das redes de segurança, dos cabos de ancoragem e dos suportes de fixação nas fachadas do prédio principal do Complexo Barão de Mauá situado na Avenida Francisco Bicalho, s/nº, São Cristóvão, RJ, de acordo com as especificações constantes neste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-contract"></i> Contratos (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Nº 002CENTRAL2023/Contrato 02.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Contrato 02</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Nº 002CENTRAL2023/Extrato de Instrumento Contratual 18-01-2023.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Extrato de Instrumento Contratual 18-01-2023</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Nº 002CENTRAL2023/Nota de Empenho.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Nota de Empenho</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Nº 002CENTRAL2023/Portaria de Gestor e Fiscal 07-02-23.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Portaria de Gestor e Fiscal 07-02-23</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO - 001CENTRAL2023 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 001/CENTRAL/2023</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">--/--/----</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Não especificado</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Não especificado.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">Não especificado</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">Não especificado</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Documentos relacionados ao Pregão 001CENTRAL2023.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos (4)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/001CENTRAL2023/Aviso de Licitaç╞o 25-10-2022.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Aviso de Licitaç╞o 25-10-2022</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/001CENTRAL2023/Despacho do Diretor 28-12-2022.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Despacho do Diretor 28-12-2022</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/001CENTRAL2023/Extrato de Instrumento Contratual 10-03-2023 (1).pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Extrato de Instrumento Contratual 10-03-2023 (1)</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/001CENTRAL2023/Extrato de Instrumento Contratual 10-03-2023.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Extrato de Instrumento Contratual 10-03-2023</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- Ano 2022 -->
+          <h3 class="year-heading">2022</h3>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2022 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO N.º 002/CENTRAL/2022</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-fracassado">FRACASSADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">25/07/2022</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço Unitário</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 108.211,68</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000132/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de 24 (vinte e quatro) unidades de carretilhas de contato de alavanca dos Bondes de Santa Teresa, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Preg╞o Eletrônico PE002CENTRAL2022 R1/132. Edital de Licitaç╞o.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>132. Edital de Licitaç╞o</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/Preg╞o Eletrônico PE002CENTRAL2022 R1/DO de Licitaç╞o.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>DO de Licitaç╞o</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-bell"></i> Avisos (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Preg╞o Eletrônico PE002CENTRAL2022 R1/Aviso1.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Aviso1</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-times-circle"></i> Fracassado (1)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/Preg╞o Eletrônico PE002CENTRAL2022 R1/Licitaç╞o Fracassada.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Licitaç╞o Fracassada</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO LI - 001/2022 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO LI - 001/2022</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">01/11/2022</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Técnica e Preço</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 1.205.726,86</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">SEI-100006/000426/2022</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Contratação de empresa especializada para elaboração de Projeto Básico e Executivo, com modelagem em software de tecnologia BIM (Building Information Modeling), para Reforma e Adequação Do complexo da oficina dos Bondes de Santa Teresa no município do Rio de Janeiro, conforme esmiuçado no item 3 do Termo de Referência (Anexo I) do Edital.
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/LI - 001.2022 - Técnica e Preço/Edital Reperfilamento_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Edital Reperfilamento_0</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/LI - 001.2022 - Técnica e Preço/Publicaç╞o DO Reperfilamento_0.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Publicaç╞o DO Reperfilamento_0</span>
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-times-circle"></i> Fracassado (2)</h4>
+                                  <div class="doc-list">
+                                      <a href="pdfs/5.2 - LicitaçΣes/LI - 001.2022 - Técnica e Preço/Fracassado Publicacao D.O. 17_10.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Fracassado Publicacao D.O. 17_10</span>
+                                      </a>
+                                      <a href="pdfs/5.2 - LicitaçΣes/LI - 001.2022 - Técnica e Preço/Fracassado Publicacao D.O. R1 17_11.pdf" target="_blank" class="doc-link">
+                                          <i class="fas fa-file-pdf"></i>
+                                          <span>Fracassado Publicacao D.O. R1 17_11</span>
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+          <!-- EDITAL DE PREGÃO ELETRÔNICO PE001/CENTRAL/2022 -->
+          <div class="licitacao-card">
+              <div class="card-header">
+                  <i class="fas fa-wrench"></i> <!-- Changed icon to wrench -->
+                  <h2>EDITAL DE PREGÃO ELETRÔNICO PE001/CENTRAL/2022</h2>
+              </div>
+              <div class="card-content">
+                  <div class="info-list">
+                      <div class="info-item">
+                          <span class="label">STATUS:</span>
+                          <span class="value status-encerrado">ENCERRADO</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">DATA:</span>
+                          <span class="value">23/06/2022</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">TIPO:</span>
+                          <span class="value">Menor Preço</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">MODALIDADE DE LICITAÇÃO:</span>
+                          <span class="value">Pregão Eletrônico.</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">VALOR PREVISTO:</span>
+                          <span class="value">R$ 68.805,20</span>
+                      </div>
+                      <div class="info-item">
+                          <span class="label">Nº DO PROCESSO:</span>
+                          <span class="value">º SEI-100006/000955/2021.</span>
+                      </div>
+                  </div>
+                  <div class="text-content-box">
+                      <span class="label">OBJETO:</span>
+                      <p class="objeto-text">
+                          Aquisição de materiais de aplicação na sustentação, isolamento, desvio, seccionamento e ancoragem da rede aérea de tração dos bondes, de acordo com as especificações constantes deste Edital e seus anexos, com total submissão ao Regulamento Interno de Licitações e Contratos da CENTRAL, à Lei Federal nº 13.303/2016, e ao Termo de Referência
+                      </p>
+                  </div>
+                  <details class="licitacao-toggle">
+                      <summary>
+                          <span class="toggle-text">DETALHES</span>
+                          <i class="fas fa-chevron-down toggle-icon"></i>
+                      </summary>
+                      <div class="documents-section">
+                          <div class="documents-grid">
+                              <div class="doc-category">
+                                  <h4><i class="fas fa-file-alt"></i> Documentos Iniciais (0)</h4>
+                                  <div class="doc-list">
+                                      <!-- No documents provided for this section in the previous context -->
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </details>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script>
+    // JavaScript para o menu mobile
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
